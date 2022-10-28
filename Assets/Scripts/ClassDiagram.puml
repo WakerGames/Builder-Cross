@@ -1,0 +1,64 @@
+﻿@startuml
+'https://plantuml.com/class-diagram
+
+class RoadGenerator
+{
++lastRoadTransform: Transform
+-emptyRoad: GameObject
+-carRoad: GameObject
+-turretRoad: GameObject
+-droneRoad: GameObject
+-_newRoadPosition: Vector3
++isEndless: bool
+
+-void ChangeTransform(GameObject)
+-void AddRoadPrefab(RoadType)
+-void AddEmptyRoad()
+-void AddCarRoad()
+-void AddTurretRoad()
+-void AddDroneRoad()
+}
+
+enum RoadType
+{
+    Empty,
+    Car,
+    Turret,
+    Drone
+}
+
+class Pool
+{
++prefabTag: string
++prefab: GameObject
++size: int
+}
+
+class ObjectPooler
+{
++Instance: ObjectPooler
++pools: List<Pool>
++PoolDictionary: Dictionary<Pool>
+
+-void Awake()
+-void Start()
++GameObject SpawnFromPool()
+}
+
+class Spawner
+{
+-_objectPooler: ObjectPooler
+-spawnTag: string
+-timeToSpawn: float
+-_timeSinceSpawn: float
+
+-void Start()
+-void FixedUpdate()
+}
+
+
+RoadGenerator o- RoadType
+ObjectPooler o-- Pool
+ObjectPooler <.. Spawner 
+
+@enduml
