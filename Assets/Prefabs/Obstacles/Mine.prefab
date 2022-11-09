@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 8778190933279766948}
   - component: {fileID: 5655885272181569025}
   - component: {fileID: 7609195481690669771}
+  - component: {fileID: 4277236785037636261}
+  - component: {fileID: 653805034073072183}
   m_Layer: 0
   m_Name: Mine
-  m_TagString: Untagged
+  m_TagString: DeadlyObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,3 +85,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4277236785037636261
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8257832093535544094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.47851542, y: 0.13935894, z: 0.41440654}
+  m_Center: {x: 0, y: 0.06967944, z: -0.000000007450581}
+--- !u!114 &653805034073072183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8257832093535544094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958cc174ca6512940a58e05b00e9a39f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  verticalForceAmount: 100
+  horizontalForceRadius: 100
