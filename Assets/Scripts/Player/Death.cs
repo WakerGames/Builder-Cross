@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,6 +12,21 @@ public class Death : MonoBehaviour
     private void Awake()
     {
         _ragdollManager = GetComponent<RagdollManager>();
+    }
+
+    private void OnEnable()
+    {
+        BoxManager.playerDiedBox += SlowTime;
+    }
+    
+    private void OnDisable()
+    {
+        BoxManager.playerDiedBox -= SlowTime;
+    }
+
+    private void SlowTime()
+    {
+        Time.timeScale = 0.1f;
     }
 
     public void Die()

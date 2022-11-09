@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7774663900737157641}
   - component: {fileID: 5476888324653010627}
   - component: {fileID: 3369328713022189863}
+  - component: {fileID: 1423848655708526636}
   m_Layer: 0
   m_Name: RoadBearTrap
   m_TagString: Untagged
@@ -101,6 +102,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 13, y: 0.39516965, z: 4.91124}
   m_Center: {x: -0.005907774, y: -0.14430775, z: 0.082556725}
+--- !u!114 &1423848655708526636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6269341195940589334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78f6a7446024fa4f9539d2d16d5dc4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1874678939110706394
 PrefabInstance:
   m_ObjectHideFlags: 0
