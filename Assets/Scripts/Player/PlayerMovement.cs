@@ -26,27 +26,26 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
     }
-   
+
     private void FixedUpdate()
     {
         if (_canMove)
         {
             Move();
         }
-         
     }
 
     private void Move()
     {
-        
+        //_moveVector = Vector3.zero;
         _moveVector.x = _joystick.Horizontal * _moveSpeed * Time.deltaTime;
         _moveVector.z = _joystick.Vertical * _moveSpeed * Time.deltaTime;
 
         if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
         {
-
             Vector3 direction = Vector3.RotateTowards(transform.forward, _moveVector, _rotateSpeed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(direction);
+
             if (_boxManager.GetHaveBox())
             {
                 _animatorController.BoxRun();

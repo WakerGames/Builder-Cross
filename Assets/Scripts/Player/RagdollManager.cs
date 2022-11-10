@@ -63,7 +63,6 @@ public class RagdollManager : MonoBehaviour
         mainCollider.enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
     }
-    
 
     public void RagdollsExplosionModeOn(float horizontalForceRadius, float verticalForceAmount)
     {
