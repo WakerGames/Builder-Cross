@@ -997,6 +997,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 309084137}
     - target: {fileID: 8906128772543708162, guid: 937da4602c83954439b64163c1f09f3c, type: 3}
+      propertyPath: m_Mass
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906128772543708162, guid: 937da4602c83954439b64163c1f09f3c, type: 3}
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
@@ -1391,18 +1395,6 @@ PrefabInstance:
     - target: {fileID: 6650405106299876780, guid: 9f33dbafea50c634bb72b55a3a558c25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6965736050022745331, guid: 9f33dbafea50c634bb72b55a3a558c25, type: 3}
-      propertyPath: MinDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6965736050022745331, guid: 9f33dbafea50c634bb72b55a3a558c25, type: 3}
-      propertyPath: rolloffMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6965736050022745331, guid: 9f33dbafea50c634bb72b55a3a558c25, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f33dbafea50c634bb72b55a3a558c25, type: 3}
@@ -2130,10 +2122,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 617593094091092572, guid: 2435dfbec648a3c4daa70cc51dc926a2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4889600803653486029, guid: 2435dfbec648a3c4daa70cc51dc926a2, type: 3}
       propertyPath: m_RootOrder
       value: 12

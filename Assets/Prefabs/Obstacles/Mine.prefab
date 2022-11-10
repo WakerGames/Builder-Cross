@@ -112,8 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958cc174ca6512940a58e05b00e9a39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalForceAmount: 100
-  horizontalForceRadius: 100
+  verticalForceAmount: 40
+  horizontalForceRadius: 40
   explosionParticleEffect: {fileID: 7633057741385677557}
   audioData: {fileID: 4000331373145761230}
 --- !u!82 &4000331373145761230
