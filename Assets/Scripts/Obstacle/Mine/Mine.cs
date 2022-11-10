@@ -9,6 +9,9 @@ public class Mine : MonoBehaviour, IDamageDealer
     [SerializeField] private float verticalForceAmount;
     [SerializeField] private float horizontalForceRadius;
     
+    [SerializeField] ParticleSystem explosionParticleEffect;
+    [SerializeField] AudioSource audioData;
+
     public void DealDamage(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -24,6 +27,11 @@ public class Mine : MonoBehaviour, IDamageDealer
 
     public void OnTriggerEnter(Collider other)
     {
-        DealDamage(other);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            DealDamage(other);
+            audioData.Play(0);
+            explosionParticleEffect.Play();
+        }
     }
 }
