@@ -5,8 +5,17 @@ using UnityEngine.UIElements;
 
 public class BearTrap : MonoBehaviour, IDamageDealer
 {
+
+
+    [SerializeField] AudioSource audioData;
+
+    [SerializeField] GameObject leftJaw;
+    [SerializeField] GameObject rightJaw;
+
     private void AttachLeg(Collider other)
     {
+
+
         if (other.gameObject.CompareTag("Player"))
         {
             Rigidbody calfR = GameObject.Find("calf_r").GetComponent<Rigidbody>();
@@ -48,12 +57,19 @@ public class BearTrap : MonoBehaviour, IDamageDealer
         }
     }
 
+
+    void TrapCloseAnimation()
+    {
+        leftJaw.transform.Rotate(90.0f, 0.0f, 0.0f, Space.Self);
+        rightJaw.transform.Rotate(-90.0f, 0.0f, 0.0f, Space.Self);
+    }
+
     public void DealDamage(Collider other)
     {
         AttachLeg(other);
 
         Debug.Log(other.gameObject.name);
-
+        
         if (other.gameObject.GetComponent<Death>() != null)
         {
             other.gameObject.GetComponent<Death>().Die();
@@ -62,6 +78,12 @@ public class BearTrap : MonoBehaviour, IDamageDealer
 
     public void OnTriggerEnter(Collider other)
     {
-        DealDamage(other);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            DealDamage(other);
+            TrapCloseAnimation();
+            audioData.Play(0);
+        }
+    
     }
 }

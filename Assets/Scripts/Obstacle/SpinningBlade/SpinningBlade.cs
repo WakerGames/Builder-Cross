@@ -6,6 +6,8 @@ using UnityEngine;
 public class SpinningBlade : MonoBehaviour, IDamageDealer
 {
     [SerializeField] private int spinningSpeed;
+
+
     void FixedUpdate()
     {
         gameObject.transform.Rotate(0,spinningSpeed,0);
