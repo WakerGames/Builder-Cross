@@ -9,12 +9,13 @@ public class laserScript : MonoBehaviour {
 	void Start () {
 		laserLine = GetComponentInChildren<LineRenderer> ();
 		laserLine.SetWidth (.2f, .2f);
+		laserLine.SetPosition(0, startPoint.position);
+		laserLine.SetPosition(1, endPoint.position);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		laserLine.SetPosition (0, startPoint.position);
-		laserLine.SetPosition (1, endPoint.position);
+		
 
 	}
 }

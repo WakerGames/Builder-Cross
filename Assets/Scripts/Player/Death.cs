@@ -16,12 +16,12 @@ public class Death : MonoBehaviour
 
     private void OnEnable()
     {
-        BoxManager.playerDiedBox += SlowTime;
+        //BoxManager.playerDiedBox += SlowTime;
     }
     
     private void OnDisable()
     {
-        BoxManager.playerDiedBox -= SlowTime;
+        //BoxManager.playerDiedBox -= SlowTime;
     }
 
     private void SlowTime()
