@@ -48,4 +48,13 @@ public class Death : MonoBehaviour
 
         _ragdollManager.RagdollsExplosionModeOn(horizontalForceRadius, verticalForceAmount);
     }
+    public void GotShot(float horizontalForceRadius)
+    {
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+
+        if (BoxManager.playerDiedBox != null)
+            BoxManager.playerDiedBox();
+
+        _ragdollManager.RagdollsMachineGunModeOn(horizontalForceRadius);
+    }
 }

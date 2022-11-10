@@ -138,6 +138,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2841338257172821141}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &6908449412684119443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5560241110366584064}
+  - component: {fileID: 5238583785880631877}
+  m_Layer: 0
+  m_Name: ShootingArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5560241110366584064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6908449412684119443}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.038, y: 1.706, z: 2.14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8435472579702849558}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5238583785880631877
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6908449412684119443}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.061820988, y: 0.18255219, z: 9.449937}
+  m_Center: {x: 0.008503625, y: 0.004442961, z: 4.2249694}
 --- !u!1 &9104872389594634924
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +222,7 @@ Transform:
   - {fileID: 7034334021630404542}
   - {fileID: 8281384021795295344}
   - {fileID: 1476979625721090324}
+  - {fileID: 5560241110366584064}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -618,6 +664,22 @@ PrefabInstance:
     - target: {fileID: 4325800379666594, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108890469088767822, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 4.274561e-38
+      objectReference: {fileID: 0}
+    - target: {fileID: 108890469088767822, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 9.938702e-32
+      objectReference: {fileID: 0}
+    - target: {fileID: 108890469088767822, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: -9.1569445e+18
+      objectReference: {fileID: 0}
+    - target: {fileID: 108890469088767822, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 1.227999e-19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}

@@ -50,12 +50,7 @@ public class BoxManager : MonoBehaviour
                 BoxesOnHand[i].GetComponent<Rigidbody>().useGravity = true;
                 BoxesOnHand[i].transform.parent = null;
             }
-            //BoxArray[0].AddComponent<Rigidbody>();
-            //BoxArray[1].AddComponent<Rigidbody>();
-            //BoxArray[2].AddComponent<Rigidbody>();
-            //_currentBox.GetComponent<BoxCollider>().isTrigger = false;
-            //_currentBox.GetComponent<Rigidbody>().useGravity = true;
-            //_currentBox.transform.parent = null;
+           
         }
     }
 

@@ -86,6 +86,26 @@ public class RagdollManager : MonoBehaviour
         mainCollider.enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
     }
+    public void RagdollsMachineGunModeOn(float horizontalForceRadius)
+    {
+        _playerMovement.CanMove = false;
+        mainAnimator.enabled = false;
+
+        foreach (Collider col in ragDollColliders)
+        {
+            col.enabled = true;
+        }
+        foreach (Rigidbody rigid in limbsRigidbodies)
+        {
+            rigid.isKinematic = false;
+            rigid.AddForce(new Vector3(transform.position.x * horizontalForceRadius,0f,0f), ForceMode.Impulse);
+
+
+
+        }
+        mainCollider.enabled = false;
+        GetComponent<Rigidbody>().isKinematic = true;
+    }
 
     public void RagdollModeOff()
     {
