@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 5310497477402615420}
   - component: {fileID: 1631837974152940906}
   - component: {fileID: 3077396918548693030}
+  - component: {fileID: 7610299184136723967}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -416,6 +417,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioData: {fileID: 3077396918548693030}
   bulletParticleEffect: {fileID: 7156768677817350234}
+  shootingCollider: {fileID: 5238583785880631877}
+  horizontalForceRadius: 50
 --- !u!82 &3077396918548693030
 AudioSource:
   m_ObjectHideFlags: 0
@@ -439,7 +442,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 11.227229
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -447,23 +450,23 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      time: 0.6391281
+      value: 1.0061646
+      inSlope: -0.17549561
+      outSlope: -0.17549561
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 0.08906917
+      inSlope: -0.08910466
+      outSlope: -0.08910466
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -472,7 +475,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -512,6 +515,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &7610299184136723967
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104872389594634924}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.60990715, y: 1.9397389, z: 2.552147}
+  m_Center: {x: 0.1302141, y: 0.9742703, z: 0.47882524}
 --- !u!1001 &3708685335669177174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -568,6 +584,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4783295443984149068, guid: 24a50fe832a758c4fb628f8d507e6f5f, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783295443984149068, guid: 24a50fe832a758c4fb628f8d507e6f5f, type: 3}
       propertyPath: ShapeModule.m_Scale.x
       value: 1
       objectReference: {fileID: 0}
@@ -584,8 +604,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4783295443984149068, guid: 24a50fe832a758c4fb628f8d507e6f5f, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783295443984149068, guid: 24a50fe832a758c4fb628f8d507e6f5f, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783295443984149068, guid: 24a50fe832a758c4fb628f8d507e6f5f, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.4
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783295443984149068, guid: 24a50fe832a758c4fb628f8d507e6f5f, type: 3}
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783295443984149068, guid: 24a50fe832a758c4fb628f8d507e6f5f, type: 3}
+      propertyPath: CollisionModule.m_Dampen.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4783295443984149068, guid: 24a50fe832a758c4fb628f8d507e6f5f, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
@@ -598,6 +634,10 @@ PrefabInstance:
     - target: {fileID: 6517944251678453995, guid: 24a50fe832a758c4fb628f8d507e6f5f, type: 3}
       propertyPath: m_Name
       value: FallingBullet_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517944251678453995, guid: 24a50fe832a758c4fb628f8d507e6f5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6870853238858314838, guid: 24a50fe832a758c4fb628f8d507e6f5f, type: 3}
       propertyPath: m_Materials.Array.size
@@ -627,11 +667,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4325800379666594, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.005
+      value: 0.0007
       objectReference: {fileID: 0}
     - target: {fileID: 4325800379666594, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.715
+      value: 1.7391
       objectReference: {fileID: 0}
     - target: {fileID: 4325800379666594, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
       propertyPath: m_LocalPosition.z
