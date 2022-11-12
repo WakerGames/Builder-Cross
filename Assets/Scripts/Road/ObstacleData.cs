@@ -44,10 +44,19 @@ public static class ObstacleData
 
     public static void ResetObstacleDictionary()
     {
-        if (!obstacleRarity.ElementAt(0).IsUnityNull())
+        try
         {
-            obstacleRarity[obstacleRarity.ElementAt(0).Key] = 0;
+            if (!obstacleRarity.ElementAt(0).IsUnityNull())
+            {
+                obstacleRarity[obstacleRarity.ElementAt(0).Key] = 0;
+            }
         }
+        catch (ArgumentOutOfRangeException)
+        {
+
+            //throw;
+        }
+        
         
         
         for (int i = 1; i < obstacleRarity.Count; i++)

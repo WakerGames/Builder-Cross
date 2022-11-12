@@ -17,6 +17,14 @@ public class BoxManager : MonoBehaviour
     public List<GameObject> BoxesOnHand = new List<GameObject>();
 
 
+    private void Start()
+    {
+        foreach (var collectible in GameObject.FindGameObjectsWithTag("Collectable"))
+        {
+            collectible.GetComponent<BoxMovementAnimation>()._boxManager = this;
+        }
+    }
+
     private void OnEnable()
     {
         playerDiedBox += UnSetChild;

@@ -147,18 +147,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4889600803653486029}
     m_Modifications:
-    - target: {fileID: 1631837974152940906, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
-      propertyPath: shootingCollider
-      value: 
-      objectReference: {fileID: 1761285361}
     - target: {fileID: 5310497477402615420, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
       propertyPath: endPoint
       value: 
       objectReference: {fileID: 4604465029605055802}
-    - target: {fileID: 6908449412684119443, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8435472579702849558, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -207,29 +199,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7610299184136723967, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
 --- !u!4 &1477592244761475575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8435472579702849558, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
   m_PrefabInstance: {fileID: 7030585001445800417}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2290826970278224717 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9104872389594634924, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
-  m_PrefabInstance: {fileID: 7030585001445800417}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1761285361
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2290826970278224717}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: -0.39, y: 0.5, z: 10.4}
-  m_Center: {x: 0.11, y: 1.54, z: 6.7}

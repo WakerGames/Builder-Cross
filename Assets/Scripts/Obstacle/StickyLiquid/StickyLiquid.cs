@@ -6,12 +6,21 @@ using UnityEngine;
 
 public class StickyLiquid : MonoBehaviour
 {
-    private void OnTriggerStay(Collider other)      //To be improved after attackers and zombies are done. Should be merged with player's movement speed
+    private void OnTriggerEnter(Collider other)      //To be improved after attackers and zombies are done. Should be merged with player's movement speed
     {
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerMovement>()._moveSpeed /= 4;
             other.gameObject.GetComponent<PlayerMovement>()._rotateSpeed /= 4;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<PlayerMovement>()._moveSpeed *= 4;
+            other.gameObject.GetComponent<PlayerMovement>()._rotateSpeed *= 4;
         }
     }
 }

@@ -47,7 +47,7 @@ public class RoadGenerator : MonoBehaviour
     private void CreateRoad(GameObject road)
     {
         GameObject createdRoad = PrefabUtility.InstantiatePrefab(road) as GameObject;
-        _newRoadPosition = new Vector3(lastRoadTransform.position.x / 2, lastRoadTransform.position.y,
+        _newRoadPosition = new Vector3(lastRoadTransform.position.x, lastRoadTransform.position.y,
             lastRoadTransform.position.z + emptyRoad.GetComponent<BoxCollider>().size.z);
 
         if (createdRoad != null)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BoxMovementAnimation : MonoBehaviour
 {
-    [SerializeField] private BoxManager _boxManager;
+    public BoxManager _boxManager;
     private void FixedUpdate()
     {
         if (_boxManager.BoxesOnHand.Contains(this.gameObject))
