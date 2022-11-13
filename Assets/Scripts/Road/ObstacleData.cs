@@ -7,7 +7,7 @@ using UnityEngine;
 
 public static class ObstacleData
 {
-    public static Dictionary<string, int> obstacleRarity = new Dictionary<string, int>();
+    public static Dictionary<RoadType, int> obstacleRarity = new Dictionary<RoadType, int>();
     private static int _repeatReduceAmount = 5; //Chance value is divided by this amount
 
     public enum RoadType
@@ -27,41 +27,32 @@ public static class ObstacleData
 
     public static void InitializeObstacleDictionary()
     {
-        foreach (var roadName in Enum.GetNames(typeof(RoadType)))
+        foreach (RoadType roadtype in Enum.GetValues(typeof(RoadType)))
         {
-            if (!obstacleRarity.ContainsKey(roadName))
-                obstacleRarity.Add(roadName, 1000);
+            //if (!obstacleRarity.ContainsKey(roadtype))
+            //    obstacleRarity.Add(roadtype, 1024);
+            obstacleRarity[roadtype] = 1024;
         }
-
-        obstacleRarity[obstacleRarity.ElementAt(0).Key] = 0;    //Set collectible to zero so collectibles do not spawn unintended
+        obstacleRarity[RoadType.Collectible] = 0;    //Set collectible to zero so collectibles do not spawn unintended
     }
 
     public static void ReduceChance(RoadType roadType)
     {
-        if (obstacleRarity[Enum.GetName(typeof(RoadType), roadType)] != null)
-            obstacleRarity[Enum.GetName(typeof(RoadType), roadType)] /= _repeatReduceAmount;
+        obstacleRarity[roadType] /= _repeatReduceAmount;
     }
 
     public static void ResetObstacleDictionary()
     {
-        try
-        {
-            if (!obstacleRarity.ElementAt(0).IsUnityNull())
-            {
-                obstacleRarity[obstacleRarity.ElementAt(0).Key] = 0;
-            }
-        }
-        catch (ArgumentOutOfRangeException)
-        {
 
-            //throw;
+        if (obstacleRarity.ContainsKey(RoadType.Collectible))
+        {
+            obstacleRarity[RoadType.Collectible] = 0;
         }
-        
-        
-        
+
+
         for (int i = 1; i < obstacleRarity.Count; i++)
         {
-            obstacleRarity[obstacleRarity.ElementAt(i).Key] = 100;
+            obstacleRarity[obstacleRarity.ElementAt(i).Key] = 1024;
         }
     }
 }
