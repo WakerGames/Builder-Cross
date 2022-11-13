@@ -99,7 +99,27 @@ public class TurretShootingScript : MonoBehaviour,IDamageDealer
 
     private IEnumerator FadeInLaser() 
     {
-        if (gameObject.GetComponent<LineRenderer>().startColor.a < 1f)
+        //if (gameObject.GetComponent<LineRenderer>().startColor.a < 1f)
+        //{
+        //    var currentMaterialStartColor = gameObject.GetComponent<LineRenderer>().startColor;     //have to set these since accessing via gameobject does not give permission to Set stuff
+        //    var currentMaterialEndColor = gameObject.GetComponent<LineRenderer>().endColor;
+
+        //    currentMaterialStartColor.a += 0.01f;
+        //    currentMaterialStartColor.a += 0.01f;
+
+        //    gameObject.GetComponent<LineRenderer>().startColor = currentMaterialStartColor;
+        //    gameObject.GetComponent<LineRenderer>().endColor = currentMaterialEndColor;
+
+        //    yield return new WaitForSecondsRealtime(0.04f); //Wait for seconds realtime * alpha increase amount must equal 0.25 for it to wait 3 seconds!
+        //    StartCoroutine(FadeInLaser());
+        //}
+        //else 
+        //{
+        //    readyToShoot = true;
+        //}
+
+
+        while (gameObject.GetComponent<LineRenderer>().startColor.a < 1f)
         {
             var currentMaterialStartColor = gameObject.GetComponent<LineRenderer>().startColor;     //have to set these since accessing via gameobject does not give permission to Set stuff
             var currentMaterialEndColor = gameObject.GetComponent<LineRenderer>().endColor;
@@ -110,13 +130,11 @@ public class TurretShootingScript : MonoBehaviour,IDamageDealer
             gameObject.GetComponent<LineRenderer>().startColor = currentMaterialStartColor;
             gameObject.GetComponent<LineRenderer>().endColor = currentMaterialEndColor;
 
-            yield return new WaitForSecondsRealtime(0.04f); //Wait for seconds realtime * alpha increase amount must equal 0.25 for it to wait 3 seconds!
-            StartCoroutine(FadeInLaser());
+            yield return new WaitForSecondsRealtime(0.04f);
         }
-        else 
-        {
-            readyToShoot = true;
-        }
+        readyToShoot = true;
+
+
     }
 
     void KickstartLaser()
