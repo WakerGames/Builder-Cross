@@ -6,7 +6,9 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEditor;
 using Random = UnityEngine.Random;
+using RoadType = ObstacleData.RoadType;
 
+[ExecuteAlways]
 public class RoadGenerator : MonoBehaviour
 {
     public static RoadGenerator Instance { get; set; }
@@ -24,6 +26,8 @@ public class RoadGenerator : MonoBehaviour
     [SerializeField] private GameObject barrierRoad;
     [SerializeField] private GameObject zombieRoad;
 
+    private Dictionary<RoadType, GameObject> roadTypeDict = new ();
+
     private Vector3 _newRoadPosition;
 
     [Header("Level Generation")] [SerializeField, Min(1)]
@@ -39,10 +43,24 @@ public class RoadGenerator : MonoBehaviour
         }
         else
         {
-            Instance = this;
+            Instance = this;   
         }
     }
 
+    private void OnEnable()
+    {
+        roadTypeDict[RoadType.Collectible] = collectibleRoad;
+        roadTypeDict[RoadType.Empty] = emptyRoad;
+        roadTypeDict[RoadType.Turret] = turretRoad;
+        roadTypeDict[RoadType.BearTrap] = bearTrapRoad;
+        roadTypeDict[RoadType.StickyLiquid] = stickyLiquidRoad;
+        roadTypeDict[RoadType.SpinningBlades] = spinningBladeRoad;
+        roadTypeDict[RoadType.Mine] = mineRoad;
+        roadTypeDict[RoadType.Spikes] = spikeRoad;
+        roadTypeDict[RoadType.Attacker] = attackerRoad;
+        roadTypeDict[RoadType.Barrier] = barrierRoad;
+        roadTypeDict[RoadType.Zombie] = zombieRoad;
+    }
 
     private void CreateRoad(GameObject road)
     {
@@ -59,52 +77,17 @@ public class RoadGenerator : MonoBehaviour
         }
     }
 
-    void AddRoadPrefab(ObstacleData.RoadType roadType)
+    void AddRoadPrefab(RoadType roadType)
     {
         if (lastRoadTransform == null)
         {
             lastRoadTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
         }
 
-        switch ((int)roadType)
-        {
-            case 0: //Collectible
-                CreateRoad(collectibleRoad);
-                break;
-            case 1: //Empty
-                CreateRoad(emptyRoad);
-                break;
-            case 2: //Turret
-                CreateRoad(turretRoad);
-                break;
-            case 3: //BearTrap
-                CreateRoad(bearTrapRoad);
-                break;
-            case 4: //StickyLiquid
-                CreateRoad(stickyLiquidRoad);
-                break;
-            case 5: //SpinningBlades
-                CreateRoad(spinningBladeRoad);
-                break;
-            case 6: //Mine
-                CreateRoad(mineRoad);
-                break;
-            case 7: //Spikes
-                CreateRoad(spikeRoad);
-                break;
-            case 8: //Attacker
-                CreateRoad(attackerRoad);
-                break;
-            case 9: //Barrier
-                CreateRoad(barrierRoad);
-                break;
-            case 10: //Zombie
-                CreateRoad(zombieRoad);
-                break;
-            default:
-                Debug.Log("Could not spawn road!");
-                break;
-        }
+        //Create a dictionary with enum keys and values 
+
+        CreateRoad(roadTypeDict[roadType]);
+
     }
 
     [ContextMenu("Add Collectible Road")]
@@ -128,7 +111,7 @@ public class RoadGenerator : MonoBehaviour
     [ContextMenu("Add Bear Trap Road")]
     void AddBearTrapRoad()
     {
-        AddRoadPrefab(ObstacleData.RoadType.BearTrap);
+        AddRoadPrefab(RoadType.BearTrap);
     }
 
     [ContextMenu("Add Sticky Road")]

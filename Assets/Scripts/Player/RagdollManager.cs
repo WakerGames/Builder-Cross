@@ -45,6 +45,9 @@ public class RagdollManager : MonoBehaviour
         limbsRigidbodies = mainRig.GetComponentsInChildren<Rigidbody>();
     }
 
+
+    //Get death type with enum
+
     public void RagdollModeOn()
     {
         _playerMovement.CanMove = false;
