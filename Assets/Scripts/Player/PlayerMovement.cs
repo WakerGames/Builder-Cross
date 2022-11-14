@@ -1,75 +1,57 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-public class PlayerMovement : Character
+public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private FloatingJoystick _joystick;
-    //[SerializeField] private AnimatorController _animatorController;
-    //public float characterMoveSpeed;
-    //public float _rotateSpeed;
-    [SerializeField] private BoxManager _boxManager;
-    
+    private Player _player;
 
-
-    //private Rigidbody characterRigidbody;
-    private Vector3 _moveVector;
-    
-
-    private void Awake()
+    private void OnEnable()
     {
-        characterRigidbody = GetComponent<Rigidbody>();
+        _player = GetComponent<Player>();
     }
-
-    private void Start()
+    private void Move()
     {
-        CanMove = true;
+        //_moveVector = Vector3.zero;
+        _player._moveVector.x = _player._joystick.Horizontal * _player.characterMoveSpeed * Time.deltaTime;
+        _player._moveVector.z = _player._joystick.Vertical * _player.characterMoveSpeed * Time.deltaTime;
+
+        if (_player._joystick.Horizontal != 0 || _player._joystick.Vertical != 0)
+        {
+            Vector3 direction = Vector3.RotateTowards(transform.forward, _player._moveVector, _player.characterRotateSpeed * Time.deltaTime, 0.0f);
+            transform.rotation = Quaternion.LookRotation(direction);
+
+            if (_player._boxManager.GetHaveBox())
+            {
+                _player.characterAnimatorController.BoxRun();
+                _player.characterMoveSpeed = 5;
+            }
+            else
+            {
+                _player.characterAnimatorController.PlayRun();
+            }
+        }
+
+        else if (_player._joystick.Horizontal == 0 && _player._joystick.Vertical == 0)
+        {
+            if (_player._boxManager.GetHaveBox())
+            {
+                _player.characterAnimatorController.BoxStand();
+            }
+            else
+            {
+                _player.characterAnimatorController.PlayIdle();
+            }
+
+        }
+        _player.characterRigidbody.MovePosition(_player.characterRigidbody.position + _player._moveVector);
     }
 
     private void FixedUpdate()
     {
-        if (CanMove)
+        if (_player.CanMove)
         {
             Move();
         }
-    }
-
-    private void Move()
-    {
-        //_moveVector = Vector3.zero;
-        _moveVector.x = _joystick.Horizontal * characterMoveSpeed * Time.deltaTime;
-        _moveVector.z = _joystick.Vertical * characterMoveSpeed * Time.deltaTime;
-
-        if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
-        {
-            Vector3 direction = Vector3.RotateTowards(transform.forward, _moveVector, characterRotateSpeed * Time.deltaTime, 0.0f);
-            transform.rotation = Quaternion.LookRotation(direction);
-
-            if (_boxManager.GetHaveBox())
-            {
-                characterAnimatorController.BoxRun();
-                characterMoveSpeed = 5;
-            }
-            else
-            {
-                characterAnimatorController.PlayRun();
-            }
-        }
-
-        else if (_joystick.Horizontal == 0 && _joystick.Vertical == 0)
-        {
-            if (_boxManager.GetHaveBox())
-            {
-                characterAnimatorController.BoxStand();
-            }
-            else
-            {
-                characterAnimatorController.PlayIdle();
-            }
-
-        }
-        characterRigidbody.MovePosition(characterRigidbody.position + _moveVector);
     }
 }

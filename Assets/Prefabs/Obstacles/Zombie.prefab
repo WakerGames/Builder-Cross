@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 1595157777688318803}
   - component: {fileID: 1595157777688318804}
   - component: {fileID: 2596504695715535274}
+  - component: {fileID: 7685105070759296533}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -375,10 +376,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688ed1106c92e0f42bf1c501918ffdca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterMoveSpeed: 0.04
+  characterRotateSpeed: 10
+  characterAnimatorController: {fileID: 7685105070759296533}
+  characterRigidbody: {fileID: 0}
   target: {fileID: 0}
-  zombieAnimator: {fileID: 5136837122718929066}
   followArea: {fileID: 4556229911984494241}
-  zombieMoveSpeed: 0.04
   x: 0
   y: 0
   z: 0
@@ -395,6 +398,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.008100562, y: 0.01587906, z: 0.008083206}
   m_Center: {x: 0.0007573461, y: 0.0081652785, z: 0.002171334}
+--- !u!114 &7685105070759296533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937192556227858538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6f198b15e4440458525c446917f128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 5136837122718929066}
 --- !u!1 &2328005518544743587
 GameObject:
   m_ObjectHideFlags: 0

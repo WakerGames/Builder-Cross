@@ -4,19 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using DeathCause = Death.DeathCause;
+using JetBrains.Annotations;
 
 public class RagdollManager : MonoBehaviour
 {
     public BoxCollider mainCollider;
     public GameObject mainRig;
     public Animator mainAnimator;
-    private PlayerMovement _playerMovement;
-    [SerializeField] private TimerManager _timerEnd;
+    //private PlayerMovement _playerMovement;
+    private Character character;
+    [SerializeField, CanBeNull] private TimerManager _timerEnd;
 
 
     private void Awake()
     {
-        _playerMovement = GetComponent<PlayerMovement>();
+        //_playerMovement = GetComponent<PlayerMovement>();
+        character = GetComponent<Character>();
     }
 
 
@@ -31,14 +34,6 @@ public class RagdollManager : MonoBehaviour
         GetComponent<Rigidbody>().inertiaTensorRotation = Quaternion.identity;
     }
 
-    void Update()
-    {
-        if (_timerEnd.isTimeEnd())
-        {
-            RagdollModeOn(DeathCause.Regular, null, null);
-        }
-    }
-
     Collider[] ragDollColliders;
     Rigidbody[] limbsRigidbodies;
 
@@ -50,7 +45,8 @@ public class RagdollManager : MonoBehaviour
 
     public void RagdollModeOn(DeathCause causeOfDeath, float? horizontalForceRadius, float? verticalForceAmount)
     {
-        _playerMovement.CanMove = false;
+        //_playerMovement.CanMove = false;
+        character.CanMove = false;
         mainAnimator.enabled = false;
 
         foreach (Collider col in ragDollColliders)

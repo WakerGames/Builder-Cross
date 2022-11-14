@@ -30,4 +30,8 @@ public class AnimatorController : MonoBehaviour
     {
         _animator.Play("Carrying");
     }
+    public void ZombieRun()
+    {
+        _animator.Play("Zombie Running");
+    }
 }

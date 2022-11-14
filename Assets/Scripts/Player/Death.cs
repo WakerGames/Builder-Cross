@@ -21,17 +21,8 @@ public class Death : MonoBehaviour
         _ragdollManager = GetComponent<RagdollManager>();
     }
 
-    private void OnEnable()
-    {
-        BoxManager.playerDiedBox += SlowTime;
-    }
-    
-    private void OnDisable()
-    {
-        BoxManager.playerDiedBox -= SlowTime;
-    }
 
-    private void SlowTime()
+    public void SlowTime()
     {
         Time.timeScale = 0.1f;
     }
@@ -40,8 +31,8 @@ public class Death : MonoBehaviour
     {
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         
-        if (BoxManager.playerDiedBox != null)
-            BoxManager.playerDiedBox();
+        if (Player.playerDied != null)
+            Player.playerDied();
 
         _ragdollManager.RagdollModeOn(DeathCause.Regular, null, null);
     }
@@ -50,8 +41,8 @@ public class Death : MonoBehaviour
     {
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         
-        if (BoxManager.playerDiedBox != null)
-            BoxManager.playerDiedBox();
+        if (Player.playerDied != null)
+            Player.playerDied();
 
         _ragdollManager.RagdollModeOn(DeathCause.Explosion, horizontalForceRadius, verticalForceAmount);
     }
@@ -59,8 +50,8 @@ public class Death : MonoBehaviour
     {
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
-        if (BoxManager.playerDiedBox != null)
-            BoxManager.playerDiedBox();
+        if (Player.playerDied != null)
+            Player.playerDied();
 
         _ragdollManager.RagdollModeOn(DeathCause.Turret, horizontalForceRadius, null);
     }

@@ -9,4 +9,6 @@ public abstract class Character : MonoBehaviour
     public AnimatorController characterAnimatorController;
     public Rigidbody characterRigidbody;
     public bool CanMove { get; set; }
+    public RagdollManager characterRagdollManager;
+    public Death characterDeath;
 }

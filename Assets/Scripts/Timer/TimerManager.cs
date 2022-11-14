@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class TimerManager : MonoBehaviour
 {
     private Text _info;
@@ -36,7 +37,7 @@ public class TimerManager : MonoBehaviour
         {
             _info.text = "X";
         }
-        if(_time.value == 0)
+        if(_time.value <= 0)
         {
             _timeEnd = true;
         }

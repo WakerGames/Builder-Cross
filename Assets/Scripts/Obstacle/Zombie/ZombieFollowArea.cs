@@ -13,9 +13,9 @@ public class ZombieFollowArea : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && _zombie.CanMove)
         {
-            _zombie.characterAnimatorController.PlayRun();
+            _zombie.characterAnimatorController.ZombieRun();
             _zombie.transform.LookAt(_zombie.target);
             //_zombie.transform.Rotate(_zombie.x, _zombie.y, _zombie.z);
             _zombie.transform.position = Vector3.MoveTowards(_zombie.transform.position, _zombie.target.position, _zombie.characterMoveSpeed);

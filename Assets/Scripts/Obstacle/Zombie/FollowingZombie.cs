@@ -8,12 +8,15 @@ public class FollowingZombie : Character
     //[SerializeField] internal Animator characterAnimatorController;
     [SerializeField] internal BoxCollider followArea;
     //[SerializeField] internal float characterMoveSpeed;
-    [HideInInspector] private new float characterRotateSpeed;   //Unused
 
     [SerializeField] internal int x;
     [SerializeField] internal int y;
     [SerializeField] internal int z;
 
+    private void OnEnable()
+    {
+        CanMove = true;
+    }
 
     private void Start()
     {

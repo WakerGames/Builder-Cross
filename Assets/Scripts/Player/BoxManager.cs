@@ -10,9 +10,7 @@ public class BoxManager : MonoBehaviour
     [SerializeField] private GameObject boxPlace;
     private GameObject _currentBox;
 
-    public delegate void OnPlayerDead();
 
-    public static OnPlayerDead playerDiedBox;
 
     public List<GameObject> BoxesOnHand = new List<GameObject>();
 
@@ -27,12 +25,14 @@ public class BoxManager : MonoBehaviour
 
     private void OnEnable()
     {
-        playerDiedBox += UnSetChild;
+        if (this.gameObject.CompareTag("Player"))
+        Player.playerDied += UnSetChild;
     }
 
     private void OnDisable()
     {
-        playerDiedBox -= UnSetChild;
+        if (this.gameObject.CompareTag("Player"))
+            Player.playerDied -= UnSetChild;
     }
 
     private void OnTriggerEnter(Collider other)
