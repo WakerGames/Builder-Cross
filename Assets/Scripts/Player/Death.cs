@@ -9,6 +9,13 @@ public class Death : MonoBehaviour
 {
     private RagdollManager _ragdollManager;
 
+    public enum DeathCause
+    {
+        Regular,
+        Explosion,
+        Turret
+    }
+
     private void Awake()
     {
         _ragdollManager = GetComponent<RagdollManager>();
@@ -36,7 +43,7 @@ public class Death : MonoBehaviour
         if (BoxManager.playerDiedBox != null)
             BoxManager.playerDiedBox();
 
-        _ragdollManager.RagdollModeOn();
+        _ragdollManager.RagdollModeOn(DeathCause.Regular, null, null);
     }
 
     public void Explode(float horizontalForceRadius, float verticalForceAmount)
@@ -46,7 +53,7 @@ public class Death : MonoBehaviour
         if (BoxManager.playerDiedBox != null)
             BoxManager.playerDiedBox();
 
-        _ragdollManager.RagdollsExplosionModeOn(horizontalForceRadius, verticalForceAmount);
+        _ragdollManager.RagdollModeOn(DeathCause.Explosion, horizontalForceRadius, verticalForceAmount);
     }
     public void GotShot(float horizontalForceRadius)
     {
@@ -55,6 +62,6 @@ public class Death : MonoBehaviour
         if (BoxManager.playerDiedBox != null)
             BoxManager.playerDiedBox();
 
-        _ragdollManager.RagdollsMachineGunModeOn(horizontalForceRadius);
+        _ragdollManager.RagdollModeOn(DeathCause.Turret, horizontalForceRadius, null);
     }
 }
