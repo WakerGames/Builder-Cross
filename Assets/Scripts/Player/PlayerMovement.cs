@@ -10,8 +10,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AnimatorController _animatorController;
     public float _moveSpeed;
     public float _rotateSpeed;
+    public StickyLiquid _stickyLiquid;
     [SerializeField] private BoxManager _boxManager;
-    [SerializeField]  private bool _canMove = true;
+    [SerializeField] private bool _canMove = true;
+    public bool onSticky;
     public bool CanMove
     {
         get { return _canMove; }
@@ -20,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody _rigidbody;
     private Vector3 _moveVector;
-    
+
 
     private void Awake()
     {
@@ -48,13 +50,34 @@ public class PlayerMovement : MonoBehaviour
 
             if (_boxManager.GetHaveBox())
             {
-                _animatorController.BoxRun();
-                _moveSpeed = 5;
+                if (_stickyLiquid != null)
+                {
+                    _animatorController.BoxRun();
+                }
+                else
+                {
+                    _animatorController.BoxRun();
+                }
+
             }
-            else
+
+            if (_stickyLiquid != null)
+            {
+                if (!_boxManager.GetHaveBox())
+                {
+                    if (_stickyLiquid.isSticky())
+                    {
+                        _animatorController.SlimesWalk();
+                    }
+                }
+
+            }
+
+            if (!_boxManager.GetHaveBox() && _stickyLiquid == null)
             {
                 _animatorController.PlayRun();
             }
+
         }
 
         else if (_joystick.Horizontal == 0 && _joystick.Vertical == 0)

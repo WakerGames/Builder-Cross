@@ -30,4 +30,10 @@ public class AnimatorController : MonoBehaviour
     {
         _animator.Play("Carrying");
     }
+
+    public void SlimesWalk()
+    {
+        Debug.Log("alooo");
+        _animator.Play("SlimeWalk");
+    }
 }
