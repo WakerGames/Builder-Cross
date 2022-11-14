@@ -10,8 +10,8 @@ public class StickyLiquid : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerMovement>()._moveSpeed /= 4;
-            other.gameObject.GetComponent<PlayerMovement>()._rotateSpeed /= 4;
+            other.gameObject.GetComponent<PlayerMovement>().characterMoveSpeed /= 4;
+            other.gameObject.GetComponent<PlayerMovement>().characterRotateSpeed /= 4;
         }
     }
 
@@ -19,8 +19,8 @@ public class StickyLiquid : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerMovement>()._moveSpeed *= 4;
-            other.gameObject.GetComponent<PlayerMovement>()._rotateSpeed *= 4;
+            other.gameObject.GetComponent<PlayerMovement>().characterMoveSpeed *= 4;
+            other.gameObject.GetComponent<PlayerMovement>().characterRotateSpeed *= 4;
         }
     }
 }

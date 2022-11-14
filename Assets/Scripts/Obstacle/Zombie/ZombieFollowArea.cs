@@ -6,7 +6,7 @@ public class ZombieFollowArea : MonoBehaviour
 {
     private FollowingZombie _zombie;
 
-    private void Start()
+    private void OnEnable()
     {
         _zombie = this.transform.GetComponentInParent<FollowingZombie>();
     }
@@ -15,10 +15,10 @@ public class ZombieFollowArea : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _zombie.zombieAnimator.Play("Zombie Running");
+            _zombie.characterAnimatorController.PlayRun();
             _zombie.transform.LookAt(_zombie.target);
             //_zombie.transform.Rotate(_zombie.x, _zombie.y, _zombie.z);
-            _zombie.transform.position = Vector3.MoveTowards(_zombie.transform.position, _zombie.target.position, _zombie.zombieMoveSpeed);
+            _zombie.transform.position = Vector3.MoveTowards(_zombie.transform.position, _zombie.target.position, _zombie.characterMoveSpeed);
         }
     }
 }

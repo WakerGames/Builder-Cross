@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowingZombie : MonoBehaviour
+public class FollowingZombie : Character
 {
     [SerializeField] internal Transform target;
-    [SerializeField] internal Animator zombieAnimator;
+    //[SerializeField] internal Animator characterAnimatorController;
     [SerializeField] internal BoxCollider followArea;
-    [SerializeField] internal float zombieMoveSpeed;
-
+    //[SerializeField] internal float characterMoveSpeed;
+    [HideInInspector] private new float characterRotateSpeed;   //Unused
 
     [SerializeField] internal int x;
     [SerializeField] internal int y;
@@ -41,7 +41,7 @@ public class FollowingZombie : MonoBehaviour
     //{
     //    if (collision.gameObject.CompareTag("Player"))
     //    {
-    //        zombieAnimator.Play("Zombie Running");
+    //        characterAnimatorController.Play("Zombie Running");
     //        transform.LookAt(target);
     //        transform.Rotate(x, y, z);
     //        transform.position = Vector3.MoveTowards(transform.position, target.position, 0.02f);
@@ -52,7 +52,7 @@ public class FollowingZombie : MonoBehaviour
     //{
     //    if (other.CompareTag("Player"))
     //    {
-    //        zombieAnimator.Play("Zombie Idle");
+    //        characterAnimatorController.Play("Zombie Idle");
 
     //    }
     //}
