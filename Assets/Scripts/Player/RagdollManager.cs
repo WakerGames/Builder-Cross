@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using DeathCause = Death.DeathCause;
 
 public class RagdollManager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class RagdollManager : MonoBehaviour
         _playerMovement = GetComponent<PlayerMovement>();
     }
 
+
+
     void Start()
     {
         GetRagdollBits();
@@ -32,7 +35,7 @@ public class RagdollManager : MonoBehaviour
     {
         if (_timerEnd.isTimeEnd())
         {
-            RagdollModeOn();
+            RagdollModeOn(DeathCause.Regular, null, null);
         }
     }
 
@@ -45,10 +48,7 @@ public class RagdollManager : MonoBehaviour
         limbsRigidbodies = mainRig.GetComponentsInChildren<Rigidbody>();
     }
 
-
-    //Get death type with enum
-
-    public void RagdollModeOn()
+    public void RagdollModeOn(DeathCause causeOfDeath, float? horizontalForceRadius, float? verticalForceAmount)
     {
         _playerMovement.CanMove = false;
         mainAnimator.enabled = false;
@@ -58,57 +58,100 @@ public class RagdollManager : MonoBehaviour
             col.enabled = true;
         }
 
-        foreach (Rigidbody rigid in limbsRigidbodies)
+        if (causeOfDeath == DeathCause.Regular)
         {
-            rigid.isKinematic = false;
+            foreach (Rigidbody rigid in limbsRigidbodies)
+            {
+                rigid.isKinematic = false;
+            }
+        }
+
+        else if (causeOfDeath == DeathCause.Explosion)
+        {
+            foreach (Rigidbody rigid in limbsRigidbodies)
+            {
+                rigid.isKinematic = false;
+                rigid.AddForce((Vector3)(transform.right * Random.Range((float)-horizontalForceRadius, (float)horizontalForceRadius) +
+                               transform.up * verticalForceAmount +
+                               transform.forward * Random.Range((float)-horizontalForceRadius, (float)horizontalForceRadius)),
+                    ForceMode.Impulse);
+            }
+        }
+        else if (causeOfDeath == DeathCause.Turret)
+        {
+            foreach (Rigidbody rigid in limbsRigidbodies)
+            {
+                rigid.isKinematic = false;
+                rigid.AddForce(new Vector3(transform.position.x * (float)horizontalForceRadius, 0f, 0f), ForceMode.Impulse);
+            }
         }
 
         mainCollider.enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
     }
 
-    public void RagdollsExplosionModeOn(float horizontalForceRadius, float verticalForceAmount)
-    {
-        _playerMovement.CanMove = false;
-        mainAnimator.enabled = false;
 
-        foreach (Collider col in ragDollColliders)
-        {
-            col.enabled = true;
-        }
+    //public void RagdollModeOn()
+    //{
+    //    _playerMovement.CanMove = false;
+    //    mainAnimator.enabled = false;
 
-        foreach (Rigidbody rigid in limbsRigidbodies)
-        {
-            rigid.isKinematic = false;
-            rigid.AddForce(transform.right * Random.Range(-horizontalForceRadius, horizontalForceRadius) +
-                           transform.up * verticalForceAmount +
-                           transform.forward * Random.Range(-horizontalForceRadius, horizontalForceRadius),
-                ForceMode.Impulse);
-        }
+    //    foreach (Collider col in ragDollColliders)
+    //    {
+    //        col.enabled = true;
+    //    }
 
-        mainCollider.enabled = false;
-        GetComponent<Rigidbody>().isKinematic = true;
-    }
-    public void RagdollsMachineGunModeOn(float horizontalForceRadius)
-    {
-        _playerMovement.CanMove = false;
-        mainAnimator.enabled = false;
+    //    foreach (Rigidbody rigid in limbsRigidbodies)
+    //    {
+    //        rigid.isKinematic = false;
+    //    }
 
-        foreach (Collider col in ragDollColliders)
-        {
-            col.enabled = true;
-        }
-        foreach (Rigidbody rigid in limbsRigidbodies)
-        {
-            rigid.isKinematic = false;
-            rigid.AddForce(new Vector3(transform.position.x * horizontalForceRadius,0f,0f), ForceMode.Impulse);
+    //    mainCollider.enabled = false;
+    //    GetComponent<Rigidbody>().isKinematic = true;
+    //}
+
+    //public void RagdollsExplosionModeOn(float horizontalForceRadius, float verticalForceAmount)
+    //{
+    //    _playerMovement.CanMove = false;
+    //    mainAnimator.enabled = false;
+
+    //    foreach (Collider col in ragDollColliders)
+    //    {
+    //        col.enabled = true;
+    //    }
+
+    //    foreach (Rigidbody rigid in limbsRigidbodies)
+    //    {
+    //        rigid.isKinematic = false;
+    //        rigid.AddForce(transform.right * Random.Range(-horizontalForceRadius, horizontalForceRadius) +
+    //                       transform.up * verticalForceAmount +
+    //                       transform.forward * Random.Range(-horizontalForceRadius, horizontalForceRadius),
+    //            ForceMode.Impulse);
+    //    }
+
+    //    mainCollider.enabled = false;
+    //    GetComponent<Rigidbody>().isKinematic = true;
+    //}
+    //public void RagdollsMachineGunModeOn(float horizontalForceRadius)
+    //{
+    //    _playerMovement.CanMove = false;
+    //    mainAnimator.enabled = false;
+
+    //    foreach (Collider col in ragDollColliders)
+    //    {
+    //        col.enabled = true;
+    //    }
+    //    foreach (Rigidbody rigid in limbsRigidbodies)
+    //    {
+    //        rigid.isKinematic = false;
+    //        rigid.AddForce(new Vector3(transform.position.x * horizontalForceRadius, 0f, 0f), ForceMode.Impulse);
 
 
 
-        }
-        mainCollider.enabled = false;
-        GetComponent<Rigidbody>().isKinematic = true;
-    }
+    //    }
+    //    mainCollider.enabled = false;
+    //    GetComponent<Rigidbody>().isKinematic = true;
+    //}
 
     public void RagdollModeOff()
     {

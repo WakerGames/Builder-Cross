@@ -39,6 +39,14 @@ public static class ObstacleData
     public static void ReduceChance(RoadType roadType)
     {
         obstacleRarity[roadType] /= _repeatReduceAmount;
+        if (obstacleRarity[roadType] == 1 || obstacleRarity[roadType] == 0)
+        {
+            obstacleRarity[roadType] = 2;
+            for (int i = 1; i < obstacleRarity.Count; i++)
+            {
+                obstacleRarity[obstacleRarity.ElementAt(i).Key] *= 2;
+            }
+        }
     }
 
     public static void ResetObstacleDictionary()
