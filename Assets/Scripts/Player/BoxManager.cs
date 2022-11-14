@@ -20,6 +20,7 @@ public class BoxManager : MonoBehaviour
         foreach (var collectible in GameObject.FindGameObjectsWithTag("Collectable"))
         {
             collectible.GetComponent<BoxMovementAnimation>()._boxManager = this;
+
         }
     }
 
@@ -44,6 +45,7 @@ public class BoxManager : MonoBehaviour
             SetChild(other.gameObject);
             BoxesOnHand.Add(other.gameObject);
             _countBox++;
+            GetComponent<PlayerMovement>()._moveSpeed -= 1f;
         }
     }
 
