@@ -34,6 +34,10 @@ public class AnimatorController : MonoBehaviour
     {
         _animator.Play("Zombie Running");
     }
+    public void AttackerRun()
+    {
+        _animator.Play("Attacker Running");
+    }
     public void SlimeWalk()
     {
         _animator.Play("SlimeWalk");

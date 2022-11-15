@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class Death : MonoBehaviour
 {
-    private RagdollManager _ragdollManager;
+    [SerializeField]private RagdollManager _ragdollManager;
     public enum DeathCause
     {
         Regular,
@@ -17,7 +17,7 @@ public class Death : MonoBehaviour
 
     private void Awake()
     {
-        _ragdollManager = GetComponent<Player>()?.characterRagdollManager;
+        _ragdollManager = GetComponent<RagdollManager>();
     }
 
 

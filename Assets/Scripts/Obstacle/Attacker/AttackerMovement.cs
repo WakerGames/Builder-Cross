@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZombieMovement : MonoBehaviour
+public class AttackerMovement : MonoBehaviour
 {
     private AnimatorController characterAnimatorController;
     private Transform target;
@@ -11,8 +11,8 @@ public class ZombieMovement : MonoBehaviour
     private void OnEnable()
     {
         characterAnimatorController = GetComponent<AnimatorController>();
-        target = gameObject.GetComponent<FollowingZombie>().target;
-        characterMoveSpeed = gameObject.GetComponent<FollowingZombie>().characterMoveSpeed;
+        target = gameObject.GetComponent<FollowingAttacker>().target;
+        characterMoveSpeed = gameObject.GetComponent<FollowingAttacker>().characterMoveSpeed;
     }
 
     void FixedUpdate()
