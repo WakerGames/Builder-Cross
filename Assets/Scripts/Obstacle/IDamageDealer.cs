@@ -5,5 +5,5 @@ using UnityEngine;
 
 public interface IDamageDealer
 { 
-    void DealDamage(Collider other);
+    void DealDamage(GameObject other);
 }

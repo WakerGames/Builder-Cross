@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DeathCause = Death.DeathCause;
 
 public class FollowingZombie : Character
 {
@@ -20,7 +21,6 @@ public class FollowingZombie : Character
 
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
 
         GetComponent<Rigidbody>().centerOfMass = Vector3.zero;
         GetComponent<Rigidbody>().inertiaTensorRotation = Quaternion.identity;
@@ -36,7 +36,7 @@ public class FollowingZombie : Character
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<Death>().Die();
+            collision.gameObject.GetComponent<Death>().Die(TryGetComponent(out Player temp), DeathCause.Regular, null, null);
         }
     }
 

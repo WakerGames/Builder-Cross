@@ -8,17 +8,16 @@ public class ZombieFollowArea : MonoBehaviour
 
     private void OnEnable()
     {
-        _zombie = this.transform.GetComponentInParent<FollowingZombie>();
+        _zombie = transform.GetComponentInParent<FollowingZombie>();
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && _zombie.CanMove)
+        if (other.gameObject.CompareTag("Player"))
         {
-            _zombie.characterAnimatorController.ZombieRun();
-            _zombie.transform.LookAt(_zombie.target);
-            //_zombie.transform.Rotate(_zombie.x, _zombie.y, _zombie.z);
-            _zombie.transform.position = Vector3.MoveTowards(_zombie.transform.position, _zombie.target.position, _zombie.characterMoveSpeed);
+            _zombie.target = other.transform;
+            _zombie.GetComponent<ZombieMovement>().enabled = true;
+            GetComponent<Collider>().enabled = false;
         }
     }
 }

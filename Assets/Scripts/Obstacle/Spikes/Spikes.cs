@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DeathCause = Death.DeathCause;
 
 public class Spikes : MonoBehaviour, IDamageDealer
 {
@@ -9,22 +10,36 @@ public class Spikes : MonoBehaviour, IDamageDealer
 
     private float _timer = 0;
 
-    public void DealDamage(Collider other)
+    public void DealDamage(GameObject other)
     {
-        other.gameObject.GetComponent<Death>().Die();
+        other.GetComponent<Death>()?.Die(other.TryGetComponent(out Player temp), DeathCause.Regular, null, null);
     }
+
+    //private void OnCollisionStay(Collision collision)
+    //{
+    //    _timer += Time.deltaTime;
+
+    //    if (_timer >= timeUntilActivation)
+    //    {
+    //        DealDamage(collision.gameObject);
+    //        _timer = 0;
+    //    }
+    //}
+   
+    
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    _timer = 0;
+    //}
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            _timer += Time.deltaTime;
+        _timer += Time.deltaTime;
 
-            if (_timer >= timeUntilActivation)
-            {
-                DealDamage(other);
-                _timer = 0;
-            }
+        if (_timer >= timeUntilActivation)
+        {
+            DealDamage(other.gameObject);
+            _timer = 0;
         }
     }
 

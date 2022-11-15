@@ -2,21 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using DeathCause = Death.DeathCause;
 
 public class BearTrap : MonoBehaviour, IDamageDealer
 {
-
-
     [SerializeField] AudioSource audioData;
 
     [SerializeField] GameObject leftJaw;
     [SerializeField] GameObject rightJaw;
+    private bool _triggered = false;
 
-    private void AttachLeg(Collider other)
+    private void AttachLeg(GameObject other)
     {
-
-
-        if (other.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             Rigidbody calfR = GameObject.Find("calf_r").GetComponent<Rigidbody>();
             Rigidbody calfL = GameObject.Find("calf_l").GetComponent<Rigidbody>();
@@ -47,7 +45,7 @@ public class BearTrap : MonoBehaviour, IDamageDealer
                 // calfL.gameObject.GetComponent<CharacterJoint>().connectedBody =
                 //     this.gameObject.GetComponent<Rigidbody>();
                 this.gameObject.GetComponent<FixedJoint>().connectedBody = calfL;
-                
+
 
                 calfL.centerOfMass = Vector3.zero;
                 calfL.inertiaTensorRotation = Quaternion.identity;
@@ -64,26 +62,36 @@ public class BearTrap : MonoBehaviour, IDamageDealer
         rightJaw.transform.Rotate(-90.0f, 0.0f, 0.0f, Space.Self);
     }
 
-    public void DealDamage(Collider other)
+    public void DealDamage(GameObject other)
     {
         AttachLeg(other);
 
-        Debug.Log(other.gameObject.name);
-        
-        if (other.gameObject.GetComponent<Death>() != null)
+        if (other.GetComponent<Death>() != null)
         {
-            other.gameObject.GetComponent<Death>().Die();
+            other.GetComponent<Death>().Die(other.TryGetComponent(out Player temp), DeathCause.Regular, null ,null);
         }
     }
 
-    public void OnTriggerEnter(Collider other)
+   
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (!_triggered)
+    //    {
+    //        _triggered = true;
+    //        DealDamage(collision.gameObject);
+    //        TrapCloseAnimation();
+    //        audioData.Play(0);
+    //    }
+    //}
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (!_triggered && other.gameObject.CompareTag("Player"))
         {
-            DealDamage(other);
+            _triggered = true;
+            DealDamage(other.gameObject);
             TrapCloseAnimation();
             audioData.Play(0);
         }
-    
     }
 }

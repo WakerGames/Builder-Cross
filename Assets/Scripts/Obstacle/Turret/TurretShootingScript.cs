@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DeathCause = Death.DeathCause;
 
 public class TurretShootingScript : MonoBehaviour,IDamageDealer
 {
@@ -149,23 +150,19 @@ public class TurretShootingScript : MonoBehaviour,IDamageDealer
         gameObject.GetComponent<LineRenderer>().endColor = currentMaterialEndColor;
     }
 
-    public void DealDamage(Collider other)
+    public void DealDamage(GameObject other)
     {
-        Debug.Log(other.gameObject.name);
-
-        if (other.gameObject.GetComponent<Death>() != null)
-        {
-            other.gameObject.GetComponent<Death>().GotShot(horizontalForceRadius);
-        }
+        other.GetComponent<Death>()?.Die(other.TryGetComponent(out Player temp), DeathCause.Turret, horizontalForceRadius, null);
     }
 
-    public void OnTriggerEnter(Collider other)
+   
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    DealDamage(collision.gameObject);
+    //}
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            DealDamage(other);
-
-        }
-
+        DealDamage(other.gameObject);
     }
 }

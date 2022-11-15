@@ -11,4 +11,5 @@ public abstract class Character : MonoBehaviour
     public bool CanMove { get; set; }
     public RagdollManager characterRagdollManager;
     public Death characterDeath;
+    public bool StandingOnStickyLiquid { get; set; }
 }

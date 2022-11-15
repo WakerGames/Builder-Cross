@@ -10,9 +10,9 @@ public class StickyLiquid : MonoBehaviour
     {
         if (other.GetComponent<Character>() != null)
         {
-
-            other.gameObject.GetComponent<Character>().characterMoveSpeed /= 4;
-            other.gameObject.GetComponent<Character>().characterRotateSpeed /= 4;
+            other.GetComponent<Character>().characterMoveSpeed /= 4;
+            other.GetComponent<Character>().characterRotateSpeed /= 4;
+            other.GetComponent<Character>().StandingOnStickyLiquid = true;
         }
     }
 
@@ -20,8 +20,9 @@ public class StickyLiquid : MonoBehaviour
     {
         if (other.GetComponent<Character>() != null)
         {
-            other.gameObject.GetComponent<Character>().characterMoveSpeed *= 4;
-            other.gameObject.GetComponent<Character>().characterRotateSpeed *= 4;
+            other.GetComponent<Character>().characterMoveSpeed *= 4;
+            other.GetComponent<Character>().characterRotateSpeed *= 4;
+            other.GetComponent<Character>().StandingOnStickyLiquid = false;
         }
     }
 }

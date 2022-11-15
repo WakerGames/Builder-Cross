@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DeathCause = Death.DeathCause;
 
 public class SpinningBlade : MonoBehaviour, IDamageDealer
 {
@@ -13,16 +14,18 @@ public class SpinningBlade : MonoBehaviour, IDamageDealer
         gameObject.transform.Rotate(0,spinningSpeed,0);
     }
 
-    public void DealDamage(Collider other)
+    public void DealDamage(GameObject other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            other.gameObject.GetComponent<Death>().Die();
-        }
+        other.GetComponent<Death>().Die(other.TryGetComponent(out Player temp), DeathCause.Regular, null, null);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    DealDamage(collision.gameObject);
+    //}
+
+    private void OnTriggerEnter(Collider other)
     {
-        DealDamage(collision.gameObject.GetComponent<Collider>());
+        DealDamage(other.gameObject);
     }
 }

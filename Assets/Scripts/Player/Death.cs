@@ -8,7 +8,6 @@ using Random = UnityEngine.Random;
 public class Death : MonoBehaviour
 {
     private RagdollManager _ragdollManager;
-
     public enum DeathCause
     {
         Regular,
@@ -18,7 +17,7 @@ public class Death : MonoBehaviour
 
     private void Awake()
     {
-        _ragdollManager = GetComponent<RagdollManager>();
+        _ragdollManager = GetComponent<Player>()?.characterRagdollManager;
     }
 
 
@@ -27,32 +26,32 @@ public class Death : MonoBehaviour
         Time.timeScale = 0.1f;
     }
 
-    public void Die()
+
+    public void Die(bool playerIsDying, DeathCause causeOfDeath, float? horizontalForceRadius, float? verticalForceAmount)
     {
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        
-        if (Player.playerDied != null)
+        Debug.Log(playerIsDying);
+        if (playerIsDying && Player.playerDied != null)
+        {
             Player.playerDied();
+        }
 
-        _ragdollManager.RagdollModeOn(DeathCause.Regular, null, null);
-    }
+        switch (causeOfDeath)
+        {
+            case DeathCause.Regular:
+                _ragdollManager.RagdollModeOn(DeathCause.Regular, null, null);
+                break;
 
-    public void Explode(float horizontalForceRadius, float verticalForceAmount)
-    {
-        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        
-        if (Player.playerDied != null)
-            Player.playerDied();
+            case DeathCause.Explosion:
+                _ragdollManager.RagdollModeOn(DeathCause.Explosion, horizontalForceRadius, verticalForceAmount);
+                break;
 
-        _ragdollManager.RagdollModeOn(DeathCause.Explosion, horizontalForceRadius, verticalForceAmount);
-    }
-    public void GotShot(float horizontalForceRadius)
-    {
-        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            case DeathCause.Turret:
+                _ragdollManager.RagdollModeOn(DeathCause.Turret, horizontalForceRadius, null);
+                break;
 
-        if (Player.playerDied != null)
-            Player.playerDied();
-
-        _ragdollManager.RagdollModeOn(DeathCause.Turret, horizontalForceRadius, null);
+            default:
+                break;
+        }
     }
 }

@@ -1,3 +1,5 @@
+using Cinemachine;
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -31,11 +33,19 @@ public class Player : Character
     private void OnEnable()
     {
         playerDied += characterDeath.SlowTime;
+        playerDied += StopCamera;
     }
 
     private void OnDisable()
     {
         playerDied -= characterDeath.SlowTime;
+        playerDied -= StopCamera;
+    }
+
+    private void StopCamera()
+    {
+        GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = null;
+        GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().LookAt = null;
     }
 
     private void Start()

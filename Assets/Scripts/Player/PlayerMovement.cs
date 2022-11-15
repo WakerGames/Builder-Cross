@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _player = GetComponent<Player>();
     }
+
     private void Move()
     {
         //_moveVector = Vector3.zero;
@@ -24,14 +23,17 @@ public class PlayerMovement : MonoBehaviour
             if (_player._boxManager.GetHaveBox())
             {
                 _player.characterAnimatorController.BoxRun();
-                _player.characterMoveSpeed = 5;
             }
             else
             {
-                _player.characterAnimatorController.PlayRun();
+                if (_player.StandingOnStickyLiquid)
+                    _player.characterAnimatorController.SlimeWalk();
+                else
+                {
+                    _player.characterAnimatorController.PlayRun();
+                }
             }
         }
-
         else if (_player._joystick.Horizontal == 0 && _player._joystick.Vertical == 0)
         {
             if (_player._boxManager.GetHaveBox())
@@ -42,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 _player.characterAnimatorController.PlayIdle();
             }
-
         }
         _player.characterRigidbody.MovePosition(_player.characterRigidbody.position + _player._moveVector);
     }

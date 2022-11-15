@@ -27,7 +27,7 @@ public class BoxManager : MonoBehaviour
     private void OnEnable()
     {
         if (this.gameObject.CompareTag("Player"))
-        Player.playerDied += UnSetChild;
+            Player.playerDied += UnSetChild;
     }
 
     private void OnDisable()
@@ -45,7 +45,7 @@ public class BoxManager : MonoBehaviour
             SetChild(other.gameObject);
             BoxesOnHand.Add(other.gameObject);
             _countBox++;
-            GetComponent<PlayerMovement>()._moveSpeed -= 1f;
+            GetComponent<Player>().characterMoveSpeed -= 1f;
         }
     }
 

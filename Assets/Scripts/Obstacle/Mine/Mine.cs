@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
+using DeathCause = Death.DeathCause;
 
 public class Mine : MonoBehaviour, IDamageDealer
 {
@@ -12,26 +13,32 @@ public class Mine : MonoBehaviour, IDamageDealer
     [SerializeField] ParticleSystem explosionParticleEffect;
     [SerializeField] AudioSource audioData;
 
-    public void DealDamage(Collider other)
+    public void DealDamage(GameObject other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            other.gameObject.GetComponent<Death>().Explode(horizontalForceRadius, verticalForceAmount);
-
-            GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = null;
-            GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().LookAt = null;
-        }
-        
-        //Explode animation here
+        Debug.Log(other);
+        other.GetComponent<Death>()?.Die(other.TryGetComponent(out Player temp), DeathCause.Explosion, horizontalForceRadius, verticalForceAmount);
     }
 
-    public void OnTriggerEnter(Collider other)
+    private IEnumerator MineExplosion()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            DealDamage(other);
-            audioData.Play(0);
-            explosionParticleEffect.Play();
-        }
+        audioData.Play(0);
+        explosionParticleEffect.Play();
+        yield return new WaitWhile(() => audioData.isPlaying);
+        Destroy(this.gameObject);
     }
+
+    //private void OnCollisionEnter(Collision other)
+    //{
+    //    DealDamage(other.gameObject);
+    //    Debug.Log(audioData.loop);
+    //    StartCoroutine(MineExplosion());
+    //}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        DealDamage(other.gameObject);
+        Debug.Log(audioData.loop);
+        StartCoroutine(MineExplosion());
+    }
+
 }
