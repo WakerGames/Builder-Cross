@@ -11,7 +11,7 @@ public class SpinningBlade : MonoBehaviour, IDamageDealer
 
     void FixedUpdate()
     {
-        gameObject.transform.Rotate(0,spinningSpeed,0);
+        gameObject.transform.Rotate(0, spinningSpeed, 0);
     }
 
     public void DealDamage(GameObject other)
@@ -24,8 +24,12 @@ public class SpinningBlade : MonoBehaviour, IDamageDealer
     //    DealDamage(collision.gameObject);
     //}
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        DealDamage(other.gameObject);
+        if (other.gameObject.GetComponent<Character>() != null)
+        {
+
+            DealDamage(other.gameObject);
+        }
     }
 }

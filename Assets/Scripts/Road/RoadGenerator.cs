@@ -26,11 +26,14 @@ public class RoadGenerator : MonoBehaviour
     [SerializeField] private GameObject barrierRoad;
     [SerializeField] private GameObject zombieRoad;
 
-    private Dictionary<RoadType, GameObject> roadTypeDict = new ();
+    private Dictionary<RoadType, GameObject> roadTypeDict = new();
 
     private Vector3 _newRoadPosition;
 
-    [Header("Level Generation")] [SerializeField, Min(1)]
+
+
+    [Header("Level Generation")]
+    [SerializeField, Min(1)]
     private int collectibleAmount;
 
     [SerializeField, Min(1)] private int collectibleInterval;
@@ -43,12 +46,13 @@ public class RoadGenerator : MonoBehaviour
         }
         else
         {
-            Instance = this;   
+            Instance = this;
         }
     }
 
     private void OnEnable()
     {
+        GameManager.generateRoad += GenerateLevel;
         roadTypeDict[RoadType.Collectible] = collectibleRoad;
         roadTypeDict[RoadType.Empty] = emptyRoad;
         roadTypeDict[RoadType.Turret] = turretRoad;
@@ -61,10 +65,14 @@ public class RoadGenerator : MonoBehaviour
         roadTypeDict[RoadType.Barrier] = barrierRoad;
         roadTypeDict[RoadType.Zombie] = zombieRoad;
     }
+    private void OnDisable()
+    {
+        GameManager.generateRoad -= GenerateLevel;
+    }
 
     private void CreateRoad(GameObject road)
     {
-        GameObject createdRoad = PrefabUtility.InstantiatePrefab(road) as GameObject;
+        GameObject createdRoad = Instantiate(road);    /*PrefabUtility.InstantiatePrefab(road) as GameObject;*/
         _newRoadPosition = new Vector3(lastRoadTransform.position.x, lastRoadTransform.position.y,
             lastRoadTransform.position.z + emptyRoad.GetComponent<BoxCollider>().size.z);
 

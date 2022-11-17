@@ -8,7 +8,7 @@ public class BoxManager : MonoBehaviour
     private bool _hasBox;
     private int _countBox = 1;
     [SerializeField] private GameObject boxPlace;
-    private GameObject _currentBox;
+    [SerializeField] private GameObject _currentBox;
 
 
 
@@ -42,6 +42,7 @@ public class BoxManager : MonoBehaviour
         {
             _currentBox = other.gameObject;
             _hasBox = true;
+            
             SetChild(other.gameObject);
             BoxesOnHand.Add(other.gameObject);
             _countBox++;
@@ -66,6 +67,8 @@ public class BoxManager : MonoBehaviour
 
     void SetChild(GameObject collectable)
     {
+
+
         collectable.transform.parent = boxPlace.transform;
         collectable.transform.localPosition = new Vector3(0, 0, 0);
         if (_countBox == 2)

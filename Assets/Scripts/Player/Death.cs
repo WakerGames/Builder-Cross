@@ -35,6 +35,14 @@ public class Death : MonoBehaviour
         {
             Player.playerDied();
         }
+        if(!playerIsDying)
+        {
+            if(GetComponent<AttackerMovement>() !=null)
+                GetComponent<AttackerMovement>().enabled = false;
+            if (GetComponent<ZombieMovement>() != null)
+                GetComponent<ZombieMovement>().enabled =false;
+
+        }
 
         switch (causeOfDeath)
         {

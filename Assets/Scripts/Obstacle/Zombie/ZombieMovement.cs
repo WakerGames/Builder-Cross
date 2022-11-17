@@ -17,7 +17,7 @@ public class ZombieMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        characterAnimatorController.AttackerRun();
+        characterAnimatorController.ZombieRun();
         gameObject.transform.LookAt(target);
         transform.position = Vector3.MoveTowards(transform.position, target.position, characterMoveSpeed);
     }

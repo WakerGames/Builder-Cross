@@ -23,7 +23,11 @@ public class Mine : MonoBehaviour, IDamageDealer
     {
         audioData.Play(0);
         explosionParticleEffect.Play();
-        yield return new WaitWhile(() => audioData.isPlaying);
+        
+
+        //DAHA SONRA BU KODU KULLANCAZ 
+        //yield return new WaitWhile(() => audioData.isPlaying);
+        yield return new WaitForSeconds(1f);
         Destroy(this.gameObject);
     }
 

@@ -36,7 +36,11 @@ public class FollowingAttacker : Character
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<Death>().Die(TryGetComponent(out Player temp), DeathCause.Regular, null, null);
+            collision.gameObject.GetComponent<Death>().Die(true, DeathCause.Regular, null, null);
+             GetComponent<AttackerMovement>().enabled = false;
+            GetComponent<AnimatorController>().AttackerIdle();
+            followArea.enabled = false;
+
         }
     }
 

@@ -68,11 +68,11 @@ public class BearTrap : MonoBehaviour, IDamageDealer
 
         if (other.GetComponent<Death>() != null)
         {
-            other.GetComponent<Death>().Die(other.TryGetComponent(out Player temp), DeathCause.Regular, null ,null);
+            other.GetComponent<Death>().Die(other.TryGetComponent(out Player temp), DeathCause.Regular, null, null);
         }
     }
 
-   
+
     //private void OnCollisionEnter(Collision collision)
     //{
     //    if (!_triggered)
@@ -86,12 +86,16 @@ public class BearTrap : MonoBehaviour, IDamageDealer
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!_triggered && other.gameObject.CompareTag("Player"))
+
+        if (other.gameObject.GetComponent<Character>() != null)
         {
-            _triggered = true;
             DealDamage(other.gameObject);
             TrapCloseAnimation();
             audioData.Play(0);
+
         }
+
+
+
     }
 }

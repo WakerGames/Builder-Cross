@@ -110,6 +110,10 @@ PrefabInstance:
       propertyPath: spinningSpeed
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 167207132248115358, guid: 3d3f360ef99b1684b92392adae742453, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2895301301261337616, guid: 3d3f360ef99b1684b92392adae742453, type: 3}
       propertyPath: MaxDistance
       value: 17

@@ -18,6 +18,7 @@ public class AttackerFollowArea : MonoBehaviour
             _attacker.target = other.transform;
             _attacker.GetComponent<AttackerMovement>().enabled = true;
             GetComponent<Collider>().enabled = false;
+
         }
     }
 }

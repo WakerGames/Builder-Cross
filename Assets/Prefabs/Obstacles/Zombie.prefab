@@ -494,6 +494,7 @@ GameObject:
   - component: {fileID: 5454921023506247147}
   - component: {fileID: 2856240518899339473}
   - component: {fileID: 994652494}
+  - component: {fileID: 1949890439}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -571,7 +572,7 @@ MonoBehaviour:
   characterRotateSpeed: 10
   characterAnimatorController: {fileID: 7685105070759296533}
   characterRigidbody: {fileID: 1595157777688318803}
-  characterRagdollManager: {fileID: 994652494}
+  characterRagdollManager: {fileID: 1949890439}
   characterDeath: {fileID: 5454921023506247147}
   target: {fileID: 0}
   followArea: {fileID: 4556229911984494241}
@@ -643,6 +644,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCollider: {fileID: 2596504695715535274}
   mainRig: {fileID: 1812174455500174129}
+  mainAnimator: {fileID: 5136837122718929066}
+  _timerEnd: {fileID: 0}
+--- !u!114 &1949890439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937192556227858538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49ab63152588c4f448a68ba7e358baae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCollider: {fileID: 2596504695715535274}
+  mainRig: {fileID: 259603915428053376}
   mainAnimator: {fileID: 5136837122718929066}
   _timerEnd: {fileID: 0}
 --- !u!1 &2328005518544743587
@@ -1328,10 +1345,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.00053065957
-  m_Height: 0.0021226383
+  m_Radius: 0.00082923577
+  m_Height: 0.0016584715
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0.0010613191}
+  m_Center: {x: -0.000027419817, y: 0.0011426256, z: 0.00020997466}
 --- !u!144 &1516739255
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -1876,10 +1893,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.00054336543
-  m_Height: 0.002139611
+  m_Radius: 0.0011798594
+  m_Height: 0.0023597202
   m_Direction: 2
-  m_Center: {x: -0.0000000015041332, y: -0.000000003096649, z: 0.0010697992}
+  m_Center: {x: 0.0016095641, y: 0.0009730901, z: 0.00044688734}
 --- !u!144 &950336478
 CharacterJoint:
   m_ObjectHideFlags: 0

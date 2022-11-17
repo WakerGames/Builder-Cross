@@ -41,9 +41,9 @@ public class TurretShootingScript : MonoBehaviour,IDamageDealer
 
     void PlayFireSound()
     {
-        audioData.Play(0);
+        
         StartCoroutine(DelayLittleMert2());
-        PlayParticleEffect();
+        
     }
 
     IEnumerator DelayLittleMert2()
@@ -51,14 +51,27 @@ public class TurretShootingScript : MonoBehaviour,IDamageDealer
 
         StartCoroutine(PlayFire(_audioLength));
         DisappearLaser();   //Mert
+        if (!audioData.isPlaying)
+        {
+
+            audioData.Play(0);
+            PlayParticleEffect();
+        }
         yield return new WaitForSeconds(_audioLength); //wait 5 secconds
+
+        if(audioData.isPlaying)
+        {
+            audioData.Stop();
+            StopParticleEffect();
+        }
         shootingCollider.enabled = false;
-        StopParticleEffect();
+        
         KickstartLaser();
-        //yield return new WaitForSeconds(3f);
-        StartCoroutine(FadeInLaser());
-        yield return new WaitUntil(() => readyToShoot);
+        yield return new WaitForSeconds(3f);
         PlayFireSound();
+        StartCoroutine(FadeInLaser());
+        
+       
     }
 
 
