@@ -53,7 +53,7 @@ public class RoadGenerator : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.generateRoad += GenerateWeightedLevel;
+       
         
         roadTypeDict[RoadType.Collectible] = collectibleRoad;
         roadTypeDict[RoadType.Empty] = emptyRoad;
@@ -69,7 +69,7 @@ public class RoadGenerator : MonoBehaviour
     }
     private void OnDisable()
     {
-        GameManager.generateRoad -= GenerateWeightedLevel;
+        
        
     }
 
