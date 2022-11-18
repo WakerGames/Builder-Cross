@@ -52,6 +52,9 @@ public class BoxManager : MonoBehaviour
             SetChild(other.gameObject);
             BoxesOnHand.Add(other.gameObject);
             _countBox++;
+
+            Handheld.Vibrate();
+
             GetComponent<Player>().characterMoveSpeed -= 1f;
         }
     }
