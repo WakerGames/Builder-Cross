@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 79296deaa5e58db4088d5c69f2aea9bb, type: 3}
+  m_Motion: {fileID: 7400000, guid: 470d517396dda6e4f88888e3d3b0f58b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -81,7 +81,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Zombie Running
-  m_Speed: 1
+  m_Speed: 2.2
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -93,7 +93,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d3c1c5dbe3527a043b67327bf634b631, type: 2}
+  m_Motion: {fileID: 7400000, guid: 05f1ac0dae7cb0148b5801e5c1e55423, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
