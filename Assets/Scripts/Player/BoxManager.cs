@@ -10,18 +10,24 @@ public class BoxManager : MonoBehaviour
     [SerializeField] private GameObject boxPlace;
     [SerializeField] private GameObject _currentBox;
 
-
+    public static BoxManager Instance { get; set; }
 
     public List<GameObject> BoxesOnHand = new List<GameObject>();
 
-
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
     private void Start()
     {
-        foreach (var collectible in GameObject.FindGameObjectsWithTag("Collectable"))
-        {
-            collectible.GetComponent<BoxMovementAnimation>()._boxManager = this;
-
-        }
+       
     }
 
     private void OnEnable()

@@ -65,7 +65,7 @@ public class BearTrap : MonoBehaviour, IDamageDealer
     public void DealDamage(GameObject other)
     {
         AttachLeg(other);
-
+        GetComponent<Collider>().enabled = false;
         if (other.GetComponent<Death>() != null)
         {
             other.GetComponent<Death>().Die(other.TryGetComponent(out Player temp), DeathCause.Regular, null, null);

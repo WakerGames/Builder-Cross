@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class BoxMovementAnimation : MonoBehaviour
 {
-    public BoxManager _boxManager;
+    
+
+    private void Awake()
+    {
+       
+    }
     private void FixedUpdate()
     {
-        if (_boxManager.BoxesOnHand.Contains(this.gameObject))
+        if (BoxManager.Instance.BoxesOnHand.Contains(this.gameObject))
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }

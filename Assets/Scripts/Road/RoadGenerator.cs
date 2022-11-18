@@ -25,6 +25,7 @@ public class RoadGenerator : MonoBehaviour
     [SerializeField] private GameObject attackerRoad;
     [SerializeField] private GameObject barrierRoad;
     [SerializeField] private GameObject zombieRoad;
+    
 
     private Dictionary<RoadType, GameObject> roadTypeDict = new();
 
@@ -52,7 +53,8 @@ public class RoadGenerator : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.generateRoad += GenerateLevel;
+        GameManager.generateRoad += GenerateWeightedLevel;
+        
         roadTypeDict[RoadType.Collectible] = collectibleRoad;
         roadTypeDict[RoadType.Empty] = emptyRoad;
         roadTypeDict[RoadType.Turret] = turretRoad;
@@ -67,7 +69,8 @@ public class RoadGenerator : MonoBehaviour
     }
     private void OnDisable()
     {
-        GameManager.generateRoad -= GenerateLevel;
+        GameManager.generateRoad -= GenerateWeightedLevel;
+       
     }
 
     private void CreateRoad(GameObject road)
@@ -90,6 +93,7 @@ public class RoadGenerator : MonoBehaviour
         if (lastRoadTransform == null)
         {
             lastRoadTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            
         }
 
         //Create a dictionary with enum keys and values 
@@ -103,7 +107,8 @@ public class RoadGenerator : MonoBehaviour
     {
         AddRoadPrefab(ObstacleData.RoadType.Collectible);
     }
-
+    
+  
     [ContextMenu("Add Empty Road")]
     void AddEmptyRoad()
     {

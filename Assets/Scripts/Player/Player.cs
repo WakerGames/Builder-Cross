@@ -20,6 +20,8 @@ public class Player : Character
 
     public static OnPlayerDead playerDied;
 
+   
+
 
     //private Rigidbody characterRigidbody;
     internal Vector3 _moveVector;

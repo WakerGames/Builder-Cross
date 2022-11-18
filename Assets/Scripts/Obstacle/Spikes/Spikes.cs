@@ -6,9 +6,7 @@ using DeathCause = Death.DeathCause;
 
 public class Spikes : MonoBehaviour, IDamageDealer
 {
-    [SerializeField] private float timeUntilActivation;
-
-    private float _timer = 0;
+  
 
     public void DealDamage(GameObject other)
     {
@@ -32,19 +30,18 @@ public class Spikes : MonoBehaviour, IDamageDealer
     //    _timer = 0;
     //}
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        _timer += Time.deltaTime;
+       
 
-        if (_timer >= timeUntilActivation)
-        {
+        
             DealDamage(other.gameObject);
-            _timer = 0;
-        }
+            
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
-        _timer = 0;
+       
     }
 }
