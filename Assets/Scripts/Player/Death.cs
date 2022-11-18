@@ -30,7 +30,6 @@ public class Death : MonoBehaviour
     public void Die(bool playerIsDying, DeathCause causeOfDeath, float? horizontalForceRadius, float? verticalForceAmount)
     {
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        Debug.Log(playerIsDying);
         if (playerIsDying && Player.playerDied != null)
         {
             Player.playerDied();
