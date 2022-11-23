@@ -1,5 +1,45 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2331950395975006193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4604465029605055802}
+  - component: {fileID: 4634183740945194504}
+  m_Layer: 0
+  m_Name: LaserEndPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4604465029605055802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2331950395975006193}
+  m_LocalRotation: {x: -0.7071068, y: 0.000000059604645, z: -0.000000059604645, w: 0.7071068}
+  m_LocalPosition: {x: 0.0005006791, y: 1.7393, z: 11.643401}
+  m_LocalScale: {x: 0.05, y: 0.049999997, z: 0.05}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8435472579702849558}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!33 &4634183740945194504
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2331950395975006193}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2651731604246706981
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,9 +236,9 @@ GameObject:
   - component: {fileID: 7303709684607974265}
   - component: {fileID: 940989159472569789}
   - component: {fileID: 3967971330222558619}
-  - component: {fileID: 5310497477402615420}
   - component: {fileID: 3077396918548693030}
   - component: {fileID: 1761285361}
+  - component: {fileID: 5310497477402615420}
   - component: {fileID: 120570615829750724}
   m_Layer: 0
   m_Name: Turret
@@ -225,6 +265,7 @@ Transform:
   - {fileID: 1476979625721090324}
   - {fileID: 5560241110366584064}
   - {fileID: 368650875188765000}
+  - {fileID: 4604465029605055802}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -390,20 +431,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &5310497477402615420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9104872389594634924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff8e458bea482444b92fbe7a4688ce95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPoint: {fileID: 1068746508191028410}
-  endPoint: {fileID: 0}
 --- !u!82 &3077396918548693030
 AudioSource:
   m_ObjectHideFlags: 0
@@ -513,6 +540,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: -0.39, y: 0.5, z: 10.4}
   m_Center: {x: 0.11, y: 1.54, z: 6.7}
+--- !u!114 &5310497477402615420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104872389594634924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff8e458bea482444b92fbe7a4688ce95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPoint: {fileID: 1068746508191028410}
+  endPoint: {fileID: 4604465029605055802}
 --- !u!114 &120570615829750724
 MonoBehaviour:
   m_ObjectHideFlags: 0

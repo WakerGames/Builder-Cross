@@ -25,7 +25,8 @@ public class RoadGenerator : MonoBehaviour
     [SerializeField] private GameObject attackerRoad;
     [SerializeField] private GameObject barrierRoad;
     [SerializeField] private GameObject zombieRoad;
-    
+
+    [SerializeField] private List<GameObject> specialRoads;
 
     private Dictionary<RoadType, GameObject> roadTypeDict = new();
 
@@ -103,23 +104,31 @@ public class RoadGenerator : MonoBehaviour
 
     }
 
+    void AddSpecialRoad()
+    {
+        if (specialRoads.Count != 0)
+        {
+            CreateRoad(specialRoads[Random.Range(0, specialRoads.Count)]);
+        }
+    }
+
     [ContextMenu("Add Collectible Road")]
     void AddCollectibleRoad()
     {
-        AddRoadPrefab(ObstacleData.RoadType.Collectible);
+        AddRoadPrefab(RoadType.Collectible);
     }
     
   
     [ContextMenu("Add Empty Road")]
     void AddEmptyRoad()
     {
-        AddRoadPrefab(ObstacleData.RoadType.Empty);
+        AddRoadPrefab(RoadType.Empty);
     }
 
     [ContextMenu("Add Turret Road")]
     void AddTurretRoad()
     {
-        AddRoadPrefab(ObstacleData.RoadType.Turret);
+        AddRoadPrefab(RoadType.Turret);
     }
 
     [ContextMenu("Add Bear Trap Road")]
@@ -131,60 +140,62 @@ public class RoadGenerator : MonoBehaviour
     [ContextMenu("Add Sticky Road")]
     void AddStickyRoad()
     {
-        AddRoadPrefab(ObstacleData.RoadType.StickyLiquid);
+        AddRoadPrefab(RoadType.StickyLiquid);
     }
 
     [ContextMenu("Add Spinning Blade Road")]
     void AddSpinningBladeRoad()
     {
-        AddRoadPrefab(ObstacleData.RoadType.SpinningBlades);
+        AddRoadPrefab(RoadType.SpinningBlades);
     }
 
     [ContextMenu("Add Mine Road")]
     void AddMineRoad()
     {
-        AddRoadPrefab(ObstacleData.RoadType.Mine);
+        AddRoadPrefab(RoadType.Mine);
     }
 
     [ContextMenu("Add Spike Road")]
     void AddSpikeRoad()
     {
-        AddRoadPrefab(ObstacleData.RoadType.Spikes);
+        AddRoadPrefab(RoadType.Spikes);
     }
 
     [ContextMenu("Add Attacker Road")]
     void AddAttackerRoad()
     {
-        AddRoadPrefab(ObstacleData.RoadType.Attacker);
+        AddRoadPrefab(RoadType.Attacker);
     }
 
     [ContextMenu("Add Barrier Road")]
     void AddBarrierTrapRoad()
     {
-        AddRoadPrefab(ObstacleData.RoadType.Barrier);
+        AddRoadPrefab(RoadType.Barrier);
     }
 
     [ContextMenu("Add Zombie Road")]
     void AddZombieRoad()
     {
-        AddRoadPrefab(ObstacleData.RoadType.Zombie);
+        AddRoadPrefab(RoadType.Zombie);
     }
+    
 
     [ContextMenu("Generate A Level")]
     private void GenerateLevel()
     {
         //roadAmount = collectibleAmount * collectibleInterval + collectibleAmount;
 
-        int roadTypeCount = Enum.GetNames(typeof(ObstacleData.RoadType)).Length; //GetNames is 10x faster than GetValues
+        int roadTypeCount = Enum.GetNames(typeof(RoadType)).Length; //GetNames is 10x faster than GetValues
 
         for (int i = 0; i < collectibleAmount; i++)
         {
             for (int j = 0; j < collectibleInterval; j++)
             {
-                AddRoadPrefab((ObstacleData.RoadType)Random.Range(1, roadTypeCount));
+                AddRoadPrefab((RoadType)Random.Range(1, roadTypeCount));
+                AddSpecialRoad();   //Special
             }
 
-            AddRoadPrefab(ObstacleData.RoadType.Collectible);
+            AddRoadPrefab(RoadType.Collectible);
         }
     }
 
@@ -203,7 +214,7 @@ public class RoadGenerator : MonoBehaviour
     private void GenerateWeightedLevel()
     {
         ObstacleData.InitializeObstacleDictionary();
-        //int roadTypeCount = Enum.GetNames(typeof(ObstacleData.RoadType)).Length;
+        //int roadTypeCount = Enum.GetNames(typeof(RoadType)).Length;
 
         int totalWeight = CalculateWeight();
 
@@ -218,8 +229,9 @@ public class RoadGenerator : MonoBehaviour
                 {
                     if (randomNumber <= ObstacleData.obstacleRarity.ElementAt(k).Value + pointer)
                     {
-                        AddRoadPrefab((ObstacleData.RoadType)k);
-                        ObstacleData.ReduceChance((ObstacleData.RoadType)k);
+                        AddRoadPrefab((RoadType)k);
+                        AddSpecialRoad();   //Special
+                        ObstacleData.ReduceChance((RoadType)k);
                         totalWeight = CalculateWeight();
                         break;
                     }
@@ -228,7 +240,7 @@ public class RoadGenerator : MonoBehaviour
                 }
             }
 
-            AddRoadPrefab(ObstacleData.RoadType.Collectible);
+            AddRoadPrefab(RoadType.Collectible);
         }
     }
 
