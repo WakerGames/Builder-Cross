@@ -14,7 +14,7 @@ public class RoadGenerator : MonoBehaviour
     public static RoadGenerator Instance { get; set; }
 
     [SerializeField, CanBeNull] private Transform lastRoadTransform;
-    [SerializeField] private GameObject collectibleRoad;
+    [SerializeField] private GameObject collectibleRoad;        //Can be turned into a class
     [SerializeField] private GameObject emptyRoad;
     [SerializeField] private GameObject turretRoad;
     [SerializeField] private GameObject bearTrapRoad;
@@ -92,8 +92,9 @@ public class RoadGenerator : MonoBehaviour
     {
         if (lastRoadTransform == null)
         {
-            lastRoadTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            
+            var player = GameObject.FindWithTag("Player");
+            lastRoadTransform = player.GetComponent<Transform>();
+            lastRoadTransform.position = new Vector3(lastRoadTransform.position.x, (lastRoadTransform.position.y - player.GetComponent<BoxCollider>().size.y / 2), lastRoadTransform.position.z);
         }
 
         //Create a dictionary with enum keys and values 
