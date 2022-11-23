@@ -7,39 +7,23 @@ using UnityEngine.UI;
 public class FinishingLine : MonoBehaviour
 {
     [SerializeField] Canvas _canvas;
-    [SerializeField] GameObject NextLevelUI;
-    public bool pause;
-        void Update()
+    [SerializeField] GameObject nextLevelUI;
+
+    void OnTriggerEnter(Collider col)
         {
-            if (pause)
+            if (col.gameObject.CompareTag("Player"))
             {
+                nextLevelUI.SetActive(true);
                 Time.timeScale = 0;
-            }
-            if (!pause)
-            {
-                Time.timeScale = 1;
-            }
-        }
-
-
-        void OnTriggerEnter(Collider col)
-        {
-            if (col.gameObject.tag == "Player")
-            {
-                NextLevelUI.SetActive(true);
-                StartCoroutine(pauseTime());
                 print("Pause in action");
             }
         }
-    IEnumerator pauseTime()
-    {
-        pause = true;
-        yield return new WaitForSeconds(1f);
-        pause = false;
-    }
     public void Resume()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (SceneManager.GetActiveScene().buildIndex != SceneManager.sceneCountInBuildSettings - 1)
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
-  
 }
