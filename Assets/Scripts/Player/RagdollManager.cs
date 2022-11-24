@@ -48,7 +48,7 @@ public class RagdollManager : MonoBehaviour
         //_playerMovement.CanMove = false;
         character.CanMove = false;
         mainAnimator.enabled = false;
-
+        Destroy(gameObject, 3f);
         foreach (Collider col in ragDollColliders)
         {
             col.enabled = true;
