@@ -59,8 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 0}
-  NextLevelUI: {fileID: 0}
-  pause: 0
+  nextLevelUI: {fileID: 0}
 --- !u!1 &3171129277772565996
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,8 +123,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4169288601968148159, guid: 37df7a84da3c1694db91b6173c5d1ab7, type: 3}
-  - {fileID: -2661108358118579366, guid: 37df7a84da3c1694db91b6173c5d1ab7, type: 3}
+  - {fileID: 2100000, guid: 17ce1711098740847952477457485ef1, type: 2}
+  - {fileID: 2100000, guid: 8779e160fd225004ab0b7aa2b2ef0432, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
