@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5476888324653010627}
   - component: {fileID: 3369328713022189863}
   - component: {fileID: 1649613612784269569}
+  - component: {fileID: 6797762009922435053}
   m_Layer: 0
   m_Name: RoadSticky
   m_TagString: Untagged
@@ -114,6 +115,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78f6a7446024fa4f9539d2d16d5dc4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!205 &6797762009922435053
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6269341195940589334}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.0059080124, y: -0.14430775, z: 0.082556725}
+  m_Size: 13
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.05
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5476888324653010627}
+  m_Enabled: 1
 --- !u!1001 &4225391115147088162
 PrefabInstance:
   m_ObjectHideFlags: 0
