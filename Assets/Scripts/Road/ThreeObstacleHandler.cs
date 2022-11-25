@@ -5,10 +5,7 @@ using UnityEngine;
 
 public class ThreeObstacleHandler : MonoBehaviour
 {
-    private void EnableMine()
-         {
-             
-         }
+    
 
     private void Spawn()
     {

@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 8391474474413984360}
   - component: {fileID: 6021443384749915810}
   - component: {fileID: 1358127423}
+  - component: {fileID: 1409840608495342580}
   m_Layer: 0
   m_Name: RoadTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4889600803653486029
 Transform:
@@ -53,7 +54,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -63,8 +64,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1906719341351918945, guid: f804c19ecebec0c459f6ec6a9ba0a53f, type: 3}
-  - {fileID: 7964933862413551170, guid: f804c19ecebec0c459f6ec6a9ba0a53f, type: 3}
+  - {fileID: 2100000, guid: 0a86b554ca5a13c4887f763d858e27b2, type: 2}
+  - {fileID: 2100000, guid: b8fee6a3cec9a4d44992a8e0e6c3d38a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,6 +100,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 13, y: 0.40328625, z: 4.91124}
   m_Center: {x: -0.005907774, y: -0.14024954, z: 0.082556725}
+--- !u!205 &1409840608495342580
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5228831633507573623}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.0059080124, y: 0.7214155, z: 0.082556725}
+  m_Size: 13
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6021443384749915810}
+    - renderer: {fileID: 345187886506623640}
+    - renderer: {fileID: 6233183275138167930}
+    - renderer: {fileID: 199090720501395167}
+    - renderer: {fileID: 199636260415546715}
+    - renderer: {fileID: 199592189959295787}
+    - renderer: {fileID: 199330514045116067}
+  m_Enabled: 1
 --- !u!1001 &7030585001445800417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -156,8 +182,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
+--- !u!199 &199090720501395167 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 7157038101164087102, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
+  m_PrefabInstance: {fileID: 7030585001445800417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!199 &199330514045116067 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 7157783059030583106, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
+  m_PrefabInstance: {fileID: 7030585001445800417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!199 &199592189959295787 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 7157556561301924554, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
+  m_PrefabInstance: {fileID: 7030585001445800417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!199 &199636260415546715 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 7157600588942187706, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
+  m_PrefabInstance: {fileID: 7030585001445800417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &345187886506623640 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7303709684607974265, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
+  m_PrefabInstance: {fileID: 7030585001445800417}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1477592244761475575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8435472579702849558, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
+  m_PrefabInstance: {fileID: 7030585001445800417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &6233183275138167930 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 3967971330222558619, guid: da6d1da711ecd8442a297cc7ea94da58, type: 3}
   m_PrefabInstance: {fileID: 7030585001445800417}
   m_PrefabAsset: {fileID: 0}

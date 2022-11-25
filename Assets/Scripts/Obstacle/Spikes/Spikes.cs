@@ -40,8 +40,5 @@ public class Spikes : MonoBehaviour, IDamageDealer
         
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-       
-    }
+    
 }

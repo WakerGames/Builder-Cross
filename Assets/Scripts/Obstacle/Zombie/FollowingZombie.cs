@@ -27,10 +27,7 @@ public class FollowingZombie : Character
     }
 
 
-    void Update()
-    {
-
-    }
+   
 
     private void OnCollisionEnter(Collision collision)
     {
