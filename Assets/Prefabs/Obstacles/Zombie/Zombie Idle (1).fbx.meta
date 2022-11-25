@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 79296deaa5e58db4088d5c69f2aea9bb
 ModelImporter:
-  serializedVersion: 21300
+  serializedVersion: 21202
   internalIDToNameTable:
   - first:
       74: -203655887218126122
@@ -11,7 +11,7 @@ ModelImporter:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -706,7 +706,6 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

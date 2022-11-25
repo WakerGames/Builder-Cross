@@ -297,7 +297,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3023643813072368940, guid: 72028fd670f1c7949a896e23f01ca4d4, type: 3}
+  - {fileID: 2100000, guid: f299d06847000c1408eafc763177eb97, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -828,6 +828,22 @@ PrefabInstance:
     - target: {fileID: 108890469088767822, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
       propertyPath: m_BoundingSphereOverride.z
       value: 1.227999e-19
+      objectReference: {fileID: 0}
+    - target: {fileID: 199090720937877538, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199330513609412702, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199592190327692758, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199636261051362214, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}

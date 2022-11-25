@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 69b3fddcfcde7f64a971e47406093f8c
 ModelImporter:
-  serializedVersion: 21300
+  serializedVersion: 21202
   internalIDToNameTable:
   - first:
       74: -1833641857158553092
@@ -53,7 +53,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -801,7 +801,6 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

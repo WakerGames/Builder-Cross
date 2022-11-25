@@ -30,6 +30,7 @@ public class TurretBehaviour : MonoBehaviour, IDamageDealer
     {
         while (true)
         {
+            Debug.Log("here");
             DisappearLaser();
             shootingCollider.enabled = true;
             if (!audioData.isPlaying)
@@ -38,7 +39,7 @@ public class TurretBehaviour : MonoBehaviour, IDamageDealer
             bulletParticleEffect.Play();
             
             yield return new WaitForSecondsRealtime(shootingDuration);
-            
+            Debug.Log("here waiting");
             bulletParticleEffect.Stop();
             shootingCollider.enabled = false;
             _readyToShoot = false;
@@ -48,6 +49,7 @@ public class TurretBehaviour : MonoBehaviour, IDamageDealer
             KickStartLaser();
             StartCoroutine(FadeInLaser());
             yield return new WaitUntil(() => _readyToShoot);
+            Debug.Log("here waiting for shoot");
         }
     }
 

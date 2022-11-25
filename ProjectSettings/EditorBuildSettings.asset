@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/RoadTest2.unity
-    guid: f3012877af3457a4f822940522b6cb70
+    path: Assets/Scenes/Specific Tests/TurretTest.unity
+    guid: 0e7cda82ef35b4a4d8fc59890f5f3988
   m_configObjects: {}

@@ -363,13 +363,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419580404597798996}
   serializedVersion: 2
-  m_Mass: 5
+  m_Mass: 40
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &8380417725094734729
 BoxCollider:
@@ -396,7 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d550ec7634acc4eb93529fa9c24fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterMoveSpeed: 0.04
+  characterMoveSpeed: 0.08
   characterRotateSpeed: 10
   characterAnimatorController: {fileID: 2591430740178748262}
   characterRigidbody: {fileID: 8719156595473687621}
@@ -2334,7 +2334,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 077c04be1ca8e834f9bd74eb91726160, type: 2}
+  - {fileID: 2100000, guid: 83cc3e18160c5974fb6f38df03a59727, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
