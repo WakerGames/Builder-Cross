@@ -49,7 +49,7 @@ public class TurretBehaviour : MonoBehaviour, IDamageDealer
             KickStartLaser();
             StartCoroutine(FadeInLaser());
             yield return new WaitUntil(() => _readyToShoot);
-            Debug.Log("here waiting for shoot");
+
         }
     }
 

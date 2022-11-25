@@ -68,11 +68,7 @@ public class RoadGenerator : MonoBehaviour
         roadTypeDict[RoadType.Barrier] = barrierRoad;
         roadTypeDict[RoadType.Zombie] = zombieRoad;
     }
-    private void OnDisable()
-    {
-        
-       
-    }
+    
 
     private void CreateRoad(GameObject road)
     {

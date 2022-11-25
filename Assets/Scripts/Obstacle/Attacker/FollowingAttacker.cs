@@ -27,10 +27,7 @@ public class FollowingAttacker : Character
     }
 
 
-    void Update()
-    {
-
-    }
+   
 
     private void OnCollisionEnter(Collision collision)
     {

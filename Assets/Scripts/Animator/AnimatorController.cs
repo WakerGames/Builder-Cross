@@ -7,10 +7,7 @@ public class AnimatorController : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
 
-    private void Awake()
-    {
 
-    }
 
     public void PlayIdle()
     {

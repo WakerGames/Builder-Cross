@@ -25,10 +25,7 @@ public class BoxManager : MonoBehaviour
             Instance = this;
         }
     }
-    private void Start()
-    {
-       
-    }
+    
 
     private void OnEnable()
     {

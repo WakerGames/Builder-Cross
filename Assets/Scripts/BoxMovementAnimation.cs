@@ -6,10 +6,7 @@ public class BoxMovementAnimation : MonoBehaviour
 {
     
 
-    private void Awake()
-    {
-       
-    }
+   
     private void FixedUpdate()
     {
         if (BoxManager.Instance.BoxesOnHand.Contains(this.gameObject))
