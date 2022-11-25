@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5476888324653010627}
   - component: {fileID: 3369328713022189863}
   - component: {fileID: 819711165638352709}
+  - component: {fileID: 5315418124794587984}
   m_Layer: 0
   m_Name: RoadMine
   m_TagString: Untagged
@@ -114,6 +115,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78f6a7446024fa4f9539d2d16d5dc4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!205 &5315418124794587984
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6269341195940589334}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.0059080124, y: -0.14430775, z: 0.082556725}
+  m_Size: 13
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.05
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5476888324653010627}
+  m_Enabled: 1
 --- !u!1001 &1523724204487990921
 PrefabInstance:
   m_ObjectHideFlags: 0
