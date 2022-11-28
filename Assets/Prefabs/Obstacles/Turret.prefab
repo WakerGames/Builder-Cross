@@ -567,7 +567,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingDuration: 1.5
-  increaseAmount: 0.01
   audioData: {fileID: 3077396918548693030}
   bulletParticleEffect: {fileID: 7156768677817350234}
   shootingCollider: {fileID: 1761285361}
@@ -584,6 +583,10 @@ PrefabInstance:
     - target: {fileID: 1315754061151678437, guid: a21c724189d6c0b42afd1deac3c01fcd, type: 3}
       propertyPath: m_Name
       value: Barrier3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315754061151678437, guid: a21c724189d6c0b42afd1deac3c01fcd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1804166589990925663, guid: a21c724189d6c0b42afd1deac3c01fcd, type: 3}
       propertyPath: m_RootOrder
