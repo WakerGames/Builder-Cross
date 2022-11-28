@@ -11,7 +11,7 @@ public class AnimatorController : MonoBehaviour
 
     public void PlayIdle()
     {
-        _animator.Play("Breathing Idle 0");
+        _animator.Play("Idle 0");
     }
 
     public void PlayRun()

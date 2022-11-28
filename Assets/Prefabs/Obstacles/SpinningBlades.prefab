@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7397127818393089635}
   - component: {fileID: 5838981901409712582}
   - component: {fileID: 8569448850138664204}
-  - component: {fileID: 167207132248115358}
   - component: {fileID: -2319204522925794542}
   - component: {fileID: 2895301301261337616}
+  - component: {fileID: 7204336202238687489}
   m_Layer: 0
   m_Name: SpinningBlades
   m_TagString: Untagged
@@ -64,8 +64,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3636744c5f9fa0e47b0bbf3330ea65af, type: 2}
-  - {fileID: 2100000, guid: 3636744c5f9fa0e47b0bbf3330ea65af, type: 2}
+  - {fileID: -2813467912831258332, guid: 09c4da46221655b49997647b7eb7a133, type: 3}
+  - {fileID: 5905646435478650555, guid: 09c4da46221655b49997647b7eb7a133, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,19 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &167207132248115358
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7920758774737579225}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 6.632906, y: 0.5354035, z: 1.4981852}
-  m_Center: {x: -0.04611671, y: 0.28960544, z: -0.30487195}
 --- !u!114 &-2319204522925794542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e0351184549ff469f83475d37dc442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinningSpeed: -10
+  spinningSpeed: -3
 --- !u!82 &2895301301261337616
 AudioSource:
   m_ObjectHideFlags: 0
@@ -209,3 +196,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!64 &7204336202238687489
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7920758774737579225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5147470373265397394, guid: 09c4da46221655b49997647b7eb7a133, type: 3}

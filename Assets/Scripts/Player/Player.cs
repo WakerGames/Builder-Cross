@@ -15,7 +15,7 @@ public class Player : Character
     //public float _rotateSpeed;
     [SerializeField] internal BoxManager _boxManager;
     [SerializeField] private TimerManager _timerManager;
-
+    
     public delegate void OnPlayerDead();
 
     public static OnPlayerDead playerDied;

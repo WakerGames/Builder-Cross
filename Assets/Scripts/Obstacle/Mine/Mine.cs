@@ -27,7 +27,7 @@ public class Mine : MonoBehaviour, IDamageDealer
 
         //DAHA SONRA BU KODU KULLANCAZ 
         //yield return new WaitWhile(() => audioData.isPlaying);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
     }
 
