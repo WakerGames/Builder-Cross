@@ -100,11 +100,19 @@ public class RoadGenerator : MonoBehaviour
 
     }
 
-    void AddSpecialRoad()
+    void AddRandomSpecialRoad()
     {
         if (specialRoads.Count != 0)
         {
             CreateRoad(specialRoads[Random.Range(0, specialRoads.Count)]);
+        }
+    }
+
+    void AddSpecialRoad(int roadIndex)
+    {
+        if (specialRoads.Count != 0)
+        {
+            CreateRoad(specialRoads[roadIndex]);
         }
     }
 
@@ -175,6 +183,109 @@ public class RoadGenerator : MonoBehaviour
         AddRoadPrefab(RoadType.Zombie);
     }
     
+    [ContextMenu("Add Custom-1 Road")]
+    void AddCustom1Road()
+    {
+        AddSpecialRoad(0);
+    }
+    
+    [ContextMenu("Add Custom-2 Road")]
+    void AddCustom2Road()
+    {
+        AddSpecialRoad(1);
+    }
+    
+    [ContextMenu("Add Custom-3 Road")]
+    void AddCustom3Road()
+    {
+        AddSpecialRoad(2);
+    }
+    
+    [ContextMenu("Add Custom-4 Road")]
+    void AddCustom4Road()
+    {
+        AddSpecialRoad(3);
+    }
+    
+    [ContextMenu("Add Custom-5 Road")]
+    void AddCustom5Road()
+    {
+        AddSpecialRoad(4);
+    }
+    
+    [ContextMenu("Add Custom-6 Road")]
+    void AddCustom6Road()
+    {
+        AddSpecialRoad(5);
+    }
+    
+    [ContextMenu("Add Custom-7 Road")]
+    void AddCustom7Road()
+    {
+        AddSpecialRoad(6);
+    }
+    
+    [ContextMenu("Add Custom-8 Road")]
+    void AddCustom8Road()
+    {
+        AddSpecialRoad(7);
+    }
+    
+    [ContextMenu("Add Custom-9 Road")]
+    void AddCustom9Road()
+    {
+        AddSpecialRoad(8);
+    }
+    
+    [ContextMenu("Add Custom-10 Road")]
+    void AddCustom10Road()
+    {
+        AddSpecialRoad(9);
+    }
+    
+    [ContextMenu("Add Custom-11 Road")]
+    void AddCustom11Road()
+    {
+        AddSpecialRoad(10);
+    }
+    
+    [ContextMenu("Add Custom-12 Road")]
+    void AddCustom12Road()
+    {
+        AddSpecialRoad(11);
+    }
+    
+    [ContextMenu("Add Custom-13 Road")]
+    void AddCustom13Road()
+    {
+        AddSpecialRoad(12);
+    }
+    
+    [ContextMenu("Add Custom-14 Road")]
+    void AddCustom14Road()
+    {
+        AddSpecialRoad(13);
+    }
+    
+    [ContextMenu("Add Custom-15 Road")]
+    void AddCustom15Road()
+    {
+        AddSpecialRoad(14);
+    }
+    
+    [ContextMenu("Add Custom-16 Road")]
+    void AddCustom16Road()
+    {
+        AddSpecialRoad(15);
+    }
+    
+    [ContextMenu("Add Custom-17 Road")]
+    void AddCustom17Road()
+    {
+        AddSpecialRoad(16);
+    }
+    
+    
 
     [ContextMenu("Generate A Level")]
     private void GenerateLevel()
@@ -188,7 +299,7 @@ public class RoadGenerator : MonoBehaviour
             for (int j = 0; j < collectibleInterval; j++)
             {
                 AddRoadPrefab((RoadType)Random.Range(1, roadTypeCount));
-                AddSpecialRoad();   //Special
+                AddRandomSpecialRoad();   //Special
             }
 
             AddRoadPrefab(RoadType.Collectible);
@@ -226,7 +337,7 @@ public class RoadGenerator : MonoBehaviour
                     if (randomNumber <= ObstacleData.obstacleRarity.ElementAt(k).Value + pointer)
                     {
                         AddRoadPrefab((RoadType)k);
-                        AddSpecialRoad();   //Special
+                        AddRandomSpecialRoad();   //Special
                         ObstacleData.ReduceChance((RoadType)k);
                         totalWeight = CalculateWeight();
                         break;

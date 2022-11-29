@@ -6,18 +6,20 @@ using DeathCause = Death.DeathCause;
 public class TurretBehaviour : MonoBehaviour, IDamageDealer
 {
     [SerializeField] private float shootingDuration;
-    [SerializeField] private float increaseAmount;
     [SerializeField] AudioSource audioData;
     [SerializeField] ParticleSystem bulletParticleEffect;
     [SerializeField] Collider shootingCollider;
     [SerializeField] private float horizontalForceRadius;
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private float laserKickStartAmount;
+
     private bool _readyToShoot;
+    private Renderer _renderer;
 
     void OnEnable()
     {
         lineRenderer = GetComponent<LineRenderer>();
+        _renderer = GetComponent<Renderer>();
     }
 
     // Start is called before the first frame update
@@ -28,9 +30,8 @@ public class TurretBehaviour : MonoBehaviour, IDamageDealer
 
     private IEnumerator Fire()
     {
-        while (true)
+        while (_renderer.enabled)
         {
-            Debug.Log("here");
             DisappearLaser();
             shootingCollider.enabled = true;
             if (!audioData.isPlaying)
@@ -39,7 +40,6 @@ public class TurretBehaviour : MonoBehaviour, IDamageDealer
             bulletParticleEffect.Play();
             
             yield return new WaitForSecondsRealtime(shootingDuration);
-            Debug.Log("here waiting");
             bulletParticleEffect.Stop();
             shootingCollider.enabled = false;
             _readyToShoot = false;
@@ -49,7 +49,6 @@ public class TurretBehaviour : MonoBehaviour, IDamageDealer
             KickStartLaser();
             StartCoroutine(FadeInLaser());
             yield return new WaitUntil(() => _readyToShoot);
-
         }
     }
 
