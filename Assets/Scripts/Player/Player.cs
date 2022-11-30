@@ -23,7 +23,7 @@ public class Player : Character
 
 
     //private Rigidbody characterRigidbody;
-    internal Vector3 _moveVector;
+    
     
 
     private void Awake()

@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Player _player;
+    private Vector3 _moveVector;
 
     private void OnEnable()
     {
@@ -12,12 +13,12 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         //_moveVector = Vector3.zero;
-        _player._moveVector.x = _player._joystick.Horizontal * _player.characterMoveSpeed * Time.deltaTime;
-        _player._moveVector.z = _player._joystick.Vertical * _player.characterMoveSpeed * Time.deltaTime;
+        _moveVector.x = _player._joystick.Horizontal * _player.characterMoveSpeed * Time.deltaTime;
+        _moveVector.z = _player._joystick.Vertical * _player.characterMoveSpeed * Time.deltaTime;
 
         if (_player._joystick.Horizontal != 0 || _player._joystick.Vertical != 0)
         {
-            Vector3 direction = Vector3.RotateTowards(transform.forward, _player._moveVector, _player.characterRotateSpeed * Time.deltaTime, 0.0f);
+            Vector3 direction = Vector3.RotateTowards(transform.forward, _moveVector, _player.characterRotateSpeed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(direction);
 
             if (_player._boxManager.GetHaveBox())
@@ -45,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
                 _player.characterAnimatorController.PlayIdle();
             }
         }
-        _player.characterRigidbody.MovePosition(_player.characterRigidbody.position + _player._moveVector);
+        _player.characterRigidbody.MovePosition(_player.characterRigidbody.position + _moveVector);
     }
 
     private void FixedUpdate()

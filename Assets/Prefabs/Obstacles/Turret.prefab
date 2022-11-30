@@ -352,7 +352,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d5de20319324818499be4f1627bc8142, type: 2}
+  - {fileID: 2100000, guid: 729723c57d050704ba873994b991918e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -567,7 +567,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingDuration: 1.5
-  increaseAmount: 0.01
   audioData: {fileID: 3077396918548693030}
   bulletParticleEffect: {fileID: 7156768677817350234}
   shootingCollider: {fileID: 1761285361}
