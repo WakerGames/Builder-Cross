@@ -1314,7 +1314,6 @@ MonoBehaviour:
   mainCollider: {fileID: 8906128772543708159}
   mainRig: {fileID: 8402351572634444549}
   mainAnimator: {fileID: 7245429945237305462}
-  _timerEnd: {fileID: 0}
 --- !u!114 &8906128772543708158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1367,7 +1366,6 @@ MonoBehaviour:
   characterDeath: {fileID: 936375742}
   _joystick: {fileID: 0}
   _boxManager: {fileID: 8906128772543708160}
-  _timerManager: {fileID: 0}
 --- !u!114 &936375742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1380,7 +1378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f88ab1849d5cd54ab566456b2fc836c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ragdollManager: {fileID: 0}
+  _ragdollManager: {fileID: 8906128772543708157}
 --- !u!114 &6759440853578686509
 MonoBehaviour:
   m_ObjectHideFlags: 0

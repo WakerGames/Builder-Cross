@@ -13,7 +13,6 @@ public class RagdollManager : MonoBehaviour
     public Animator mainAnimator;
     //private PlayerMovement _playerMovement;
     private Character character;
-    [SerializeField, CanBeNull] private TimerManager _timerEnd;
 
 
     private void Awake()
@@ -47,7 +46,10 @@ public class RagdollManager : MonoBehaviour
     {
         //_playerMovement.CanMove = false;
         character.CanMove = false;
-        mainAnimator.enabled = false;
+        
+        if (mainAnimator != null)
+            mainAnimator.enabled = false;
+
         Destroy(gameObject, 3f);
         foreach (Collider col in ragDollColliders)
         {

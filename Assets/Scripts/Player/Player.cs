@@ -14,7 +14,6 @@ public class Player : Character
     //public float characterMoveSpeed;
     //public float _rotateSpeed;
     [SerializeField] internal BoxManager _boxManager;
-    [SerializeField] private TimerManager _timerManager;
     
     public delegate void OnPlayerDead();
 
@@ -54,14 +53,7 @@ public class Player : Character
     {
         CanMove = true;
     }
-
-    private void FixedUpdate()
-    {
-        if (_timerManager.isTimeEnd())
-        {
-            characterRagdollManager.RagdollModeOn(DeathCause.Regular, null, null);
-        }
-    }
+    
 
     //private void Move()
     //{
