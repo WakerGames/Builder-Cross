@@ -6,12 +6,14 @@ using DeathCause = Death.DeathCause;
 
 public class SpinningBlade : MonoBehaviour, IDamageDealer
 {
-    [SerializeField] private int spinningSpeed;
+    public Transform target;
+    public float rotateSpeed = 2f;
 
-
-    void FixedUpdate()
+    void Update()
     {
-        gameObject.transform.Rotate(0, spinningSpeed, 0);
+
+        transform.RotateAround(target.position, Vector3.up, rotateSpeed * Time.deltaTime);
+
     }
 
     public void DealDamage(GameObject other)
