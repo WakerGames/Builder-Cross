@@ -6,10 +6,8 @@ using UnityEngine.UI;
 
 public class TimerManager : MonoBehaviour
 {
-    private Text _info;
     private float _madTimer;
-    [SerializeField] private float maxTimeValue;
-    [SerializeField] private Slider timeSlider;
+    [SerializeField] private Image sliderImage;
     private bool _timeEnd = false;
     private Player _player;
     
@@ -20,9 +18,8 @@ public class TimerManager : MonoBehaviour
 
     private void Awake()
     {
-        _info = GameObject.FindWithTag("info").GetComponent<Text>();
         _player = GameObject.FindWithTag("Player").GetComponent<Player>();
-        //timeSlider = GameObject.Find("Timer").GetComponent<Slider>();
+        
     }
 
     private void OnEnable()
@@ -37,31 +34,24 @@ public class TimerManager : MonoBehaviour
 
     void Start()
     {
-        timeSlider.maxValue = maxTimeValue;
-        timeSlider.minValue = 0;
-        timeSlider.wholeNumbers = false;
-        timeSlider.value = timeSlider.maxValue;
-        _madTimer = timeSlider.value;
     }
 
 
     void FixedUpdate()
     {
-        if (timeSlider.value > timeSlider.minValue)
+        if (_player.CanMove)
         {
-            _madTimer -= Time.fixedDeltaTime;
-            timeSlider.value = _madTimer;
-            _info.text = ((int)timeSlider.value).ToString();
-        }
-
-        else if (timeSlider.value <= 0)
-        {
-            _timeEnd = true;
-            timeEnded();
-        }
-        else
-        {
-            _info.text = "X";
+            if (sliderImage.fillAmount >= 0 && sliderImage.fillAmount < 1)
+            {
+                _madTimer += 0.0005f;
+                sliderImage.fillAmount = _madTimer;
+            }
+            else
+            {
+                _timeEnd = true;
+                timeEnded();
+            }
+            sliderImage.GetComponent<Image>().fillAmount += 0.0005f;
         }
     }
 

@@ -19,5 +19,7 @@ public class FollowToxinEdge : MonoBehaviour
         {
             edgeImg.SetActive(false);
         }
+
+        
     }
 }
