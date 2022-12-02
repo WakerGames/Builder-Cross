@@ -3212,6 +3212,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SettingsUICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7349808454730677976, guid: 469300f62df5b674aa77ee2eb9cc79cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7349808454730677980, guid: 469300f62df5b674aa77ee2eb9cc79cb, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3246,6 +3250,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7349808454730677980, guid: 469300f62df5b674aa77ee2eb9cc79cb, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7349808454730677980, guid: 469300f62df5b674aa77ee2eb9cc79cb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7349808454730677980, guid: 469300f62df5b674aa77ee2eb9cc79cb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7349808454730677980, guid: 469300f62df5b674aa77ee2eb9cc79cb, type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7349808454730677980, guid: 469300f62df5b674aa77ee2eb9cc79cb, type: 3}

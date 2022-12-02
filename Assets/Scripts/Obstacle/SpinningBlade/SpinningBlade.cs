@@ -9,9 +9,13 @@ public class SpinningBlade : MonoBehaviour, IDamageDealer
     public Transform target;
     public float rotateSpeed = 2f;
 
+    private void Awake()
+    {
+        FindObjectOfType<AudioManager>().Play("SpinningBlade");
+    }
     void Update()
     {
-
+        
         transform.RotateAround(target.position, Vector3.up, rotateSpeed * Time.deltaTime);
 
     }
