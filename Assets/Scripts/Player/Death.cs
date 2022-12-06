@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
+
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,6 +8,8 @@ public class Death : MonoBehaviour
     [SerializeField] public GameObject _deadScene;
     [SerializeField] private GameObject _joyStick;
     [SerializeField] private GameObject _gamehud;
+    
+    [SerializeField] private AudioClip deathClip;
     public enum DeathCause
     {
         Regular,
@@ -26,12 +25,17 @@ public class Death : MonoBehaviour
 
     public void SlowTime()
     {
+        DeathSceen();
         Time.timeScale = 0.1f;
     }
 
 
     public void Die(bool playerIsDying, DeathCause causeOfDeath, float? horizontalForceRadius, float? verticalForceAmount)
     {
+
+       
+        
+      
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         if (playerIsDying && Player.playerDied != null)
         {
@@ -39,17 +43,20 @@ public class Death : MonoBehaviour
         }
         if(!playerIsDying)
         {
-            if(GetComponent<AttackerMovement>() !=null)
+            GetComponent<Character>().charAudioSource.clip = deathClip;
+
+            GetComponent<Character>().charAudioSource.Play();
+
+            if (GetComponent<AttackerMovement>() !=null)
                 GetComponent<AttackerMovement>().enabled = false;
             if (GetComponent<ZombieMovement>() != null)
                 GetComponent<ZombieMovement>().enabled =false;
-
+            
         }
 
         switch (causeOfDeath)
         {
             case DeathCause.Regular:
-                DeathSceen();
                 _ragdollManager.RagdollModeOn(DeathCause.Regular, null, null);
                 break;
 
@@ -71,4 +78,5 @@ public class Death : MonoBehaviour
         _joyStick.SetActive(false);
         _gamehud.SetActive(false);
     }
+
 }

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class ZombieMovement : MonoBehaviour
@@ -7,9 +6,11 @@ public class ZombieMovement : MonoBehaviour
     private AnimatorController characterAnimatorController;
     private Transform target;
     private float characterMoveSpeed;
+    
 
     private void OnEnable()
     {
+        GetComponent<Character>().charAudioSource.Play();
         characterAnimatorController = GetComponent<AnimatorController>();
         target = gameObject.GetComponent<FollowingZombie>().target;
         characterMoveSpeed = gameObject.GetComponent<FollowingZombie>().characterMoveSpeed;

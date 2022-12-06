@@ -14,7 +14,8 @@ public class Player : Character
     //public float characterMoveSpeed;
     //public float _rotateSpeed;
     [SerializeField] internal BoxManager _boxManager;
-    
+
+
     public delegate void OnPlayerDead();
 
     public static OnPlayerDead playerDied;
@@ -35,12 +36,15 @@ public class Player : Character
     {
         playerDied += characterDeath.SlowTime;
         playerDied += StopCamera;
+        Debug.Log("Baþlama");
     }
 
     private void OnDisable()
     {
+        Debug.Log("Ölüm Kýsmý");
         playerDied -= characterDeath.SlowTime;
         playerDied -= StopCamera;
+        
     }
 
     private void StopCamera()
@@ -53,7 +57,7 @@ public class Player : Character
     {
         CanMove = true;
     }
-    
+
 
     //private void Move()
     //{
@@ -91,4 +95,5 @@ public class Player : Character
     //    }
     //    characterRigidbody.MovePosition(characterRigidbody.position + _moveVector);
     //}
+    
 }

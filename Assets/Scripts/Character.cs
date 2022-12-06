@@ -12,4 +12,6 @@ public abstract class Character : MonoBehaviour
     public RagdollManager characterRagdollManager;
     public Death characterDeath;
     public bool StandingOnStickyLiquid { get; set; }
+
+    public AudioSource charAudioSource;
 }
