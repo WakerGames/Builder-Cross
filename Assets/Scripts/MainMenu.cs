@@ -31,5 +31,9 @@ public class MainMenu : MonoBehaviour
             AudioListener.volume= 1;
         }
     }
-
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+    }
 }

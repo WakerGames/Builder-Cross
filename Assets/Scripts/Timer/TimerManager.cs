@@ -10,6 +10,9 @@ public class TimerManager : MonoBehaviour
     [SerializeField] private Image sliderImage;
     private bool _timeEnd = false;
     private Player _player;
+    [SerializeField] public GameObject _poisonedScreen;
+    [SerializeField] private GameObject _gameHUD;
+    [SerializeField] private GameObject _joyStick;
     
     public delegate void OnTimeEnd();
 
@@ -62,6 +65,9 @@ public class TimerManager : MonoBehaviour
 
     public void EndGame()
     {
+        _poisonedScreen.SetActive(true);
+        _gameHUD.SetActive(false);
+        _joyStick.SetActive(false);
         _player.characterRagdollManager.RagdollModeOn(Death.DeathCause.Regular, null, null);
     }
 }

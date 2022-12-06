@@ -7,7 +7,10 @@ using Random = UnityEngine.Random;
 
 public class Death : MonoBehaviour
 {
-    [SerializeField]private RagdollManager _ragdollManager;
+    [SerializeField] private RagdollManager _ragdollManager;
+    [SerializeField] public GameObject _deadScene;
+    [SerializeField] private GameObject _joyStick;
+    [SerializeField] private GameObject _gamehud;
     public enum DeathCause
     {
         Regular,
@@ -46,6 +49,7 @@ public class Death : MonoBehaviour
         switch (causeOfDeath)
         {
             case DeathCause.Regular:
+                DeathSceen();
                 _ragdollManager.RagdollModeOn(DeathCause.Regular, null, null);
                 break;
 
@@ -60,5 +64,11 @@ public class Death : MonoBehaviour
             default:
                 break;
         }
+    }
+    public void DeathSceen()
+    {
+        _deadScene.SetActive(true);
+        _joyStick.SetActive(false);
+        _gamehud.SetActive(false);
     }
 }

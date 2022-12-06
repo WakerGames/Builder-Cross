@@ -11,7 +11,7 @@ public class SpinningBlade : MonoBehaviour, IDamageDealer
 
     private void Awake()
     {
-        FindObjectOfType<AudioManager>().Play("SpinningBlade");
+       // FindObjectOfType<AudioManager>().Play("SpinningBlade");
     }
     void Update()
     {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,8 @@ public class BoxManager : MonoBehaviour
     private int _countBox = 1;
     [SerializeField] private GameObject boxPlace;
     [SerializeField] private GameObject _currentBox;
-
+    public GameObject[] BoxUI;
+    private int index=0;
     public static BoxManager Instance { get; set; }
 
     public List<GameObject> BoxesOnHand = new List<GameObject>();
@@ -62,6 +64,7 @@ public class BoxManager : MonoBehaviour
         {
             for (int i = 0; i < BoxesOnHand.Count; i++)
             {
+
                 BoxesOnHand[i].AddComponent<Rigidbody>();
                 BoxesOnHand[i].GetComponent<BoxCollider>().isTrigger = false;
                 BoxesOnHand[i].GetComponent<Rigidbody>().useGravity = true;
@@ -74,11 +77,13 @@ public class BoxManager : MonoBehaviour
     void SetChild(GameObject collectable)
     {
 
-
+        BoxUI[index].SetActive(true);
+        index++;
         collectable.transform.parent = boxPlace.transform;
         collectable.transform.localPosition = new Vector3(0, 0, 0);
         if (_countBox == 2)
         {
+            
             collectable.transform.localPosition = new Vector3(0, 0.5f, 0);
         }
 
