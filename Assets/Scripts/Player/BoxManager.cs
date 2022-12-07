@@ -12,6 +12,7 @@ public class BoxManager : MonoBehaviour
     [SerializeField] private GameObject _currentBox;
     public GameObject[] BoxUI;
     private int index=0;
+    [SerializeField] AudioSource _boxSound;
     public static BoxManager Instance { get; set; }
 
     public List<GameObject> BoxesOnHand = new List<GameObject>();
@@ -76,7 +77,7 @@ public class BoxManager : MonoBehaviour
 
     void SetChild(GameObject collectable)
     {
-
+        _boxSound.Play();
         BoxUI[index].SetActive(true);
         index++;
         collectable.transform.parent = boxPlace.transform;

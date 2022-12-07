@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] AudioSource _stickySound;
+
     private Player _player;
     private Vector3 _moveVector;
 
@@ -28,7 +30,12 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 if (_player.StandingOnStickyLiquid)
+                {
+                    if (!_stickySound.isPlaying)
+                        _stickySound.Play();
+
                     _player.characterAnimatorController.SlimeWalk();
+                }
                 else
                 {
                     _player.characterAnimatorController.PlayRun();

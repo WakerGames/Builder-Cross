@@ -40,9 +40,12 @@ public class Mine : MonoBehaviour, IDamageDealer
 
     private void OnTriggerEnter(Collider other)
     {
-        DealDamage(other.gameObject);
-        Debug.Log(audioData.loop);
-        StartCoroutine(MineExplosion());
+        if(other.GetComponent<Character>()!=null)
+        {
+            DealDamage(other.gameObject);
+            Debug.Log(audioData.loop);
+            StartCoroutine(MineExplosion());
+        }
     }
 
 }

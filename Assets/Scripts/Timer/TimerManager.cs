@@ -13,6 +13,7 @@ public class TimerManager : MonoBehaviour
     [SerializeField] public GameObject _poisonedScreen;
     [SerializeField] private GameObject _gameHUD;
     [SerializeField] private GameObject _joyStick;
+    [SerializeField] private AudioSource _timerSound;
     
     public delegate void OnTimeEnd();
 
@@ -55,6 +56,10 @@ public class TimerManager : MonoBehaviour
                 timeEnded();
             }
             sliderImage.GetComponent<Image>().fillAmount += 0.0005f;
+        }
+        if(_madTimer == 85f)
+        {
+            _timerSound.Play();
         }
     }
 
