@@ -1,15 +1,13 @@
-
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Death : MonoBehaviour
 {
     [SerializeField] private RagdollManager _ragdollManager;
-    [SerializeField] public GameObject _deadScene;
-    [SerializeField] private GameObject _joyStick;
-    [SerializeField] private GameObject _gamehud;
     
+
     [SerializeField] private AudioClip deathClip;
+
     public enum DeathCause
     {
         Regular,
@@ -25,33 +23,30 @@ public class Death : MonoBehaviour
 
     public void SlowTime()
     {
-        DeathSceen();
+        ShowDeathScene();
         Time.timeScale = 0.1f;
     }
 
 
-    public void Die(bool playerIsDying, DeathCause causeOfDeath, float? horizontalForceRadius, float? verticalForceAmount)
+    public void Die(bool playerIsDying, DeathCause causeOfDeath, float? horizontalForceRadius,
+        float? verticalForceAmount)
     {
-
-       
-        
-      
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+
         if (playerIsDying && Player.playerDied != null)
-        {
             Player.playerDied();
-        }
-        if(!playerIsDying)
+
+
+        if (!playerIsDying) // If the hostile NPC is dying
         {
             GetComponent<Character>().charAudioSource.clip = deathClip;
 
             GetComponent<Character>().charAudioSource.Play();
 
-            if (GetComponent<AttackerMovement>() !=null)
+            if (GetComponent<AttackerMovement>() != null)
                 GetComponent<AttackerMovement>().enabled = false;
             if (GetComponent<ZombieMovement>() != null)
-                GetComponent<ZombieMovement>().enabled =false;
-            
+                GetComponent<ZombieMovement>().enabled = false;
         }
 
         switch (causeOfDeath)
@@ -72,11 +67,12 @@ public class Death : MonoBehaviour
                 break;
         }
     }
-    public void DeathSceen()
-    {
-        _deadScene.SetActive(true);
-        _joyStick.SetActive(false);
-        _gamehud.SetActive(false);
-    }
 
+    private static void ShowDeathScene()
+    {
+        var player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        player._deadScene.SetActive(true);
+        player._joystick.gameObject.SetActive(false);
+        player._gamehud.SetActive(false);
+    }
 }

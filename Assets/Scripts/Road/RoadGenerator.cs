@@ -54,8 +54,6 @@ public class RoadGenerator : MonoBehaviour
 
     private void OnEnable()
     {
-       
-        
         roadTypeDict[RoadType.Collectible] = collectibleRoad;
         roadTypeDict[RoadType.Empty] = emptyRoad;
         roadTypeDict[RoadType.Turret] = turretRoad;

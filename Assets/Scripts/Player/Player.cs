@@ -9,7 +9,9 @@ using DeathCause = Death.DeathCause;
 [RequireComponent(typeof(Rigidbody))]
 public class Player : Character
 {
-    [SerializeField] internal FloatingJoystick _joystick;
+    [SerializeField] public FloatingJoystick _joystick;
+    [SerializeField] public GameObject _deadScene;
+    [SerializeField] public GameObject _gamehud;
     //[SerializeField] private AnimatorController _animatorController;
     //public float characterMoveSpeed;
     //public float _rotateSpeed;
