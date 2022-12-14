@@ -36,12 +36,12 @@ public class Player : Character
     {
         playerDied += characterDeath.SlowTime;
         playerDied += StopCamera;
-        Debug.Log("Baþlama");
+        //Debug.Log("Baï¿½lama");
     }
 
     private void OnDisable()
     {
-        Debug.Log("Ölüm Kýsmý");
+        //Debug.Log("ï¿½lï¿½m Kï¿½smï¿½");
         playerDied -= characterDeath.SlowTime;
         playerDied -= StopCamera;
         
