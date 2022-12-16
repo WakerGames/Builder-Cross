@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -9,21 +10,32 @@ public class Mine : MonoBehaviour, IDamageDealer
 {
     [SerializeField] private float verticalForceAmount;
     [SerializeField] private float horizontalForceRadius;
-    
+
     [SerializeField] ParticleSystem explosionParticleEffect;
-    [SerializeField] AudioSource audioData;
+    [SerializeField] AudioSource audioSrc;
+    [SerializeField] private AudioClip beepSound;
+    [SerializeField] private AudioClip explosionSound;
 
     public void DealDamage(GameObject other)
     {
         Debug.Log(other);
-        other.GetComponent<Death>()?.Die(other.TryGetComponent(out Player temp), DeathCause.Explosion, horizontalForceRadius, verticalForceAmount);
+        other.GetComponent<Death>()?.Die(other.TryGetComponent(out Player temp), DeathCause.Explosion,
+            horizontalForceRadius, verticalForceAmount);
+    }
+
+    private void OnEnable()
+    {
+        audioSrc.clip = beepSound;
+        audioSrc.loop = true;
+        audioSrc.playOnAwake = true;
     }
 
     private IEnumerator MineExplosion()
     {
-        audioData.Play(0);
+        audioSrc.loop = false;
+        audioSrc.clip = explosionSound;
+        audioSrc.Play(0);
         explosionParticleEffect.Play();
-        
 
         //DAHA SONRA BU KODU KULLANCAZ 
         //yield return new WaitWhile(() => audioData.isPlaying);
@@ -40,12 +52,10 @@ public class Mine : MonoBehaviour, IDamageDealer
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<Character>()!=null)
+        if (other.GetComponent<Character>() != null)
         {
             DealDamage(other.gameObject);
-            Debug.Log(audioData.loop);
             StartCoroutine(MineExplosion());
         }
     }
-
 }
