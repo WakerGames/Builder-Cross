@@ -3,23 +3,23 @@ using UnityEngine;
 
 public class ZombieMovement : MonoBehaviour
 {
-    private AnimatorController characterAnimatorController;
-    private Transform target;
+    [SerializeField] private AnimatorController characterAnimatorController;
+    public Transform target;
     private float characterMoveSpeed;
     
 
-    private void OnEnable()
+    private void Start()
     {
         GetComponent<Character>().charAudioSource.Play();
         characterAnimatorController = GetComponent<AnimatorController>();
-        target = gameObject.GetComponent<FollowingZombie>().target;
         characterMoveSpeed = gameObject.GetComponent<FollowingZombie>().characterMoveSpeed;
+        characterAnimatorController.ZombieRun();
     }
 
     void FixedUpdate()
     {
-        characterAnimatorController.ZombieRun();
+       
         gameObject.transform.LookAt(target);
-        transform.position = Vector3.MoveTowards(transform.position, target.position, characterMoveSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, target.position, characterMoveSpeed*Time.deltaTime);
     }
 }

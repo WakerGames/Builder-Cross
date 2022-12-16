@@ -493,7 +493,6 @@ GameObject:
   - component: {fileID: 7685105070759296533}
   - component: {fileID: 5454921023506247147}
   - component: {fileID: 2856240518899339473}
-  - component: {fileID: 994652494}
   - component: {fileID: 1949890439}
   - component: {fileID: -3574100477531095312}
   m_Layer: 0
@@ -619,11 +618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f88ab1849d5cd54ab566456b2fc836c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ragdollManager: {fileID: 0}
-  _deadScene: {fileID: 0}
-  _joyStick: {fileID: 0}
-  _gamehud: {fileID: 0}
-  deathClip: {fileID: 0}
+  _ragdollManager: {fileID: 1949890439}
+  deathClip: {fileID: 8300000, guid: 9a6a58dfc6f21af40b0d5faf6e24894e, type: 3}
 --- !u!114 &2856240518899339473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,21 +632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884e5d55e6140d34d8eb009c09d8ca2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &994652494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1937192556227858538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49ab63152588c4f448a68ba7e358baae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCollider: {fileID: 2596504695715535274}
-  mainRig: {fileID: 1812174455500174129}
-  mainAnimator: {fileID: 5136837122718929066}
+  characterAnimatorController: {fileID: 7685105070759296533}
 --- !u!114 &1949890439
 MonoBehaviour:
   m_ObjectHideFlags: 0

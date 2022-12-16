@@ -39,9 +39,7 @@ public class Death : MonoBehaviour
 
         if (!playerIsDying) // If the hostile NPC is dying
         {
-            GetComponent<Character>().charAudioSource.clip = deathClip;
-
-            GetComponent<Character>().charAudioSource.Play();
+            GetComponent<Character>().charAudioSource.PlayOneShot(deathClip);
 
             if (GetComponent<AttackerMovement>() != null)
                 GetComponent<AttackerMovement>().enabled = false;
@@ -73,6 +71,6 @@ public class Death : MonoBehaviour
         var player = GameObject.FindWithTag("Player").GetComponent<Player>();
         player._deadScene.SetActive(true);
         player._joystick.gameObject.SetActive(false);
-        player._gamehud.SetActive(false);
+        //player._gamehud.SetActive(false);
     }
 }

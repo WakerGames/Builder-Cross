@@ -12,22 +12,20 @@ public class Mine : MonoBehaviour, IDamageDealer
     [SerializeField] private float horizontalForceRadius;
 
     [SerializeField] ParticleSystem explosionParticleEffect;
-    [SerializeField] AudioSource audioSrc;
-    [SerializeField] private AudioClip beepSound;
+
+    [SerializeField] AudioSource audioSrc; // By default, Loop is active, clip is beep, everything else is disabled
+
+    //[SerializeField] private AudioClip beepSound;
     [SerializeField] private AudioClip explosionSound;
+
+    private static bool _audioPlaying = false;
+
 
     public void DealDamage(GameObject other)
     {
         Debug.Log(other);
         other.GetComponent<Death>()?.Die(other.TryGetComponent(out Player temp), DeathCause.Explosion,
             horizontalForceRadius, verticalForceAmount);
-    }
-
-    private void OnEnable()
-    {
-        audioSrc.clip = beepSound;
-        audioSrc.loop = true;
-        audioSrc.playOnAwake = true;
     }
 
     private IEnumerator MineExplosion()
@@ -43,6 +41,7 @@ public class Mine : MonoBehaviour, IDamageDealer
         Destroy(this.gameObject);
     }
 
+
     //private void OnCollisionEnter(Collision other)
     //{
     //    DealDamage(other.gameObject);
@@ -50,12 +49,30 @@ public class Mine : MonoBehaviour, IDamageDealer
     //    StartCoroutine(MineExplosion());
     //}
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.GetComponent<Character>() != null)
+        if (collision.gameObject.GetComponent<Character>() != null)
         {
-            DealDamage(other.gameObject);
+            DealDamage(collision.gameObject);
             StartCoroutine(MineExplosion());
         }
+    }
+
+    private void OnTriggerEnter(Collider other) // Beeping
+    {
+        if (!_audioPlaying)
+        {
+            audioSrc.loop = true;
+            audioSrc.Play();
+            Debug.Log("Bruh");
+            _audioPlaying = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        audioSrc.Stop();
+        _audioPlaying = false;
+        audioSrc.loop = false;
     }
 }

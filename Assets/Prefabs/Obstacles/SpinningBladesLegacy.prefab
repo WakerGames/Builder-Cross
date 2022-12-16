@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2895301301261337616}
   - component: {fileID: 7204336202238687489}
   m_Layer: 0
-  m_Name: SpinningBlades
+  m_Name: SpinningBladesLegacy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

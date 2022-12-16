@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 4277236785037636261}
   - component: {fileID: 653805034073072183}
   - component: {fileID: 4000331373145761230}
+  - component: {fileID: 841111063179591580}
   m_Layer: 0
   m_Name: Mine
   m_TagString: DeadlyObstacle
@@ -232,7 +233,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8257832093535544094}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.47851542, y: 0.13935894, z: 0.41440654}
@@ -253,8 +254,7 @@ MonoBehaviour:
   horizontalForceRadius: 40
   explosionParticleEffect: {fileID: 7633057741385677557}
   audioSrc: {fileID: 4000331373145761230}
-  beepSound: {fileID: 0}
-  explosionSound: {fileID: 8300000, guid: 7efdef369064279448abf33ee886451c, type: 3}
+  explosionSound: {fileID: 8300000, guid: 41c8bbf517501ca4ba16ef571227be67, type: 3}
 --- !u!82 &4000331373145761230
 AudioSource:
   m_ObjectHideFlags: 0
@@ -264,9 +264,9 @@ AudioSource:
   m_GameObject: {fileID: 8257832093535544094}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  OutputAudioMixerGroup: {fileID: 4107877335069431528, guid: ed703d03ebdf2df4db815efbf432b654, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 5ba50d30cbba39e4b98c8e5877bb1471, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -275,10 +275,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 200
+  MinDistance: 3
+  MaxDistance: 5
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -360,6 +360,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &841111063179591580
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8257832093535544094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7723192466609213093
 PrefabInstance:
   m_ObjectHideFlags: 0

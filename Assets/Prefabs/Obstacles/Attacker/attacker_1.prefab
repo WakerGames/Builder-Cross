@@ -340,9 +340,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ragdollManager: {fileID: 0}
-  _deadScene: {fileID: 0}
-  _joyStick: {fileID: 0}
-  _gamehud: {fileID: 0}
   deathClip: {fileID: 8300000, guid: 3c8d680d8a0ec20459559f83ab3ac43f, type: 3}
 --- !u!114 &3183134188510404749
 MonoBehaviour:
@@ -457,10 +454,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 20
+  MaxDistance: 30
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0

@@ -15,7 +15,7 @@ public class ZombieFollowArea : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _zombie.target = other.transform;
+            _zombie.GetComponent<ZombieMovement>().target = other.transform;
             _zombie.GetComponent<ZombieMovement>().enabled = true;
             GetComponent<Collider>().enabled = false;
         }

@@ -5,14 +5,11 @@ using DeathCause = Death.DeathCause;
 
 public class FollowingZombie : Character
 {
-    [SerializeField] internal Transform target;
+
     //[SerializeField] internal Animator characterAnimatorController;
     [SerializeField] internal BoxCollider followArea;
     //[SerializeField] internal float characterMoveSpeed;
-
-    [SerializeField] internal int x;
-    [SerializeField] internal int y;
-    [SerializeField] internal int z;
+    
 
     private void OnEnable()
     {
@@ -21,13 +18,10 @@ public class FollowingZombie : Character
 
     private void Start()
     {
-
         GetComponent<Rigidbody>().centerOfMass = Vector3.zero;
         GetComponent<Rigidbody>().inertiaTensorRotation = Quaternion.identity;
     }
 
-
-   
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -35,7 +29,7 @@ public class FollowingZombie : Character
         {
             collision.gameObject.GetComponent<Death>().Die(true, DeathCause.Regular, null, null);
             GetComponent<ZombieMovement>().enabled = false;
-            
+
             GetComponent<AnimatorController>().ZombieIdle();
         }
     }
@@ -59,6 +53,4 @@ public class FollowingZombie : Character
 
     //    }
     //}
-
-
 }

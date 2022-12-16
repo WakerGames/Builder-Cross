@@ -6,11 +6,18 @@ using DeathCause = Death.DeathCause;
 
 public class Spikes : MonoBehaviour, IDamageDealer
 {
-  
-
+    [SerializeField] private AudioSource _audioSource;
     public void DealDamage(GameObject other)
     {
         other.GetComponent<Death>()?.Die(other.TryGetComponent(out Player temp), DeathCause.Regular, null, null);
+    }
+
+    public void PlayAudio(AudioClip clip)
+    {
+        _audioSource.clip = clip;
+        if(!_audioSource.isPlaying)
+            _audioSource.Play();
+       
     }
 
     //private void OnCollisionStay(Collision collision)
@@ -23,8 +30,8 @@ public class Spikes : MonoBehaviour, IDamageDealer
     //        _timer = 0;
     //    }
     //}
-   
-    
+
+
     //private void OnCollisionExit(Collision collision)
     //{
     //    _timer = 0;
@@ -32,13 +39,6 @@ public class Spikes : MonoBehaviour, IDamageDealer
 
     private void OnTriggerEnter(Collider other)
     {
-       
-
-        
-            DealDamage(other.gameObject);
-            
-        
+        DealDamage(other.gameObject);
     }
-
-    
 }
