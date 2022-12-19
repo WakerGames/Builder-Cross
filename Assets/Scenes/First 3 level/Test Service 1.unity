@@ -136,15 +136,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1272718730220948176, guid: 8058f352ac8d16d41b12cce69df528b2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.3587365
+      value: 4.37
       objectReference: {fileID: 0}
     - target: {fileID: 1272718730220948176, guid: 8058f352ac8d16d41b12cce69df528b2, type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< Updated upstream
       value: -0.91
+=======
+      value: -1.31
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 1272718730220948176, guid: 8058f352ac8d16d41b12cce69df528b2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.405729
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 1272718730220948176, guid: 8058f352ac8d16d41b12cce69df528b2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -176,12 +180,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1595157777688318803, guid: 8058f352ac8d16d41b12cce69df528b2, type: 3}
       propertyPath: m_Constraints
+<<<<<<< Updated upstream
       value: 0
       objectReference: {fileID: 0}
+=======
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595157777688318803, guid: 8058f352ac8d16d41b12cce69df528b2, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595157777688318804, guid: 8058f352ac8d16d41b12cce69df528b2, type: 3}
+      propertyPath: charAudioSource
+      value: 
+      objectReference: {fileID: 1917497830}
+>>>>>>> Stashed changes
     - target: {fileID: 1937192556227858538, guid: 8058f352ac8d16d41b12cce69df528b2, type: 3}
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 4556229911984494241, guid: 8058f352ac8d16d41b12cce69df528b2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454921023506247147, guid: 8058f352ac8d16d41b12cce69df528b2, type: 3}
+      propertyPath: deathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c8d680d8a0ec20459559f83ab3ac43f, type: 3}
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8058f352ac8d16d41b12cce69df528b2, type: 3}
 --- !u!1 &18405021
@@ -37765,9 +37793,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 224366662}
     - target: {fileID: 8906128772543708161, guid: 937da4602c83954439b64163c1f09f3c, type: 3}
+      propertyPath: _gamehud
+      value: 
+      objectReference: {fileID: 742785599}
+    - target: {fileID: 8906128772543708161, guid: 937da4602c83954439b64163c1f09f3c, type: 3}
       propertyPath: _joystick
       value: 
       objectReference: {fileID: 1796404086}
+    - target: {fileID: 8906128772543708161, guid: 937da4602c83954439b64163c1f09f3c, type: 3}
+      propertyPath: _deadScene
+      value: 
+      objectReference: {fileID: 1446855650}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 937da4602c83954439b64163c1f09f3c, type: 3}
 --- !u!4 &822273458 stripped
