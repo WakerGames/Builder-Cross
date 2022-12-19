@@ -59,7 +59,7 @@ public class Player : Character
     {
         CanMove = true;
     }
-
+    
 
     //private void Move()
     //{
