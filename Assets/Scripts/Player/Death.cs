@@ -23,8 +23,13 @@ public class Death : MonoBehaviour
 
     public void SlowTime()
     {
+<<<<<<< Updated upstream
         //ShowDeathScene();
         Time.timeScale = 0.1f;
+=======
+        ShowDeathScene();
+        //Time.timeScale = 0.1f;
+>>>>>>> Stashed changes
     }
 
 
@@ -71,6 +76,6 @@ public class Death : MonoBehaviour
         var player = GameObject.FindWithTag("Player").GetComponent<Player>();
         player._deadScene.SetActive(true);
         player._joystick.gameObject.SetActive(false);
-        //player._gamehud.SetActive(false);
+        player._gamehud.SetActive(false);
     }
 }
