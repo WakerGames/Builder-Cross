@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3369328713022189863}
   - component: {fileID: 7725583106058503041}
   - component: {fileID: 2878233511569553616}
+  - component: {fileID: 2219160203897767306}
   m_Layer: 0
   m_Name: RoadSpikes
   m_TagString: Untagged
@@ -252,6 +253,102 @@ LODGroup:
     - renderer: {fileID: 7854334112984050709}
     - renderer: {fileID: 4745119442659369189}
   m_Enabled: 1
+--- !u!82 &2219160203897767306
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6269341195940589334}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &133386397325351502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307,7 +404,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (30)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!4 &88917747881313813 stripped
 Transform:
@@ -379,7 +481,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &36085811635768987 stripped
 MeshRenderer:
@@ -451,7 +558,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &1217317088706742413 stripped
 MeshRenderer:
@@ -523,7 +635,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (34)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &964258867503039048 stripped
 MeshRenderer:
@@ -595,7 +712,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (24)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &720876040077763452 stripped
 MeshRenderer:
@@ -667,7 +789,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (17)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &661789228132028525 stripped
 MeshRenderer:
@@ -739,7 +866,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (16)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &434723724309501654 stripped
 MeshRenderer:
@@ -811,7 +943,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &2038624704341563140 stripped
 MeshRenderer:
@@ -883,7 +1020,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &1789251100014880360 stripped
 MeshRenderer:
@@ -955,7 +1097,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (37)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &1506268494019412166 stripped
 MeshRenderer:
@@ -1027,7 +1174,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &1326202005935404966 stripped
 MeshRenderer:
@@ -1099,7 +1251,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (20)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &1181586609017565063 stripped
 MeshRenderer:
@@ -1171,7 +1328,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (32)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &1164535987783517627 stripped
 MeshRenderer:
@@ -1243,7 +1405,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!4 &4657450242693056013 stripped
 Transform:
@@ -1315,7 +1482,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (38)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!4 &4612258140983850172 stripped
 Transform:
@@ -1387,7 +1559,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (27)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!4 &4753365226558780112 stripped
 Transform:
@@ -1459,7 +1636,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!4 &4961000716288877526 stripped
 Transform:
@@ -1535,7 +1717,12 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &4903421796571816183 stripped
 MeshRenderer:
@@ -1607,7 +1794,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!4 &5246762769891888430 stripped
 Transform:
@@ -1679,7 +1871,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &5330138115840552466 stripped
 MeshRenderer:
@@ -1751,7 +1948,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (28)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &5203959105240445813 stripped
 MeshRenderer:
@@ -1823,7 +2025,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (18)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!4 &5535637638532898600 stripped
 Transform:
@@ -1895,7 +2102,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (35)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &5577186200237505932 stripped
 MeshRenderer:
@@ -1967,7 +2179,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (26)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!4 &5816912967353390390 stripped
 Transform:
@@ -2039,7 +2256,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (21)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!4 &5818336574514767060 stripped
 Transform:
@@ -2111,7 +2333,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (36)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!4 &6117378428325909097 stripped
 Transform:
@@ -2183,7 +2410,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &6148634536686863097 stripped
 MeshRenderer:
@@ -2255,7 +2487,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (33)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &6114533302392633704 stripped
 MeshRenderer:
@@ -2327,7 +2564,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &6412294566423449628 stripped
 MeshRenderer:
@@ -2399,7 +2641,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &6730250145108796271 stripped
 MeshRenderer:
@@ -2471,7 +2718,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &5615584608899010031 stripped
 MeshRenderer:
@@ -2543,7 +2795,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (29)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &5446582800076294581 stripped
 MeshRenderer:
@@ -2615,7 +2872,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (25)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &5261534669304273433 stripped
 MeshRenderer:
@@ -2687,7 +2949,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (23)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &5078290405057230334 stripped
 MeshRenderer:
@@ -2759,10 +3026,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
-    - target: {fileID: 4150891008772753261, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &5108973234022702802 stripped
@@ -2835,7 +3102,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (31)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &4933909076549094759 stripped
 MeshRenderer:
@@ -2907,7 +3179,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (39)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &4745119442659369189 stripped
 MeshRenderer:
@@ -2979,7 +3256,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (19)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &6695791049930114725 stripped
 MeshRenderer:
@@ -3051,7 +3333,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (22)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &6621682364691032445 stripped
 MeshRenderer:
@@ -3123,7 +3410,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4579475263257052218, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 2219160203897767306}
+    m_RemovedComponents:
+    - {fileID: 4123856275482402852, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f8d62518189b9047bbf0475037d6d18, type: 3}
 --- !u!23 &6410757599673274832 stripped
 MeshRenderer:

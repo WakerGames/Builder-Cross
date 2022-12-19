@@ -40,7 +40,7 @@ public class TurretBehaviour : MonoBehaviour, IDamageDealer
             yield return new WaitForSecondsRealtime(shootingDuration);
 
             SetShooting(false);
-            SetLaserColor(Color.green);  
+            SetLaserColor(Color.clear);  
             yield return new WaitForSecondsRealtime(overheatSfx.length);
             
             SetLaserColor(new Color(255,215,0));    // Gold

@@ -6,6 +6,7 @@ using DeathCause = Death.DeathCause;
 public class FollowingAttacker : Character
 {
     [SerializeField] internal Transform target;
+
     //[SerializeField] internal Animator characterAnimatorController;
     [SerializeField] internal BoxCollider followArea;
     //[SerializeField] internal float characterMoveSpeed;
@@ -21,23 +22,19 @@ public class FollowingAttacker : Character
 
     private void Start()
     {
-
         GetComponent<Rigidbody>().centerOfMass = Vector3.zero;
         GetComponent<Rigidbody>().inertiaTensorRotation = Quaternion.identity;
     }
 
-
-   
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<Death>().Die(true, DeathCause.Regular, null, null);
-             GetComponent<AttackerMovement>().enabled = false;
+            GetComponent<AttackerMovement>().enabled = false;
             GetComponent<AnimatorController>().AttackerIdle();
             followArea.enabled = false;
-
         }
     }
 
