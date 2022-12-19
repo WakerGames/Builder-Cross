@@ -30,7 +30,7 @@ public class FollowingZombie : Character
             
             GetComponent<ZombieMovement>().enabled = false;
 
-            GetComponent<AnimatorController>().ZombieAttack();
+            // GetComponent<AnimatorController>().ZombieAttack();
 
             collision.gameObject.GetComponent<Character>().CanMove = false;
             collision.gameObject.transform.parent = this.transform;

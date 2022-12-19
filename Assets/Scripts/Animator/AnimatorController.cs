@@ -47,5 +47,8 @@ public class AnimatorController : MonoBehaviour
     {
         _animator.Play("Zombie Idle");
     }
-
+    public void WalkMain()
+    {
+        _animator.Play("JustWalk");
+    }
 }
