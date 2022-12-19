@@ -7,6 +7,9 @@ public class TurretBehaviour : MonoBehaviour, IDamageDealer
 {
     [SerializeField] private float shootingDuration;
     [SerializeField] AudioSource audioData;
+    [SerializeField] private AudioClip shootingSfx;
+    [SerializeField] private AudioClip laserSfx;
+    [SerializeField] private AudioClip overheatSfx;
     [SerializeField] ParticleSystem bulletParticleEffect;
     [SerializeField] Collider shootingCollider;
     [SerializeField] private float horizontalForceRadius;
@@ -22,28 +25,30 @@ public class TurretBehaviour : MonoBehaviour, IDamageDealer
         _renderer = GetComponent<Renderer>();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Fire());
     }
 
-    private IEnumerator Fire()
+    private IEnumerator Fire()      // OverheatSFX - green, LaserSFX - yellow, Shooting - red
     {
         while (_renderer.enabled)
         {
-            //Laser should be set to red
-            //DisappearLaser();
             SetShooting(true);
             SetLaserColor(Color.red);
 
             yield return new WaitForSecondsRealtime(shootingDuration);
 
-
             SetShooting(false);
+            SetLaserColor(Color.green);  
+            yield return new WaitForSecondsRealtime(overheatSfx.length);
+            
+            SetLaserColor(new Color(255,215,0));    // Gold
+            KickStartLaser();
 
-            SetLaserColor(Color.green);
-            KickStartLaser(); //Las should be set to green
+            audioData.clip = laserSfx;
+            if (!audioData.isPlaying)
+                audioData.PlayDelayed(0.3f);
 
             StartCoroutine(FadeInLaser());
 
@@ -51,11 +56,13 @@ public class TurretBehaviour : MonoBehaviour, IDamageDealer
         }
     }
 
-    void SetShooting(bool shootingState)
+    void SetShooting(bool shootingState) //Plays overheat sfx if set to false!
     {
         if (shootingState)
         {
             shootingCollider.enabled = true;
+            audioData.clip = shootingSfx;
+
             if (!audioData.isPlaying)
                 audioData.Play();
 
@@ -66,8 +73,13 @@ public class TurretBehaviour : MonoBehaviour, IDamageDealer
             bulletParticleEffect.Stop();
             shootingCollider.enabled = false;
             _readyToShoot = false;
+            
             if (audioData.isPlaying)
                 audioData.Stop();
+
+            audioData.clip = overheatSfx;
+            if (!audioData.isPlaying)
+                audioData.Play();
         }
     }
 
@@ -129,7 +141,7 @@ public class TurretBehaviour : MonoBehaviour, IDamageDealer
         lineRenderer.colorGradient = tempGradient;
     }
 
-    IEnumerator LaserColorMorph(Color newColor, float timeToMorph)      // To streamline things
+    IEnumerator LaserColorMorph(Color newColor, float timeToMorph) // To streamline things
     {
         float time = 0;
         float progress;

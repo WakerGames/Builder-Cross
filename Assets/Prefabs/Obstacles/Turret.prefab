@@ -445,7 +445,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -566,8 +566,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78907096f7fbee24c9c64d7f14656578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingDuration: 1.5
+  shootingDuration: 2
   audioData: {fileID: 3077396918548693030}
+  shootingSfx: {fileID: 8300000, guid: 3db0775054029a2458840b6318c1acdc, type: 3}
+  laserSfx: {fileID: 8300000, guid: 9fbe95fe2b3f0824398c800e8925bb9f, type: 3}
+  overheatSfx: {fileID: 8300000, guid: f3def1297ef56e847bfddc0067a89211, type: 3}
   bulletParticleEffect: {fileID: 7156768677817350234}
   shootingCollider: {fileID: 1761285361}
   horizontalForceRadius: 5

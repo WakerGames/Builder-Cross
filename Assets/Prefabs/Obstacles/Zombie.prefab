@@ -574,12 +574,8 @@ MonoBehaviour:
   characterRigidbody: {fileID: 1595157777688318803}
   characterRagdollManager: {fileID: 1949890439}
   characterDeath: {fileID: 5454921023506247147}
-  charAudioSource: {fileID: 0}
-  target: {fileID: 0}
+  charAudioSource: {fileID: -3574100477531095312}
   followArea: {fileID: 4556229911984494241}
-  x: 0
-  y: 0
-  z: 0
 --- !u!65 &2596504695715535274
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -619,7 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ragdollManager: {fileID: 1949890439}
-  deathClip: {fileID: 8300000, guid: 9a6a58dfc6f21af40b0d5faf6e24894e, type: 3}
+  deathClip: {fileID: 8300000, guid: 3c8d680d8a0ec20459559f83ab3ac43f, type: 3}
 --- !u!114 &2856240518899339473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,6 +629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterAnimatorController: {fileID: 7685105070759296533}
+  target: {fileID: 0}
 --- !u!114 &1949890439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,9 +655,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b2223438a32bcac44b1c56909a44f4f9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -704,7 +701,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

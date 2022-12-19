@@ -23,7 +23,7 @@ public class Death : MonoBehaviour
 
     public void SlowTime()
     {
-        ShowDeathScene();
+        //ShowDeathScene();
         Time.timeScale = 0.1f;
     }
 
