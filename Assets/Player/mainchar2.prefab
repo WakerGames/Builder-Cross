@@ -1687,6 +1687,8 @@ MonoBehaviour:
   characterDeath: {fileID: 936375742}
   charAudioSource: {fileID: 0}
   _joystick: {fileID: 0}
+  _deadScene: {fileID: 0}
+  _gamehud: {fileID: 0}
   _boxManager: {fileID: 8906128772543708160}
 --- !u!114 &936375742
 MonoBehaviour:
@@ -1701,9 +1703,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ragdollManager: {fileID: 8906128772543708157}
-  _deadScene: {fileID: 0}
-  _joyStick: {fileID: 0}
-  _gamehud: {fileID: 0}
   deathClip: {fileID: 0}
 --- !u!114 &6759440853578686509
 MonoBehaviour:
