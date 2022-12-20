@@ -569,7 +569,7 @@ MonoBehaviour:
   target: {fileID: 1443654007}
   rotateAngle: 90
   rotateAxis: {x: 0, y: 1, z: 0}
-  rotateSpeed: 15
+  rotateSpeed: 60
 --- !u!4 &233208527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4979137928398444, guid: 09f6dcdf77c3c114e822909385b37310, type: 3}
@@ -1222,7 +1222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec51a09fce260d642960d27efd96da86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 2.5
 --- !u!1001 &638369127
 PrefabInstance:
   m_ObjectHideFlags: 0
