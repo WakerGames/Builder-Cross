@@ -34,7 +34,6 @@ public class SpinningBlade : MonoBehaviour, IDamageDealer
     {
         if (other.gameObject.GetComponent<Character>() != null)
         {
-            //Debug.Log("la �lsene");
             DealDamage(other.gameObject);
         }
     }

@@ -6,6 +6,9 @@ using DeathCause = Death.DeathCause;
 public class FollowingZombie : Character
 {
     [SerializeField] internal BoxCollider followArea;
+
+    [SerializeField] private AudioClip biteSFX;
+    
     //[SerializeField] internal float characterMoveSpeed;
     
 
@@ -29,6 +32,9 @@ public class FollowingZombie : Character
 
             characterAnimatorController.ZombieAttack();
             collision.gameObject.GetComponent<Player>().GetBitten(this.transform);
+
+            charAudioSource.clip = biteSFX;
+            charAudioSource.Play();
         }
     }
 
