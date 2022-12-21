@@ -28,19 +28,24 @@ public class FollowingZombie : Character
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            GameObject player = collision.gameObject;
             GetComponent<ZombieMovement>().enabled = false;
 
             characterAnimatorController.ZombieAttack();
-            collision.gameObject.GetComponent<Player>().GetBitten(this.transform);
-
-            charAudioSource.clip = biteSFX;
-            charAudioSource.Play();
+            player.GetComponent<Player>().GetKilled(this.transform, 0.05f, 0.4f, player.GetComponent<AnimatorController>().PlayerBitten);
         }
+    }
+
+    private void BiteSound()    // Called in animation event
+    {
+        charAudioSource.clip = biteSFX;
+        charAudioSource.Play();
     }
 
     private void BitePlayer()   // Called in animation event
     {
-        var player = GetComponent<ZombieMovement>().GetPlayer();
+        var player = GetComponent<ZombieMovement>().GetPlayer().gameObject;
+        //player.GetComponent<AnimatorController>().PlayIdle();
         player.GetComponent<Death>().Die(true, DeathCause.Regular, null, null);
     }
 

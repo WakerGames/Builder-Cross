@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class AttackerFollowArea : MonoBehaviour
 {
-    private FollowingAttacker _attacker;
+    private AttackerMovement _attackerMovement;
 
     private void OnEnable()
     {
-        _attacker = transform.GetComponentInParent<FollowingAttacker>();
+        _attackerMovement = transform.GetComponentInParent<AttackerMovement>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _attacker.target = other.transform;
-            _attacker.GetComponent<AttackerMovement>().enabled = true;
+            _attackerMovement.SetPlayer(other.transform);
+            _attackerMovement.enabled = true;
             GetComponent<Collider>().enabled = false;
 
         }

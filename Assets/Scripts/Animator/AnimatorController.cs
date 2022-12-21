@@ -27,6 +27,17 @@ public class AnimatorController : MonoBehaviour
     {
         _animator.Play("Carrying");
     }
+
+    public void PlayerBitten()
+    {
+        _animator.Play("Player Bitten");
+    }
+
+    public void PlayerAxed()
+    {
+        _animator.Play("Player Axed");
+    }
+
     public void ZombieRun()
     {
         _animator.Play("Zombie Running");
@@ -35,6 +46,12 @@ public class AnimatorController : MonoBehaviour
     {
         _animator.Play("Attacker Running");
     }
+
+    public void AttackerAttack()
+    {
+        _animator.Play("Attacker Attack");
+    }
+
     public void SlimeWalk()
     {
         _animator.Play("SlimeWalk");

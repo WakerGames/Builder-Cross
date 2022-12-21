@@ -5,15 +5,9 @@ using DeathCause = Death.DeathCause;
 
 public class FollowingAttacker : Character
 {
-    [SerializeField] internal Transform target;
-
-    //[SerializeField] internal Animator characterAnimatorController;
     [SerializeField] internal BoxCollider followArea;
+    [SerializeField] private AudioClip attackSFX;
     //[SerializeField] internal float characterMoveSpeed;
-
-    [SerializeField] internal int x;
-    [SerializeField] internal int y;
-    [SerializeField] internal int z;
 
     private void OnEnable()
     {
@@ -22,8 +16,8 @@ public class FollowingAttacker : Character
 
     private void Start()
     {
-        GetComponent<Rigidbody>().centerOfMass = Vector3.zero;
-        GetComponent<Rigidbody>().inertiaTensorRotation = Quaternion.identity;
+        characterRigidbody.centerOfMass = Vector3.zero;
+        characterRigidbody.inertiaTensorRotation = Quaternion.identity;
     }
 
 
@@ -31,11 +25,29 @@ public class FollowingAttacker : Character
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<Death>().Die(true, DeathCause.Regular, null, null);
+            GameObject player = collision.gameObject;
             GetComponent<AttackerMovement>().enabled = false;
-            GetComponent<AnimatorController>().AttackerIdle();
+            
+            characterAnimatorController.AttackerAttack();
+            player.GetComponent<Player>().GetKilled(this.transform, 0f, 0f, player.GetComponent<AnimatorController>().PlayerAxed);
+            
             followArea.enabled = false;
+
+            
         }
+    }
+
+
+    private void AxeSound()     // Called in animation event
+    {
+        charAudioSource.clip = attackSFX;
+        charAudioSource.Play();
+    }
+
+    private void AxePlayer()    // Called in animation event
+    {
+        var player = GetComponent<AttackerMovement>().GetPlayer().gameObject;
+        player.GetComponent<Death>().Die(true, DeathCause.Regular, null, null);
     }
 
     //private void OnCollisionEnter(Collision collision)

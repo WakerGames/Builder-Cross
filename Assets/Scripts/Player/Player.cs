@@ -50,14 +50,25 @@ public class Player : Character
         CanMove = true;
     }
 
-    public void GetBitten(Transform zombieTransform)
+    public void GetKilled(Transform hostileTransform, float localXOffset, float localZOffset, Action playerAnimation)   //Animations should be stored in a scriptable object to enable abstraction
+    {
+        GetComponent<Character>().CanMove = false;
+        this.transform.parent = hostileTransform;
+        transform.localRotation = Quaternion.identity;
+        Vector3 newPosition = new Vector3(transform.localPosition.x + localXOffset, transform.localPosition.y, transform.localPosition.z + localZOffset);
+        transform.localPosition = newPosition;
+        playerAnimation();
+    }
+    
+    /*public void GetBitten(Transform zombieTransform)
     {
         GetComponent<Character>().CanMove = false;
         this.transform.parent = zombieTransform;
         transform.localRotation = Quaternion.identity;
-        Debug.Log(transform.localPosition);
         Vector3 newPosition = new Vector3(transform.localPosition.x + 0.05f, transform.localPosition.y, transform.localPosition.z + 0.25f);
         transform.localPosition = newPosition;
-        characterAnimatorController.PlayIdle();
-    }
+        characterAnimatorController.PlayerBitten();
+    }*/
+    
+    
 }
