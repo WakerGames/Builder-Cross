@@ -120,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3864946876281930892}
   m_LocalRotation: {x: 0.08525387, y: -0.32348832, z: 0.029408861, w: 0.94192475}
-  m_LocalPosition: {x: -1.6085601, y: 3.0877373, z: -3.3574746}
+  m_LocalPosition: {x: -2.37, y: 3.711, z: -3.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -149,10 +149,10 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 90
+    FieldOfView: 80
     OrthographicSize: 5
     NearClipPlane: 0.3
-    FarClipPlane: 1000
+    FarClipPlane: 800
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -266,8 +266,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.7672877, y: 4.680957, z: 11.724029}
-  m_Center: {x: -3.4626627, y: 1.8155818, z: 1.5136868}
+  m_Size: {x: 2.1105378, y: 3.2960815, z: 2.2225978}
+  m_Center: {x: 0.79229456, y: 1.1232352, z: 1.1618158}
 --- !u!114 &3864946875304549009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +344,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2e6f7326ad855b49b177c0424cae6c2, type: 3}
+--- !u!1 &3864946876639985065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2080651414192893103, guid: d2e6f7326ad855b49b177c0424cae6c2, type: 3}
+  m_PrefabInstance: {fileID: 2989538971752599814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &802236687
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3864946876639985065}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5000002, y: 3, z: 0.37481937}
+  m_Center: {x: -1.2500001, y: 1.5, z: -0.0000076293945}
 --- !u!4 &3864946876640272777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2080651414193189007, guid: d2e6f7326ad855b49b177c0424cae6c2, type: 3}

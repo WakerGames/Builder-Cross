@@ -15,7 +15,7 @@ public class BunkerEnter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //_mainCharacter.transform.eulerAngles = new Vector3(0f,0f,0f);
+            _mainCharacter.transform.Rotate(0f,0f,0f);
             _bunkerCam.SetActive(true);
             _mainCam.SetActive(false);
             _mainCharacter.GetComponent<Player>().characterMoveSpeed = 3;
