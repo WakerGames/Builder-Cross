@@ -261,7 +261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1867387537
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1689,7 +1689,6 @@ MonoBehaviour:
   _joystick: {fileID: 0}
   _deadScene: {fileID: 0}
   _gamehud: {fileID: 0}
-  _animatorController: {fileID: 0}
   _boxManager: {fileID: 8906128772543708160}
 --- !u!114 &936375742
 MonoBehaviour:
@@ -1712,7 +1711,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4118273980728965302}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb1d2073a806e214297b416dbb4b99e5, type: 3}
   m_Name: 
