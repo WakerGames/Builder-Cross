@@ -12,7 +12,6 @@ public class Player : Character
     [SerializeField] public FloatingJoystick _joystick;
     [SerializeField] public GameObject _deadScene;
     [SerializeField] public GameObject _gamehud;
-    //[SerializeField] private AnimatorController _animatorController;
     //public float characterMoveSpeed;
     //public float _rotateSpeed;
     [SerializeField] internal BoxManager _boxManager;
@@ -58,6 +57,13 @@ public class Player : Character
     private void Start()
     {
         CanMove = true;
+    }
+
+    public void GetBitten(Transform zombieTransform)
+    {
+        GetComponent<Character>().CanMove = false;
+        this.transform.parent = zombieTransform;
+        characterAnimatorController.PlayIdle();
     }
     
 

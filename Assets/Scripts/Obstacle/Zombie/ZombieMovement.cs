@@ -4,7 +4,7 @@ using UnityEngine;
 public class ZombieMovement : MonoBehaviour
 {
     [SerializeField] private AnimatorController characterAnimatorController;
-    public Transform target;
+    private Transform target;
     private float characterMoveSpeed;
     
 
@@ -20,5 +20,15 @@ public class ZombieMovement : MonoBehaviour
     {
         gameObject.transform.LookAt(target);
         transform.position = Vector3.MoveTowards(transform.position, target.position, characterMoveSpeed*Time.deltaTime);
+    }
+
+    public Transform GetPlayer()
+    {
+        return target;
+    }
+
+    public void SetPlayer(Transform player)
+    {
+        target = player;
     }
 }
