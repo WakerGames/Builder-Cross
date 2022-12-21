@@ -5,8 +5,6 @@ using DeathCause = Death.DeathCause;
 
 public class FollowingZombie : Character
 {
-
-    //[SerializeField] internal Animator characterAnimatorController;
     [SerializeField] internal BoxCollider followArea;
     //[SerializeField] internal float characterMoveSpeed;
     
@@ -18,8 +16,8 @@ public class FollowingZombie : Character
 
     private void Start()
     {
-        GetComponent<Rigidbody>().centerOfMass = Vector3.zero;
-        GetComponent<Rigidbody>().inertiaTensorRotation = Quaternion.identity;
+        characterRigidbody.centerOfMass = Vector3.zero;
+        characterRigidbody.inertiaTensorRotation = Quaternion.identity;
     }
 
 
@@ -27,21 +25,16 @@ public class FollowingZombie : Character
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            
             GetComponent<ZombieMovement>().enabled = false;
 
-            // GetComponent<AnimatorController>().ZombieAttack();
-
-            collision.gameObject.GetComponent<Character>().CanMove = false;
-            collision.gameObject.transform.parent = this.transform;
-          
-            collision.gameObject.GetComponent<AnimatorController>().PlayIdle();
+            characterAnimatorController.ZombieAttack();
+            collision.gameObject.GetComponent<Player>().GetBitten(this.transform);
         }
     }
 
-    public void BitePlayer()
+    private void BitePlayer()   // Called in animation event
     {
-        var player = GetComponent<ZombieMovement>().target.gameObject;
+        var player = GetComponent<ZombieMovement>().GetPlayer();
         player.GetComponent<Death>().Die(true, DeathCause.Regular, null, null);
     }
 

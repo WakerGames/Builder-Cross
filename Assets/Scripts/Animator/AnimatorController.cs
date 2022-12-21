@@ -51,4 +51,9 @@ public class AnimatorController : MonoBehaviour
     {
         _animator.Play("JustWalk");
     }
+    public void ZombieAttack()
+    {
+        _animator.Play("Zombie Attack");
+    }
+    
 }

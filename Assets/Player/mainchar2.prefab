@@ -1689,6 +1689,7 @@ MonoBehaviour:
   _joystick: {fileID: 0}
   _deadScene: {fileID: 0}
   _gamehud: {fileID: 0}
+  _animatorController: {fileID: 0}
   _boxManager: {fileID: 8906128772543708160}
 --- !u!114 &936375742
 MonoBehaviour:

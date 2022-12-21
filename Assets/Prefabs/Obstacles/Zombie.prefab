@@ -859,7 +859,9 @@ MonoBehaviour:
   characterRagdollManager: {fileID: 8501216949225641787}
   characterDeath: {fileID: -6456261119932573290}
   charAudioSource: {fileID: 8998553862378169388}
+  _animator: {fileID: -291369033165294197}
   followArea: {fileID: 6169295878461990970}
+  rb: {fileID: -7267806574164745391}
 --- !u!114 &5791349310192336574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,7 +875,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterAnimatorController: {fileID: -7883237875941020851}
-  target: {fileID: 0}
 --- !u!114 &-7883237875941020851
 MonoBehaviour:
   m_ObjectHideFlags: 0
