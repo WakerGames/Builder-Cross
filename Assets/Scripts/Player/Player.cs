@@ -10,7 +10,6 @@ public class Player : Character
 {
     [SerializeField] public FloatingJoystick _joystick;
     [SerializeField] public GameObject _deadScene;
-
     [SerializeField] public GameObject _gamehud;
 
     //public float characterMoveSpeed;
@@ -52,6 +51,7 @@ public class Player : Character
 
     public void GetKilled(Transform hostileTransform, float localXOffset, float localZOffset, Action playerAnimation)   //Animations should be stored in a scriptable object to enable abstraction
     {
+        //SceneOpen();
         GetComponent<Character>().CanMove = false;
         this.transform.parent = hostileTransform;
         transform.localRotation = Quaternion.identity;
@@ -60,6 +60,12 @@ public class Player : Character
         playerAnimation();
     }
     
+    public void SceneOpen()
+    {
+        _deadScene.SetActive(true);
+        _gamehud.SetActive(false);
+        _joystick.enabled = false;
+    }
     /*public void GetBitten(Transform zombieTransform)
     {
         GetComponent<Character>().CanMove = false;

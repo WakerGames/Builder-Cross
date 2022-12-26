@@ -1,7 +1,9 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class BoxManager : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class BoxManager : MonoBehaviour
     public GameObject[] BoxUI;
     private int index=0;
     [SerializeField] AudioSource _boxSound;
+    public CinemachineVirtualCamera _mainCamera;
     public static BoxManager Instance { get; set; }
 
     public List<GameObject> BoxesOnHand = new List<GameObject>();
@@ -48,13 +51,15 @@ public class BoxManager : MonoBehaviour
         {
             _currentBox = other.gameObject;
             _hasBox = true;
+
+            StartCoroutine(BoostCamera());
             
             SetChild(other.gameObject);
             BoxesOnHand.Add(other.gameObject);
             _countBox++;
-
+            
             Handheld.Vibrate();
-
+            
             GetComponent<Player>().characterMoveSpeed -= 1f;
         }
     }
@@ -97,5 +102,11 @@ public class BoxManager : MonoBehaviour
     public bool GetHaveBox()
     {
         return _hasBox;
+    }
+    IEnumerator BoostCamera()
+    {
+        _mainCamera.m_Lens.FieldOfView = 120;
+        yield return new WaitForSeconds(1f);
+        _mainCamera.m_Lens.FieldOfView = 110;
     }
 }
