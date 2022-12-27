@@ -561,8 +561,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: MuteToggle
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -889,8 +889,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: MuteToggle
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1104,7 +1104,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 32767
   m_TargetDisplay: 0
 --- !u!114 &7349808454730677982
 MonoBehaviour:
