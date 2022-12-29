@@ -53,6 +53,7 @@ public class Mine : MonoBehaviour, IDamageDealer
     {
         if (collision.gameObject.GetComponent<Character>() != null)
         {
+            Debug.Log("la");
             DealDamage(collision.gameObject);
             StartCoroutine(MineExplosion());
         }

@@ -25,16 +25,16 @@ public class SpinningBlade : MonoBehaviour, IDamageDealer
         other.GetComponent<Death>().Die(other.TryGetComponent(out Player temp), DeathCause.Regular, null, null);
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    DealDamage(collision.gameObject);
-    //}
-
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.GetComponent<Character>() != null)
-        {
-            DealDamage(other.gameObject);
-        }
+        DealDamage(collision.gameObject);
     }
+
+    //private void OnCollisionEnter(Collision other)
+    //{
+    //    if (other.gameObject.GetComponent<Character>() != null)
+    //    {
+    //        DealDamage(other.gameObject);
+    //    }
+    //}
 }

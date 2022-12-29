@@ -21,9 +21,51 @@ EditorBuildSettings:
     path: Assets/Scenes/ProdScenes/Levels/Level4.unity
     guid: e1871845726eb6443b2bf4c73d4fc792
   - enabled: 1
-    path: Assets/Scenes/ProdScenes/Levels/level5.unity
-    guid: 78b9fbf762d2dc140b1f8b089007843f
+    path: Assets/Scenes/ProdScenes/Levels/level5bonus.unity
+    guid: 3fbce951dafec0642910309c3494c961
   - enabled: 1
     path: Assets/Scenes/ProdScenes/Levels/level6.unity
     guid: f89e1c86d4537a84d80229d353a3bab4
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level7.unity
+    guid: fcbbb9d61d6e1d54991cd3acfba0934f
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level8.unity
+    guid: 4af1f0aaef4dac84993da7003908d8b8
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level9.unity
+    guid: 364ee2ab809060e41b850a7f4d7b4a09
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level10bonus 1.unity
+    guid: 2c87e83eeb4069b47893997f9cc004b1
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level11.unity
+    guid: 9c71d5b7a7e90dd4089097803e1197ec
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level12.unity
+    guid: da1c511f5e60c504a80e2525c9802bd1
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level13.unity
+    guid: 7c589694b13dcb54594df20f593a795b
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level14.unity
+    guid: bb3629f14d51e5d458ebc10cf6934ab6
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level15Bonus.unity
+    guid: 5c622e49bae84bf43adca7732419e7f1
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level16.unity
+    guid: 0b06103f228eabb40a1240687b8e470a
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level17.unity
+    guid: 4e7f9343e9a8c894c9d5399fc8f41777
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level18.unity
+    guid: 4a38b752b2571f64a9dbc9b5ce8ce48a
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level19.unity
+    guid: 262d3a1747e7b9c44835b91246616051
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level20bonus.unity
+    guid: 78b9fbf762d2dc140b1f8b089007843f
   m_configObjects: {}

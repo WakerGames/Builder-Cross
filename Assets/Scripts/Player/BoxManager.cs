@@ -2,6 +2,7 @@ using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 
@@ -16,6 +17,7 @@ public class BoxManager : MonoBehaviour
     private int index=0;
     [SerializeField] AudioSource _boxSound;
     public CinemachineVirtualCamera _mainCamera;
+    public bool _fovCam = false;
     public static BoxManager Instance { get; set; }
 
     public List<GameObject> BoxesOnHand = new List<GameObject>();
@@ -31,7 +33,20 @@ public class BoxManager : MonoBehaviour
             Instance = this;
         }
     }
-    
+
+    //private void Update()
+    //{
+    //    if (_fovCam)
+    //    {
+    //        Debug.Log("_fovcam");
+    //        _mainCamera.m_Lens.FieldOfView = Mathf.Lerp(120, 110, 0.1f);
+    //        if (_mainCamera.m_Lens.FieldOfView == 110)
+    //        {
+    //            _fovCam = false;
+    //            Debug.Log("_fovcam false");
+    //        }
+    //    }
+    //}
 
     private void OnEnable()
     {
@@ -52,7 +67,7 @@ public class BoxManager : MonoBehaviour
             _currentBox = other.gameObject;
             _hasBox = true;
 
-            StartCoroutine(BoostCamera());
+            //StartCoroutine(BoostCamera());
             
             SetChild(other.gameObject);
             BoxesOnHand.Add(other.gameObject);
@@ -103,10 +118,11 @@ public class BoxManager : MonoBehaviour
     {
         return _hasBox;
     }
-    IEnumerator BoostCamera()
-    {
-        _mainCamera.m_Lens.FieldOfView = 120;
-        yield return new WaitForSeconds(1f);
-        _mainCamera.m_Lens.FieldOfView = 110;
-    }
+    //IEnumerator BoostCamera()
+    //{
+    //    _mainCamera.m_Lens.FieldOfView = 120;
+    //    _fovCam = true;
+    //    yield return new WaitForSeconds(0f);
+    //    //_mainCamera.m_Lens.FieldOfView = 110;
+    //}
 }
