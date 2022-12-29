@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7532604081015088003, guid: 04a9ec0f0e512f74494183bbb346e572, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.09
+      value: 11.2
       objectReference: {fileID: 0}
     - target: {fileID: 7532604081015088003, guid: 04a9ec0f0e512f74494183bbb346e572, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9313,7 +9313,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 110
     OrthographicSize: 5
-    NearClipPlane: 0.001
+    NearClipPlane: 0.01
     FarClipPlane: 100
     Dutch: 0
     ModeOverride: 0

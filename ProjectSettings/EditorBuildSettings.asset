@@ -68,4 +68,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ProdScenes/Levels/level20bonus.unity
     guid: 78b9fbf762d2dc140b1f8b089007843f
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level21.unity
+    guid: e3253e250f38b7543b0293c29fb57a16
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level22.unity
+    guid: 571d854e9505e82458b35ccc7b56339a
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level23.unity
+    guid: cee8a0e50bb391242b7e37a545d807a6
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level24.unity
+    guid: 7f29eb19f453dfd4db3069f7946689dd
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level25bonus.unity
+    guid: 9be0dfb7311b14f4da2c6ab7fa8799c1
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level26.unity
+    guid: 755be2bc25d586b428cbe2ab04bee54a
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level27.unity
+    guid: 87776f432c7b6064a80a449b51daf23c
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level28.unity
+    guid: 539ed232c552cfc498f6ddd67a66c867
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level29.unity
+    guid: 980c9abdf02652042bf3ea129021b191
+  - enabled: 1
+    path: Assets/Scenes/ProdScenes/Levels/level30bonus.unity
+    guid: 07fe01ec997475a47b8bf511ec886360
   m_configObjects: {}
