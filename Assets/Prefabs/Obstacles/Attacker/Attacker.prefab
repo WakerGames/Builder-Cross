@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 8035158213390669640}
   - component: {fileID: 2591430740178748262}
   - component: {fileID: 8657845487891377820}
+  - component: {fileID: 2858400481644245462}
   m_Layer: 0
   m_Name: Attacker
   m_TagString: Untagged
@@ -527,6 +528,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!205 &2858400481644245462
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419580404597798996}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.058781028, y: 0.8832228, z: 0.07380995}
+  m_Size: 2.1683357
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0492548
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5892634776859111136}
+    - renderer: {fileID: 6605057173828943675}
+  m_Enabled: 1
 --- !u!1 &431540803984600083
 GameObject:
   m_ObjectHideFlags: 0
@@ -4054,5 +4075,10 @@ PrefabInstance:
 --- !u!4 &5468157599719867476 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 84a012abb02c85a468c704860eadf5d7, type: 3}
+  m_PrefabInstance: {fileID: 5505779328880387007}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6605057173828943675 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 84a012abb02c85a468c704860eadf5d7, type: 3}
   m_PrefabInstance: {fileID: 5505779328880387007}
   m_PrefabAsset: {fileID: 0}

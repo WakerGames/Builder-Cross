@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 653805034073072183}
   - component: {fileID: 4000331373145761230}
   - component: {fileID: 841111063179591580}
+  - component: {fileID: 8116220959578981569}
   m_Layer: 0
   m_Name: Mine
   m_TagString: DeadlyObstacle
@@ -373,6 +374,29 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3.15
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!205 &8116220959578981569
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8257832093535544094}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0.06967944, z: 0}
+  m_Size: 0.47851542
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0492548
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 7609195481690669771}
+    - renderer: {fileID: 7632367263232859215}
+    - renderer: {fileID: 7632384766208800893}
+    - renderer: {fileID: 7631384350579974317}
+    - renderer: {fileID: 7633003037143703065}
+  m_Enabled: 1
 --- !u!1001 &7723192466609213093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -446,6 +470,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cf45cdce36e66e4a93614abb5ae7821, type: 3}
+--- !u!199 &7631384350579974317 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 199940705928113672, guid: 4cf45cdce36e66e4a93614abb5ae7821, type: 3}
+  m_PrefabInstance: {fileID: 7723192466609213093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!199 &7632367263232859215 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 199802392133735146, guid: 4cf45cdce36e66e4a93614abb5ae7821, type: 3}
+  m_PrefabInstance: {fileID: 7723192466609213093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!199 &7632384766208800893 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 199819885978416856, guid: 4cf45cdce36e66e4a93614abb5ae7821, type: 3}
+  m_PrefabInstance: {fileID: 7723192466609213093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!199 &7633003037143703065 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 199167130600116412, guid: 4cf45cdce36e66e4a93614abb5ae7821, type: 3}
+  m_PrefabInstance: {fileID: 7723192466609213093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &7633057741385677557 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198258662121256016, guid: 4cf45cdce36e66e4a93614abb5ae7821, type: 3}

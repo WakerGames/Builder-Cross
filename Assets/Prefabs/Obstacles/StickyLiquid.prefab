@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 845152149255681786}
   - component: {fileID: -835394116249344288}
   - component: {fileID: 4998565177786493963}
+  - component: {fileID: -8019092909344567713}
   m_Layer: 0
   m_Name: StickyLiquid
   m_TagString: Untagged
@@ -112,7 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e1aaa065e68264fabe504729eb6642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stickySound: {fileID: 4998565177786493963}
 --- !u!82 &4998565177786493963
 AudioSource:
   m_ObjectHideFlags: 0
@@ -209,3 +209,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!205 &-8019092909344567713
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4864423115759495402}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.30522954, y: 0.021582998, z: 0.82801723}
+  m_Size: 2.3304625
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.054302502
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6377408772002056511}
+  m_Enabled: 1

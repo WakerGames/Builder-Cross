@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3361502132611480314}
   - component: {fileID: 667239905915997744}
   - component: {fileID: 2810923232789867313}
+  - component: {fileID: 7299877120150983283}
   m_Layer: 0
   m_Name: Barrier3
   m_TagString: Untagged
@@ -97,3 +98,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4073713, y: 1.6148521, z: 1.0459871}
   m_Center: {x: 0.028318524, y: 0.80742544, z: -0.07958853}
+--- !u!205 &7299877120150983283
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315754061151678437}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.028318524, y: 0.54010355, z: -0.07958853}
+  m_Size: 2.4073713
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.046342112
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 667239905915997744}
+  m_Enabled: 1
