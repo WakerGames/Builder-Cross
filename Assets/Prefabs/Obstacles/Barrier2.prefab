@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5645449232632089392}
   - component: {fileID: 7619067351108517882}
   - component: {fileID: 8918907220164202301}
+  - component: {fileID: 6430159441659921808}
   m_Layer: 0
   m_Name: Barrier2
   m_TagString: Untagged
@@ -97,3 +98,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.8143294, y: 0.97131634, z: 0.68161505}
   m_Center: {x: 0, y: 0.48565817, z: 0}
+--- !u!205 &6430159441659921808
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267660120267611695}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.02
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1

@@ -9,13 +9,21 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (PlayerPrefs.GetInt("Level") > 0)
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetInt("Level"));
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
     public void PauseTime()
     {
         Time.timeScale = 0;
         AudioListener.pause = true;
-
     }
     public void PlayTime()
     {
@@ -28,12 +36,12 @@ public class MainMenu : MonoBehaviour
     {
         if(muted)
         {
-            Debug.Log("Ses Açýk");
+            Debug.Log("Ses Aï¿½ï¿½k");
             AudioListener.volume= 1;
         }
         else
         {
-            Debug.Log("Ses Kapandý");
+            Debug.Log("Ses Kapandï¿½");
             AudioListener.volume= 0;
         }
     }

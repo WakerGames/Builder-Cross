@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BunkerEnter : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class BunkerEnter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            PlayerPrefs.SetInt("Level", SceneManager.GetActiveScene().buildIndex + 1);  //For saving
+
             _mainCharacter.transform.Rotate(0f,0f,0f);
             _bunkerCam.SetActive(true);
             _mainCam.SetActive(false);
