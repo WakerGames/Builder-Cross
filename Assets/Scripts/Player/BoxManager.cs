@@ -21,6 +21,7 @@ public class BoxManager : MonoBehaviour
     public static BoxManager Instance { get; set; }
 
     public List<GameObject> BoxesOnHand = new List<GameObject>();
+    [SerializeField] private SettingsSO settings;
 
     private void Awake()
     {
@@ -72,9 +73,12 @@ public class BoxManager : MonoBehaviour
             SetChild(other.gameObject);
             BoxesOnHand.Add(other.gameObject);
             _countBox++;
-            
-            Handheld.Vibrate();
-            
+
+            if (settings.vibrationEnabled)
+            {
+                Handheld.Vibrate();    
+            }
+
             GetComponent<Player>().characterMoveSpeed -= 1f;
         }
     }

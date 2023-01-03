@@ -2904,6 +2904,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 742785603, guid: 3b39980aebbb3fc4693386055692cc31, type: 3}
+      propertyPath: soundOnButton
+      value: 
+      objectReference: {fileID: 838790071}
+    - target: {fileID: 742785603, guid: 3b39980aebbb3fc4693386055692cc31, type: 3}
+      propertyPath: soundOffButton
+      value: 
+      objectReference: {fileID: 838790070}
+    - target: {fileID: 742785603, guid: 3b39980aebbb3fc4693386055692cc31, type: 3}
+      propertyPath: vibrationOnButton
+      value: 
+      objectReference: {fileID: 838790069}
+    - target: {fileID: 742785603, guid: 3b39980aebbb3fc4693386055692cc31, type: 3}
+      propertyPath: vibrationOffButton
+      value: 
+      objectReference: {fileID: 838790068}
     - target: {fileID: 1453274655, guid: 3b39980aebbb3fc4693386055692cc31, type: 3}
       propertyPath: _joyStick
       value: 
@@ -2916,21 +2932,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1537018946}
-    - target: {fileID: 3277998981421132458, guid: 3b39980aebbb3fc4693386055692cc31, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 3277998981421132458, guid: 3b39980aebbb3fc4693386055692cc31, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3277998981916968320, guid: 3b39980aebbb3fc4693386055692cc31, type: 3}
       propertyPath: m_Name
       value: GameHUID
-      objectReference: {fileID: 0}
-    - target: {fileID: 3277998981916968320, guid: 3b39980aebbb3fc4693386055692cc31, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3277998981916968323, guid: 3b39980aebbb3fc4693386055692cc31, type: 3}
       propertyPath: m_Camera
@@ -3382,6 +3386,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 469300f62df5b674aa77ee2eb9cc79cb, type: 3}
+--- !u!1 &838790068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2052369032, guid: 469300f62df5b674aa77ee2eb9cc79cb, type: 3}
+  m_PrefabInstance: {fileID: 838790067}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &838790069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7349808455655943554, guid: 469300f62df5b674aa77ee2eb9cc79cb, type: 3}
+  m_PrefabInstance: {fileID: 838790067}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &838790070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2965690625352077159, guid: 469300f62df5b674aa77ee2eb9cc79cb, type: 3}
+  m_PrefabInstance: {fileID: 838790067}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &838790071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7349808453772173115, guid: 469300f62df5b674aa77ee2eb9cc79cb, type: 3}
+  m_PrefabInstance: {fileID: 838790067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &843693415
 GameObject:
   m_ObjectHideFlags: 3
