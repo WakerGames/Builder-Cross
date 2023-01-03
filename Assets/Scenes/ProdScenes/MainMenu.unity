@@ -3332,6 +3332,7 @@ GameObject:
   - component: {fileID: 2107488220}
   - component: {fileID: 2107488222}
   - component: {fileID: 2107488221}
+  - component: {fileID: 2107488223}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3379,7 +3380,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Day 12
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 22fe859de939f9c46a7b0410eb8a2d4c, type: 2}
   m_sharedMaterial: {fileID: -7181702403704261741, guid: 22fe859de939f9c46a7b0410eb8a2d4c, type: 2}
@@ -3456,6 +3457,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107488219}
   m_CullTransparentMesh: 1
+--- !u!114 &2107488223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107488219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af84a2323203154fa6e045241d71e6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dayText: {fileID: 2107488221}
 --- !u!4 &2142422005 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4198196773594438, guid: 6697f20dcecf6a247b43006ef8472d83, type: 3}

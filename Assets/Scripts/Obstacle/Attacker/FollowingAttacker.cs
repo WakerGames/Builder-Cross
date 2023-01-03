@@ -25,15 +25,18 @@ public class FollowingAttacker : Character
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameObject player = collision.gameObject;
+            Player player = collision.gameObject.GetComponent<Player>();
             GetComponent<AttackerMovement>().enabled = false;
-            
-            characterAnimatorController.AttackerAttack();
-            player.GetComponent<Player>().GetKilled(this.transform, 0f, 0f, player.GetComponent<AnimatorController>().PlayerAxed);
-            
-            followArea.enabled = false;
 
-            
+            if (!player.isBeingKilled) 
+            {
+                player.isBeingKilled = true;
+                characterAnimatorController.AttackerAttack();
+                player.GetKilled(this.transform, 0f, 0f, player.GetComponent<AnimatorController>().PlayerAxed);
+
+                followArea.enabled = false;
+            }
+ 
         }
     }
 

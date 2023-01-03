@@ -11,6 +11,8 @@ public class Player : Character
     [SerializeField] public FloatingJoystick _joystick;
     [SerializeField] public GameObject _deadScene;
     [SerializeField] public GameObject _gamehud;
+    [SerializeField] public AudioSource _themeSong;
+    public bool isBeingKilled = false;
 
     //public float characterMoveSpeed;
     //public float _rotateSpeed;

@@ -8,9 +8,9 @@ public class FollowingZombie : Character
     [SerializeField] internal BoxCollider followArea;
 
     [SerializeField] private AudioClip biteSFX;
-    
+
     //[SerializeField] internal float characterMoveSpeed;
-    
+
 
     private void OnEnable()
     {
@@ -28,11 +28,16 @@ public class FollowingZombie : Character
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameObject player = collision.gameObject;
+            Player player = collision.gameObject.GetComponent<Player>();
             GetComponent<ZombieMovement>().enabled = false;
 
-            characterAnimatorController.ZombieAttack();
-            player.GetComponent<Player>().GetKilled(this.transform, 0.05f, 0.4f, player.GetComponent<AnimatorController>().PlayerBitten);
+            if (!player.isBeingKilled)
+            {
+                player.isBeingKilled = true;
+
+                characterAnimatorController.ZombieAttack();
+                player.GetKilled(this.transform, 0.05f, 0.4f, player.GetComponent<AnimatorController>().PlayerBitten);
+            }
         }
     }
 

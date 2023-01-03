@@ -73,5 +73,6 @@ public class Death : MonoBehaviour
         player._deadScene.SetActive(true);
         player._joystick.gameObject.SetActive(false);
         player._gamehud.SetActive(false);
+        player._themeSong.Stop();
     }
 }
