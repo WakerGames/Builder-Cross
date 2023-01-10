@@ -1772,6 +1772,7 @@ MonoBehaviour:
   _mainCamera: {fileID: 0}
   _fovCam: 0
   BoxesOnHand: []
+  settings: {fileID: 0}
 --- !u!114 &8906128772543708161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1795,6 +1796,7 @@ MonoBehaviour:
   _deadScene: {fileID: 0}
   _gamehud: {fileID: 0}
   _themeSong: {fileID: 936419551577754846}
+  isBeingKilled: 0
   _boxManager: {fileID: 8906128772543708160}
 --- !u!114 &936375742
 MonoBehaviour:

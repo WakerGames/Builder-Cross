@@ -13,7 +13,7 @@ public class FollowToxinEdge : MonoBehaviour
     {
         if (img.GetComponent<Image>().fillAmount < .98f)
         {
-            edgeImg.GetComponent<RectTransform>().localPosition = new Vector3(-50, img.GetComponent<Image>().fillAmount * 1268 - 610, 0);
+            edgeImg.GetComponent<RectTransform>().localPosition = new Vector3(-7 , (img.GetComponent<Image>().fillAmount * 700)+172, 0);
         }
         else
         {
