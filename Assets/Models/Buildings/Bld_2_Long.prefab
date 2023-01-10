@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6281388852032094993}
   - component: {fileID: 6954721607041928372}
   - component: {fileID: 5143345236074248318}
-  - component: {fileID: 1822580193070259521}
   m_Layer: 0
   m_Name: Bld_2_Long
   m_TagString: Untagged
@@ -85,22 +84,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!205 &1822580193070259521
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6656365663965714859}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.0005
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 5143345236074248318}
-  m_Enabled: 0

@@ -49,7 +49,7 @@ public class FollowingZombie : Character
 
     private void BitePlayer()   // Called in animation event
     {
-        var player = GetComponent<ZombieMovement>().GetPlayer().gameObject;
+        var player = GameObject.FindWithTag("Player");
         //player.GetComponent<AnimatorController>().PlayIdle();
         player.GetComponent<Death>().Die(true, DeathCause.Regular, null, null);
     }

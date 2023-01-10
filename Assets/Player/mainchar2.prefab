@@ -1758,6 +1758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80eb2acb5b488e49b1ca6f7d25253ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boxSlowAmount: 1
   BoxArray:
   - {fileID: 0}
   - {fileID: 0}
@@ -1772,7 +1773,7 @@ MonoBehaviour:
   _mainCamera: {fileID: 0}
   _fovCam: 0
   BoxesOnHand: []
-  settings: {fileID: 0}
+  settings: {fileID: 11400000, guid: afdecc93f49d83d41bfd1bf7e6fe373d, type: 2}
 --- !u!114 &8906128772543708161
 MonoBehaviour:
   m_ObjectHideFlags: 0

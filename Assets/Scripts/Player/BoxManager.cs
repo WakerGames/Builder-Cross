@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class BoxManager : MonoBehaviour
 {
+    [SerializeField] private float boxSlowAmount;
     public GameObject[] BoxArray;
     private bool _hasBox;
     private int _countBox = 1;
@@ -79,7 +80,7 @@ public class BoxManager : MonoBehaviour
                 Handheld.Vibrate();    
             }
 
-            GetComponent<Player>().characterMoveSpeed -= 1f;
+            GetComponent<Player>().characterMoveSpeed -= boxSlowAmount;
         }
     }
 
