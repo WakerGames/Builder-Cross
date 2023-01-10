@@ -16,7 +16,7 @@ public class BunkerEnter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerPrefs.SetInt("Level", SceneManager.GetActiveScene().buildIndex + 1);  //For saving
+            PlayerPrefs.SetInt("Level", (SceneManager.GetActiveScene().buildIndex + 1 % SceneManager.sceneCount));  //For saving
 
             _mainCharacter.transform.Rotate(0f,0f,0f);
             _bunkerCam.SetActive(true);
@@ -24,6 +24,7 @@ public class BunkerEnter : MonoBehaviour
             _mainCharacter.GetComponent<Player>().characterMoveSpeed = 3;
             _gameHUD.SetActive(false);
             _joystick.SetActive(false);
+            
             if (_mainCharacter.GetComponent<BoxManager>().BoxesOnHand.Count == 3)
             {
                 _survivedScene.SetActive(true);
