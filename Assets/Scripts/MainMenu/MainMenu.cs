@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
+        
         if (PlayerPrefs.GetInt("Level") > 0)
         {
             SceneManager.LoadScene(PlayerPrefs.GetInt("Level"));
@@ -23,9 +24,17 @@ public class MainMenu : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
-
+    public  void DeletePref()
+    {
+        PlayerPrefs.DeleteKey("Level");
+    }
+    public void OpenNextScene()
+    {
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
     public void PauseTime()
     {
         Time.timeScale = 0;
@@ -127,6 +136,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+       
         RestoreSettings();
     }
 }

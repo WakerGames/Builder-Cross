@@ -1387,6 +1387,7 @@ GameObject:
   - component: {fileID: 7349808455159527839}
   - component: {fileID: 7349808455159527832}
   - component: {fileID: 7349808455159527833}
+  - component: {fileID: 838790073}
   m_Layer: 5
   m_Name: ABS button
   m_TagString: Untagged
@@ -1496,9 +1497,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ButtonSound
+      - m_Target: {fileID: 838790073}
+        m_TargetAssemblyTypeName: MakePurchase, Assembly-CSharp
+        m_MethodName: MakePurchaseButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1508,6 +1509,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &838790073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7349808455159527835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bf26188195d9fb4fb0a13b1c05551d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7349808455655943554
 GameObject:
   m_ObjectHideFlags: 0

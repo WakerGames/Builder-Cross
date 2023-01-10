@@ -15,7 +15,7 @@ public class BoxManager : MonoBehaviour
     [SerializeField] private GameObject boxPlace;
     [SerializeField] private GameObject _currentBox;
     public GameObject[] BoxUI;
-    private int index=0;
+    private int index = 0;
     [SerializeField] AudioSource _boxSound;
     public CinemachineVirtualCamera _mainCamera;
     public bool _fovCam = false;
@@ -68,16 +68,16 @@ public class BoxManager : MonoBehaviour
         {
             _currentBox = other.gameObject;
             _hasBox = true;
-
             //StartCoroutine(BoostCamera());
-            
+
             SetChild(other.gameObject);
-            BoxesOnHand.Add(other.gameObject);
             _countBox++;
+            BoxesOnHand.Add(other.gameObject);
+
 
             if (settings.vibrationEnabled)
             {
-                Handheld.Vibrate();    
+                Handheld.Vibrate();
             }
 
             GetComponent<Player>().characterMoveSpeed -= boxSlowAmount;
@@ -96,20 +96,26 @@ public class BoxManager : MonoBehaviour
                 BoxesOnHand[i].GetComponent<Rigidbody>().useGravity = true;
                 BoxesOnHand[i].transform.parent = null;
             }
-           
+
         }
     }
 
     void SetChild(GameObject collectable)
     {
         _boxSound.Play();
+
+
         BoxUI[index].SetActive(true);
+
+
         index++;
+
+
         collectable.transform.parent = boxPlace.transform;
         collectable.transform.localPosition = new Vector3(0, 0, 0);
         if (_countBox == 2)
         {
-            
+
             collectable.transform.localPosition = new Vector3(0, 0.5f, 0);
         }
 
@@ -122,7 +128,9 @@ public class BoxManager : MonoBehaviour
     public bool GetHaveBox()
     {
         return _hasBox;
+
     }
+
     //IEnumerator BoostCamera()
     //{
     //    _mainCamera.m_Lens.FieldOfView = 120;

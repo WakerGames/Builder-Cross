@@ -27,7 +27,9 @@ public class SpinningBlade : MonoBehaviour, IDamageDealer
 
     private void OnCollisionEnter(Collision collision)
     {
-        DealDamage(collision.gameObject);
+        if(collision.gameObject.GetComponent<Character>()!=null)
+            DealDamage(collision.gameObject);
+
     }
 
     //private void OnCollisionEnter(Collision other)
