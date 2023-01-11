@@ -89,9 +89,7 @@ public class PurchaseManager : MonoBehaviour, IStoreListener
         if (purchaseEvent.purchasedProduct.definition.id == "remove_ads")
         {
             Debug.Log("here");
-            PlayerPrefs.SetInt("REMOVEADS", 1);
-            if (OnPurchase != null)
-                OnPurchase();
+            PurchaseRemoveAds();
         }
         //SendPurchaseInfo();
         return PurchaseProcessingResult.Complete;
@@ -101,19 +99,32 @@ public class PurchaseManager : MonoBehaviour, IStoreListener
     {
         controller.InitiatePurchase("remove_ads");
     }
-    public void OnInitialized(IStoreController controller, IExtensionProvider extensions)
+    public void RestorePurchases()
     {
-        extensions.GetExtension<IAppleExtensions>().RestoreTransactions(result => {
-            if (result)
-            {
-                PlayerPrefs.SetInt("REMOVEADS", 1);
-                if (OnPurchase != null)
-                    OnPurchase();
-            }
-            else
-            {
-                // Restoration failed.
-            }
-        });
+        
+
+        if (Application.platform == RuntimePlatform.IPhonePlayer)
+            
+        {
+            //Debug.Log("RestorePurchases started ...");
+
+            var apple = extensions.GetExtension<IAppleExtensions>();
+            apple.RestoreTransactions((result) => {
+                PurchaseRemoveAds();
+                //Debug.Log("RestorePurchases continuing: " + result + ". If no further messages, no purchases available to restore.");
+                
+            });
+        }
+        else
+        {
+            //Debug.Log("RestorePurchases FAIL. Not supported on this platform. Current = " + Application.platform);
+        }
+    }
+    public void PurchaseRemoveAds()
+    {
+        PlayerPrefs.SetInt("REMOVEADS", 1);
+        if (OnPurchase != null)
+            OnPurchase();
+
     }
 }

@@ -40,4 +40,9 @@ public class MakePurchase : MonoBehaviour
     {
         PurchaseManager.Instance.RemoveAdsCompleted();
     }
+    public void RestorePurchase()
+    {
+        PurchaseManager.Instance.RestorePurchases();
+    }
+    
 }
