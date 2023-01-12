@@ -35,20 +35,20 @@ public class ObjectPooler : MonoBehaviour
 
     void Start()
     {
-        PoolDictionary = new Dictionary<string, Queue<GameObject>>();
+        //PoolDictionary = new Dictionary<string, Queue<GameObject>>();
 
-        foreach (Pool pool in pools)
-        {
-            Queue<GameObject> objectPool = new Queue<GameObject>();
+        //foreach (Pool pool in pools)
+        //{
+        //    Queue<GameObject> objectPool = new Queue<GameObject>();
 
-            for (int i = 0; i < pool.size; i++)
-            {
-                GameObject obj = PrefabUtility.InstantiatePrefab(pool.prefab) as GameObject;
-                if (obj != null) obj.SetActive(false);
-                objectPool.Enqueue(obj);
-            }
-            PoolDictionary.Add(pool.prefabTag, objectPool);
-        }
+        //    for (int i = 0; i < pool.size; i++)
+        //    {
+        //        GameObject obj = PrefabUtility.InstantiatePrefab(pool.prefab) as GameObject;
+        //        if (obj != null) obj.SetActive(false);
+        //        objectPool.Enqueue(obj);
+        //    }
+        //    PoolDictionary.Add(pool.prefabTag, objectPool);
+        //}
     }
 
     public GameObject SpawnFromPool(string prefabTag, Vector3 position, Quaternion rotation)

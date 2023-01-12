@@ -11,12 +11,14 @@ GameObject:
   - component: {fileID: 1804166589990925663}
   - component: {fileID: 3361502132611480314}
   - component: {fileID: 667239905915997744}
+  - component: {fileID: 2810923232789867313}
+  - component: {fileID: 7299877120150983283}
   m_Layer: 0
   m_Name: Barrier3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1804166589990925663
 Transform:
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315754061151678437}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.6963835, y: 0.00000032499287, z: 18.517406}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -61,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -451139485529134152, guid: 7929039b8a493c24e99278c10c547f47, type: 3}
+  - {fileID: 2100000, guid: 98dd7ea6eb0bc33439b4ce7f868d3e22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,3 +85,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2810923232789867313
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315754061151678437}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4073713, y: 1.6148521, z: 1.0459871}
+  m_Center: {x: 0.028318524, y: 0.80742544, z: -0.07958853}
+--- !u!205 &7299877120150983283
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315754061151678437}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.028318524, y: 0.54010355, z: -0.07958853}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.01
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 667239905915997744}
+  m_Enabled: 1
