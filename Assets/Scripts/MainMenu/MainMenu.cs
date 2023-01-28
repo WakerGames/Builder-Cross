@@ -32,8 +32,9 @@ public class MainMenu : MonoBehaviour
     }
     public void OpenNextScene()
     {
-        
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
+
     }
     public void PauseTime()
     {
