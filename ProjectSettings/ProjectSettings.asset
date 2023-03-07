@@ -249,7 +249,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: '{dedicated}: Desktop/walkerKeyStore.keystore'
+  AndroidKeystoreName: C:/Users/user/Desktop/kodlar/Key/walkerKeyStore.keystore
   AndroidKeyaliasName: emir
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0

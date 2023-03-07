@@ -22,7 +22,7 @@ public class PurchaseManager : MonoBehaviour, IStoreListener
     public static PurchaseManager Instance { get { return _instance; } }
 
     public delegate void PurchaseSuccessEvent();
-    public  PurchaseSuccessEvent OnPurchase;
+    public static PurchaseSuccessEvent OnPurchase;
 
     private void Awake()
     {

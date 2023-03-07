@@ -8,11 +8,11 @@ public class MakePurchase : MonoBehaviour
 
     private void OnEnable()
     {
-        PurchaseManager.Instance.OnPurchase += OnPurchaseAction;
+        PurchaseManager.OnPurchase += OnPurchaseAction;
     }
     private void OnDisable()
     {
-        PurchaseManager.Instance.OnPurchase -= OnPurchaseAction;
+        PurchaseManager.OnPurchase -= OnPurchaseAction;
     }
     void Start()
     {

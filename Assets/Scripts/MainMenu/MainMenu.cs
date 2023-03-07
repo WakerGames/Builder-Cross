@@ -36,6 +36,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
 
     }
+
+    public void GoFirstScene()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void PauseTime()
     {
         Time.timeScale = 0;

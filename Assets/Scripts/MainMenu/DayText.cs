@@ -10,8 +10,14 @@ public class DayText : MonoBehaviour
 
     void Start()
     {
-        _dayText.text = "Day " + PlayerPrefs.GetInt("Level").ToString();
-        
+        if(PlayerPrefs.GetInt("Level") >= 1)
+        {
+            _dayText.text = "Day " + PlayerPrefs.GetInt("Level").ToString();
+        }
+        else
+        {
+            _dayText.text = "Day 1";
+        }
     }
 
 }
