@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
-public class AdManager : MonoBehaviour, IUnityAdsListener
+public class AdManager : MonoBehaviour, IUnityAdsShowListener, IUnityAdsLoadListener, IUnityAdsInitializationListener
 {
 #if UNITY_IOS
  string gameId = "5113055";
@@ -39,8 +39,10 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     }
     void Start()
     {
-        Advertisement.Initialize(gameId);
-        Advertisement.AddListener(this);
+        Advertisement.Initialize(gameId, false, this);
+        Advertisement.Load(normalAd, this);
+        Advertisement.Load(rewardedAd, this);
+
     }
 
     // Update is called once per frame
@@ -49,38 +51,56 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
 
 
     }
-    void IUnityAdsListener.OnUnityAdsDidError(string message)
+    
+    public void AdPlay()
     {
-        Debug.Log(" ADS Error");
+
+        Advertisement.Show(normalAd, this);
+
+    }
+    public void RewardedAdPlay()
+    {
+        Advertisement.Show(rewardedAd, this);
     }
 
-    void IUnityAdsListener.OnUnityAdsDidFinish(string placementId, ShowResult showResult)
+    void IUnityAdsShowListener.OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
+    {
+        Debug.Log(error.ToString() + message);
+    }
+
+    void IUnityAdsShowListener.OnUnityAdsShowStart(string placementId)
+    {
+        Time.timeScale = 0f;
+
+    }
+
+    void IUnityAdsShowListener.OnUnityAdsShowClick(string placementId)
+    {
+       
+    }
+
+    void IUnityAdsShowListener.OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
     {
         Time.timeScale = 1f;
     }
 
-    void IUnityAdsListener.OnUnityAdsDidStart(string placementId)
+    void IUnityAdsLoadListener.OnUnityAdsAdLoaded(string placementId)
     {
-        Time.timeScale = 0f;
+        throw new System.NotImplementedException();
     }
 
-    void IUnityAdsListener.OnUnityAdsReady(string placementId)
+    void IUnityAdsLoadListener.OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    void IUnityAdsInitializationListener.OnInitializationComplete()
     {
         Debug.Log(" ADS Ready");
     }
-    public void AdPlay()
-    {
 
-        if (Advertisement.IsReady(normalAd))
-        {
-            Advertisement.Show(normalAd);
-        }
-    }
-    public void RewardedAdPlay()
+    void IUnityAdsInitializationListener.OnInitializationFailed(UnityAdsInitializationError error, string message)
     {
-        if (Advertisement.IsReady(rewardedAd))
-        {
-            Advertisement.Show(rewardedAd);
-        }
+        Debug.Log(error.ToString() + message);
     }
 }
