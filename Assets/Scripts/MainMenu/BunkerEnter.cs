@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class BunkerEnter : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class BunkerEnter : MonoBehaviour
             _mainCharacter.transform.Rotate(0f, 0f, 0f);
             _bunkerCam.SetActive(true);
             _mainCam.SetActive(false);
-            _mainCharacter.GetComponent<Player>().characterMoveSpeed = 3;
+            StartCoroutine(StopMainChar());
             _gameHUD.SetActive(false);
             _joystick.SetActive(false);
 
@@ -46,4 +47,10 @@ public class BunkerEnter : MonoBehaviour
         }
     }
 
+    IEnumerator StopMainChar()
+    {
+        _mainCharacter.GetComponent<Player>().characterMoveSpeed = 3;
+        yield return new WaitForSeconds(1.5f);
+        _mainCharacter.GetComponent<Player>().characterMoveSpeed = 0;
+    }
 }

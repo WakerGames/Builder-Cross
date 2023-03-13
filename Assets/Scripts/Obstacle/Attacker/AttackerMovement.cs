@@ -11,6 +11,7 @@ public class AttackerMovement : MonoBehaviour
     {
         _character = GetComponent<Character>();
         _character.charAudioSource.Play();
+        _character.characterRigidbody.useGravity = true;
     }
 
     void FixedUpdate()
