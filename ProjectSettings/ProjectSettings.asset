@@ -251,7 +251,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 2800000, guid: 37cb832b25852a240990b42478793698, type: 3}
-  AndroidKeystoreName: "C:/Users/mert_/OneDrive/Masa\xFCst\xFC/walkerKeyStore.keystore"
+  AndroidKeystoreName: C:/Users/user/Desktop/kodlar/Key/walkerKeyStore.keystore
   AndroidKeyaliasName: emir
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
