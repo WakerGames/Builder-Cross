@@ -30,9 +30,11 @@ public class AdManager : MonoBehaviour, IUnityAdsShowListener, IUnityAdsLoadList
         if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
+            Debug.Log("Destroyed");
         }
         else
         {
+            Debug.Log("instantiated");
             _instance = this;
         }
         DontDestroyOnLoad(this);
@@ -45,16 +47,10 @@ public class AdManager : MonoBehaviour, IUnityAdsShowListener, IUnityAdsLoadList
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
     
     public void AdPlay()
     {
-
+        Debug.Log("- AdPlay -");
         Advertisement.Show(normalAd, this);
 
     }

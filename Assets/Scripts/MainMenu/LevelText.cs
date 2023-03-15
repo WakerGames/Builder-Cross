@@ -10,6 +10,6 @@ public class LevelText : MonoBehaviour
 
     private void Start()
     {
-        _levelText.text = "Level " + SceneManager.GetActiveScene().buildIndex;
+        _levelText.text = "AdCounter " + PlayerPrefs.GetInt("ADCOUNT").ToString() ;
     }
 }

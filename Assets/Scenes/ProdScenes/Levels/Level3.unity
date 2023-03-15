@@ -5763,6 +5763,10 @@ PrefabInstance:
       propertyPath: _mainCharacter
       value: 
       objectReference: {fileID: 73775579}
+    - target: {fileID: 1177916423, guid: 3c744bbb5ab524147aacfc108fdf9448, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 8044199663301853016, guid: 3c744bbb5ab524147aacfc108fdf9448, type: 3}
       propertyPath: m_Pivot.x
       value: 0
