@@ -37,7 +37,7 @@ public class AdManager : MonoBehaviour, IUnityAdsShowListener, IUnityAdsLoadList
             Debug.Log("instantiated");
             _instance = this;
         }
-        DontDestroyOnLoad(this);
+       
     }
     void Start()
     {
