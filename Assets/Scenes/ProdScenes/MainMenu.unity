@@ -4028,23 +4028,23 @@ PrefabInstance:
       objectReference: {fileID: 356817057}
     - target: {fileID: 1368682671002224751, guid: e2fe569cd3e91b249b7c87677f5774b5, type: 3}
       propertyPath: m_Pivot.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1368682671002224751, guid: e2fe569cd3e91b249b7c87677f5774b5, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1368682671002224751, guid: e2fe569cd3e91b249b7c87677f5774b5, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1368682671002224751, guid: e2fe569cd3e91b249b7c87677f5774b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -962
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 1368682671002224751, guid: e2fe569cd3e91b249b7c87677f5774b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -21.100342
+      value: -21.10022
       objectReference: {fileID: 0}
     - target: {fileID: 1368682671362429944, guid: e2fe569cd3e91b249b7c87677f5774b5, type: 3}
       propertyPath: m_Camera
