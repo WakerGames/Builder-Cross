@@ -37,11 +37,11 @@ public class TurretBehaviour : MonoBehaviour, IDamageDealer
             SetShooting(true);
             SetLaserColor(Color.red);
 
-            yield return new WaitForSecondsRealtime(shootingDuration);
+            yield return new WaitForSeconds(shootingDuration);
 
             SetShooting(false);
             SetLaserColor(Color.clear);  
-            yield return new WaitForSecondsRealtime(overheatSfx.length);
+            yield return new WaitForSeconds(overheatSfx.length);
             
             SetLaserColor(new Color(255,215,0));    // Gold
             KickStartLaser();
@@ -123,7 +123,7 @@ public class TurretBehaviour : MonoBehaviour, IDamageDealer
             lineRenderer.startColor = currentMaterialStartColor;
             lineRenderer.endColor = currentMaterialEndColor;
 
-            yield return new WaitForSecondsRealtime(0.04f);
+            yield return new WaitForSeconds(0.04f);
         }
 
         _readyToShoot = true;
