@@ -82,12 +82,10 @@ public class AdManager : MonoBehaviour, IUnityAdsShowListener, IUnityAdsLoadList
 
     void IUnityAdsLoadListener.OnUnityAdsAdLoaded(string placementId)
     {
-        throw new System.NotImplementedException();
     }
 
     void IUnityAdsLoadListener.OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
     {
-        throw new System.NotImplementedException();
     }
 
     void IUnityAdsInitializationListener.OnInitializationComplete()
