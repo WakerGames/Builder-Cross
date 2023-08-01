@@ -11,7 +11,7 @@ public class BoxManager : MonoBehaviour
     [SerializeField] private float boxSlowAmount;
     public GameObject[] BoxArray;
     private bool _hasBox;
-    private int _countBox = 1;
+    [SerializeField] private int _countBox = 0;
     [SerializeField] private GameObject boxPlace;
     [SerializeField] private GameObject _currentBox;
     public GameObject[] BoxUI;
@@ -72,7 +72,7 @@ public class BoxManager : MonoBehaviour
 
             SetChild(other.gameObject);
             _countBox++;
-            BoxesOnHand.Add(other.gameObject);
+            Debug.Log("countBox" + _countBox);
 
 
             if (settings.vibrationEnabled)
@@ -104,25 +104,44 @@ public class BoxManager : MonoBehaviour
     {
         _boxSound.Play();
 
-
+        collectable.tag = "Collected";
         BoxUI[index].SetActive(true);
 
+        if (index < 2)
+        {
+            index++;
 
-        index++;
-
-
+        }
         collectable.transform.parent = boxPlace.transform;
-        collectable.transform.localPosition = new Vector3(0, 0, 0);
-        if (_countBox == 2)
+        if (BoxesOnHand.Count <= 0)
         {
+            Debug.Log("count 0");
+            collectable.transform.localPosition = new Vector3(0, 0f, 0);
 
-            collectable.transform.localPosition = new Vector3(0, 0.5f, 0);
+        }
+        else
+        {
+            Debug.Log("count higher" + BoxesOnHand[BoxesOnHand.Count - 1].transform.localPosition.y + BoxesOnHand.Count / 2);
+            collectable.transform.localPosition = new Vector3(0, BoxesOnHand[BoxesOnHand.Count - 1].transform.localPosition.y+ 0.5F,0);
         }
 
-        if (_countBox == 3)
-        {
-            collectable.transform.localPosition = new Vector3(0, 1.01f, 0);
-        }
+        BoxesOnHand.Add(collectable.gameObject);
+
+        //if (_countBox == 1)
+        //{
+
+        //}
+
+        //if (_countBox == 2)
+        //{
+        //    collectable.transform.localPosition = new Vector3(0, 1.01f, 0);
+        //}
+        //else
+        //{
+        //    collectable.transform.localPosition = new Vector3(0, 0, 0);
+
+        //}
+
     }
 
     public bool GetHaveBox()

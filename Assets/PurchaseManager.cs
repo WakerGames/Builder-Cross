@@ -5,12 +5,12 @@ using Unity.Services.Core;
 using Unity.Services.Core.Environments;
 using UnityEngine;
 using UnityEngine.Purchasing;
-
+using UnityEngine.Purchasing.Extension;
 using UnityEngine.UI;
 
 
 
-public class PurchaseManager : MonoBehaviour, IStoreListener
+public class PurchaseManager : MonoBehaviour,IDetailedStoreListener
 {
     [SerializeField] Button removeAdsButton;
     private IStoreController controller;
@@ -109,7 +109,8 @@ public class PurchaseManager : MonoBehaviour, IStoreListener
             //Debug.Log("RestorePurchases started ...");
 
             var apple = extensions.GetExtension<IAppleExtensions>();
-            apple.RestoreTransactions((result) => {
+            apple.RestoreTransactions((result,callback) =>
+            {
                 PurchaseRemoveAds();
                 //Debug.Log("RestorePurchases continuing: " + result + ". If no further messages, no purchases available to restore.");
                 
@@ -126,5 +127,13 @@ public class PurchaseManager : MonoBehaviour, IStoreListener
         if (OnPurchase != null)
             OnPurchase();
 
+    }
+
+    public void OnInitializeFailed(InitializationFailureReason error, string message)
+    {
+    }
+
+    public void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)
+    {
     }
 }

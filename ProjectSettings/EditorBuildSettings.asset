@@ -159,6 +159,8 @@ EditorBuildSettings:
     path: Assets/Scenes/ProdScenes/Levels/level50Bonus.unity
     guid: 077f036265f79c041a177fbc8a3ea724
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 24483ce8ac7cf60438961db8983b9cf6, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: c6185df97fb8fe143a21c8add66b1808, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 1e6881e32b3d35e43a52cc5bd0d1a9e9, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 5afac424e2b6c6d49b886de314316ed2, type: 2}
+  m_UseUCBPForAssetBundles: 0

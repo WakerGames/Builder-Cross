@@ -8,11 +8,11 @@ public class CharWalk : MonoBehaviour
     bool _walkTime = false;
     [SerializeField] GameObject _mainCharacter;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (_walkTime)
         {
-            _mainCharacter.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            _mainCharacter.transform.Translate(Vector3.forward * speed );
             _mainCharacter.GetComponent<AnimatorController>().WalkMain();
 
         }
