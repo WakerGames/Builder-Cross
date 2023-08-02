@@ -49,6 +49,7 @@ Library: C:\Users\Bora\Documents\GitHub\Builder-Cross\Temp\BurstOutput\tempburst
 --assembly-defines=UnityEngine;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\Bora\Documents\GitHub\Builder-Cross\Temp\Burst
+--debug=LineOnly
 --key-folder=C:/Program Files/Unity/Hub/Editor/2023.1.6f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\Bora\Documents\GitHub\Builder-Cross\Library\Burst
 --output=C:\Users\Bora\Documents\GitHub\Builder-Cross\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
@@ -105,6 +106,7 @@ Library: C:\Users\Bora\Documents\GitHub\Builder-Cross\Temp\BurstOutput\tempburst
 --assembly-defines=UnityEngine;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\Bora\Documents\GitHub\Builder-Cross\Temp\Burst
+--debug=LineOnly
 --key-folder=C:/Program Files/Unity/Hub/Editor/2023.1.6f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\Bora\Documents\GitHub\Builder-Cross\Library\Burst
 --output=C:\Users\Bora\Documents\GitHub\Builder-Cross\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated

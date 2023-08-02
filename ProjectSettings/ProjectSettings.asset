@@ -253,7 +253,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 2800000, guid: 37cb832b25852a240990b42478793698, type: 3}
-  AndroidKeystoreName: "C:/Users/mert_/OneDrive/Masa\xFCst\xFC/walkerKeyStore.keystore"
+  AndroidKeystoreName: '{dedicated}: Desktop/walkerKeyStore.keystore'
   AndroidKeyaliasName: emir
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidBuildApkPerCpuArchitecture: 0
@@ -262,7 +262,7 @@ PlayerSettings:
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 0
+  androidUseCustomKeystore: 1
   m_AndroidBanners:
   - width: 320
     height: 180
