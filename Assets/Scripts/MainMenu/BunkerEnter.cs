@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using AppsFlyerSDK;
 
 public class BunkerEnter : MonoBehaviour
 {
@@ -18,8 +19,11 @@ public class BunkerEnter : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             int temp = SceneManager.GetActiveScene().buildIndex + 1;
-            PlayerPrefs.SetInt("Level",temp % SceneManager.sceneCountInBuildSettings);  //For saving
-             if(temp % SceneManager.sceneCountInBuildSettings ==0)
+            PlayerPrefs.SetInt("Level", temp % SceneManager.sceneCountInBuildSettings);
+            SendPurchaseInfo();
+
+            //For saving
+            if (temp % SceneManager.sceneCountInBuildSettings == 0)
             {
                 PlayerPrefs.SetInt("Level", 1);
             }
@@ -44,9 +48,16 @@ public class BunkerEnter : MonoBehaviour
             {
                 _tryAgainSurvivedScene.SetActive(true);
             }
+
         }
     }
-
+    public void SendPurchaseInfo()
+    {
+        Dictionary<string, string>
+            eventValues = new Dictionary<string, string>();
+        eventValues.Add(AFInAppEvents.LEVEL_ACHIEVED, $"Achieved Level : {PlayerPrefs.GetInt("Level")} ");
+        AppsFlyer.sendEvent(AFInAppEvents.LEVEL_ACHIEVED, eventValues);
+    }
     IEnumerator StopMainChar()
     {
         _mainCharacter.GetComponent<Player>().characterMoveSpeed = 3;

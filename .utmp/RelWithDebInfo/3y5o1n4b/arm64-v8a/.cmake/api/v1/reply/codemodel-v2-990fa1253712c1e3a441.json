@@ -66,7 +66,7 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "swappywrapper::@7e25bd1f32ce224db4e9",
-					"jsonFile" : "target-swappywrapper-RelWithDebInfo-45df6128068c4bac2c31.json",
+					"jsonFile" : "target-swappywrapper-RelWithDebInfo-ba1275410aaf9db96ec8.json",
 					"name" : "swappywrapper",
 					"projectIndex" : 1
 				}
@@ -76,7 +76,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Bora/Documents/GitHub/Builder-Cross/.utmp/RelWithDebInfo/3y5o1n4b/armeabi-v7a",
+		"build" : "C:/Users/Bora/Documents/GitHub/Builder-Cross/.utmp/RelWithDebInfo/3y5o1n4b/arm64-v8a",
 		"source" : "C:/Users/Bora/Documents/GitHub/Builder-Cross/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp"
 	},
 	"version" : 
