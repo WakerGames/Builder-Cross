@@ -89,6 +89,7 @@ PlayerSettings:
   hideHomeButton: 0
   submitAnalytics: 1
   usePlayerLog: 1
+  dedicatedServerOptimizations: 0
   bakeCollisionMeshes: 0
   forceSingleInstance: 0
   useFlipModelSwapchain: 1
@@ -128,6 +129,7 @@ PlayerSettings:
   switchAllowGpuScratchShrinking: 0
   switchNVNMaxPublicTextureIDCount: 0
   switchNVNMaxPublicSamplerIDCount: 0
+  switchMaxWorkerMultiple: 8
   switchNVNGraphicsFirmwareMemory: 32
   vulkanNumSwapchainBuffers: 3
   vulkanEnableSetSRGBWrite: 0
@@ -139,7 +141,6 @@ PlayerSettings:
   preloadedAssets:
   - {fileID: 11400000, guid: 1e6881e32b3d35e43a52cc5bd0d1a9e9, type: 2}
   - {fileID: 11400000, guid: 24483ce8ac7cf60438961db8983b9cf6, type: 2}
-  - {fileID: 5962712850503817197, guid: c6185df97fb8fe143a21c8add66b1808, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -160,10 +161,11 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.WakerGames.hazardSurvivor
+    iPhone: com.WakerGames.hazardSurvivor
   buildNumber:
     Standalone: 0
     VisionOS: 0
-    iPhone: 0
+    iPhone: 4
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 3
@@ -231,12 +233,12 @@ PlayerSettings:
   metalAPIValidation: 1
   iOSRenderExtraFrameOnPause: 0
   iosCopyPluginsCodeInsteadOfSymlink: 0
-  appleDeveloperTeamID: 
+  appleDeveloperTeamID: Y8GY3BJ349
   iOSManualSigningProvisioningProfileID: 
   tvOSManualSigningProvisioningProfileID: 
   iOSManualSigningProvisioningProfileType: 0
   tvOSManualSigningProvisioningProfileType: 0
-  appleEnableAutomaticSigning: 0
+  appleEnableAutomaticSigning: 1
   iOSRequireARKit: 0
   iOSAutomaticallyDetectAndAddCapabilities: 1
   appleEnableProMotion: 0
@@ -765,7 +767,6 @@ PlayerSettings:
   switchSocketBufferEfficiency: 4
   switchSocketInitializeEnabled: 1
   switchNetworkInterfaceManagerInitializeEnabled: 1
-  switchPlayerConnectionEnabled: 1
   switchUseNewStyleFilepaths: 0
   switchUseLegacyFmodPriorities: 1
   switchUseMicroSleepForYield: 1
@@ -1003,4 +1004,4 @@ PlayerSettings:
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
   virtualTexturingSupportEnabled: 0
-  insecureHttpOption: 0
+  insecureHttpOption: 2
