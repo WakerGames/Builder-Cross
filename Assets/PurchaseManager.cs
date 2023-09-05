@@ -41,7 +41,7 @@ public class PurchaseManager : MonoBehaviour,IDetailedStoreListener
 
 
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
-        builder.AddProduct("remove_ads", ProductType.NonConsumable);
+        builder.AddProduct("remove_ads_hs", ProductType.NonConsumable);
         UnityPurchasing.Initialize(this, builder);
     }
 
@@ -86,7 +86,7 @@ public class PurchaseManager : MonoBehaviour,IDetailedStoreListener
 
     PurchaseProcessingResult IStoreListener.ProcessPurchase(PurchaseEventArgs purchaseEvent)
     {
-        if (purchaseEvent.purchasedProduct.definition.id == "remove_ads")
+        if (purchaseEvent.purchasedProduct.definition.id == "remove_ads_hs")
         {
             Debug.Log("here");
             PurchaseRemoveAds();
@@ -97,12 +97,10 @@ public class PurchaseManager : MonoBehaviour,IDetailedStoreListener
     }
     public void RemoveAdsCompleted()
     {
-        controller.InitiatePurchase("remove_ads");
+        controller.InitiatePurchase("remove_ads_hs");
     }
     public void RestorePurchases()
     {
-        
-
         if (Application.platform == RuntimePlatform.IPhonePlayer)
             
         {
@@ -111,7 +109,7 @@ public class PurchaseManager : MonoBehaviour,IDetailedStoreListener
             var apple = extensions.GetExtension<IAppleExtensions>();
             apple.RestoreTransactions((result,callback) =>
             {
-                PurchaseRemoveAds();
+                //PurchaseRemoveAds(); // we don't have to do this manually.
                 //Debug.Log("RestorePurchases continuing: " + result + ". If no further messages, no purchases available to restore.");
                 
             });
@@ -131,9 +129,11 @@ public class PurchaseManager : MonoBehaviour,IDetailedStoreListener
 
     public void OnInitializeFailed(InitializationFailureReason error, string message)
     {
+        Debug.Log("error:"+ message);
     }
 
     public void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)
     {
+        Debug.Log("error:" + failureDescription.message);
     }
 }
