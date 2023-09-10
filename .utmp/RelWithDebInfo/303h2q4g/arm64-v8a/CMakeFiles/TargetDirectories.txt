@@ -1,0 +1,8 @@
+/Users/nasir41/Unity Projects/Github/Builder-Cross/.utmp/RelWithDebInfo/303h2q4g/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/nasir41/Unity Projects/Github/Builder-Cross/.utmp/RelWithDebInfo/303h2q4g/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/nasir41/Unity Projects/Github/Builder-Cross/.utmp/RelWithDebInfo/303h2q4g/arm64-v8a/GameActivity/CMakeFiles/game.dir
+/Users/nasir41/Unity Projects/Github/Builder-Cross/.utmp/RelWithDebInfo/303h2q4g/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+/Users/nasir41/Unity Projects/Github/Builder-Cross/.utmp/RelWithDebInfo/303h2q4g/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+/Users/nasir41/Unity Projects/Github/Builder-Cross/.utmp/RelWithDebInfo/303h2q4g/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+/Users/nasir41/Unity Projects/Github/Builder-Cross/.utmp/RelWithDebInfo/303h2q4g/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+/Users/nasir41/Unity Projects/Github/Builder-Cross/.utmp/RelWithDebInfo/303h2q4g/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir
