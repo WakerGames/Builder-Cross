@@ -32,13 +32,13 @@ public class AdShower : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("REMOVEADS") == 0)
         {
-            yield return new WaitUntil(() => AdManager.Instance != null);
+            yield return new WaitUntil(() => AdsDemoManager.Instance != null);
             {
 
                 PlayerPrefs.SetInt("ADCOUNT", PlayerPrefs.GetInt("ADCOUNT") + 1);
                 if (PlayerPrefs.GetInt("ADCOUNT") % 3 == 0)
                 {
-                    AdManager.Instance.AdPlay();
+                    AdsDemoManager.Instance.ShowInterstitialAd();
                 }
 
 
