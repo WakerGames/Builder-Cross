@@ -1,21 +1,21 @@
 # ninja log v5
-0	1348	1694174157627580174	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	d553978916198dad
-1	1163	1694174157443938859	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	9159d18768e463eb
-1348	1446	1694174157705307093	/Users/nasir41/Unity Projects/Github/Builder-Cross/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/303h2q4g/obj/armeabi-v7a/libgame.so	ee4c24ab08bce374
-1	1261	1694174157540355282	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	57f902b955a9dab4
-3	1104	1694174157384746786	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	874e30e8bddacd42
-2	1014	1694174157293800868	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	d3e67a6ec9c00dfa
-372	574	1694174156824927793	/Users/nasir41/Unity Projects/Github/Builder-Cross/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/303h2q4g/obj/armeabi-v7a/libswappywrapper.so	2b1a7c91880fb727
-1	971	1694174157250052576	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	c6d194836a95f4b
-2	1039	1694174157314467170	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	53b7e80505254d1e
-4	372	1694174156653679485	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	3d3e2c5bc764912e
 4	221	1694691482350030493	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	2432d281ff7a76f1
+3	897	1694691483025141246	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c6c91043f1334e47
+2	832	1694691482960235374	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	7107e7b0dddedc87
 221	375	1694691482477620839	/Users/nasir41/Unity Projects/Github/Builder-Cross/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/303h2q4g/obj/armeabi-v7a/libswappywrapper.so	8ec6b8f7822057cb
 2	757	1694691482887225320	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	f9122f0d12635e50
-2	832	1694691482960235374	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	7107e7b0dddedc87
-1	872	1694691483000303913	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	5dad5e80b38428ff
-3	897	1694691483025141246	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c6c91043f1334e47
-3	897	1694691483025435119	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	87fd2b3459cce246
-1	1180	1694691483308280162	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	f3ff55fb5a2b287d
 2	1218	1694691483346957171	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	7bac6c73d9e9530c
 1218	1347	1694691483445229055	/Users/nasir41/Unity Projects/Github/Builder-Cross/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/303h2q4g/obj/armeabi-v7a/libgame.so	b9c6614f6eadc2e6
+3	897	1694691483025435119	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	87fd2b3459cce246
+1	872	1694691483000303913	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	5dad5e80b38428ff
+1	1180	1694691483308280162	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	f3ff55fb5a2b287d
+21	329	1694692068093583780	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	2432d281ff7a76f1
+329	577	1694692068292622982	/Users/nasir41/Unity Projects/Github/Builder-Cross/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/303h2q4g/obj/armeabi-v7a/libswappywrapper.so	8ec6b8f7822057cb
+7	921	1694692068675190806	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	f9122f0d12635e50
+6	950	1694692068712715866	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	7107e7b0dddedc87
+7	1003	1694692068765588296	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c6c91043f1334e47
+13	1072	1694692068834106637	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	87fd2b3459cce246
+5	1106	1694692068868629388	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	5dad5e80b38428ff
+6	1287	1694692069049087496	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	7bac6c73d9e9530c
+5	1358	1694692069120249481	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	f3ff55fb5a2b287d
+1358	1484	1694692069217587704	/Users/nasir41/Unity Projects/Github/Builder-Cross/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/303h2q4g/obj/armeabi-v7a/libgame.so	b9c6614f6eadc2e6
