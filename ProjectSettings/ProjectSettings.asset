@@ -138,7 +138,10 @@ PlayerSettings:
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
   bundleVersion: 0.0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 11400000, guid: 1e6881e32b3d35e43a52cc5bd0d1a9e9, type: 2}
+  - {fileID: 11400000, guid: 24483ce8ac7cf60438961db8983b9cf6, type: 2}
+  - {fileID: 5962712850503817197, guid: c6185df97fb8fe143a21c8add66b1808, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -158,7 +161,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.WakerGames.hazardSurvivor
+    Android: com.evilmind.huawei
     iPhone: com.WakerGames.hazardSurvivor
   buildNumber:
     Standalone: 0
