@@ -31,6 +31,7 @@ public class IapDemoManager : MonoBehaviour
         {
             Instance = this;
         }
+        DontDestroyOnLoad(this);
     }
 
     #endregion
@@ -56,7 +57,9 @@ public class IapDemoManager : MonoBehaviour
     void Awake()
     {
         Singleton();
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
+        InitializeIAP();
+        //Screen.orientation = ScreenOrientation.LandscapeLeft;
+        
     }
 
     void Start()
@@ -67,11 +70,23 @@ public class IapDemoManager : MonoBehaviour
 
     #endregion
 
+    public delegate void PurchaseSuccessEvent();
+    public static PurchaseSuccessEvent OnPurchase;
     public void InitializeIAP()
     {
         Debug.Log($"InitializeIAP");
 
         HMSIAPManager.Instance.InitializeIAP();
+    }
+
+    
+
+    public void PurchaseRemoveAds()
+    {
+        PlayerPrefs.SetInt("REMOVEADS", 1);
+        if (OnPurchase != null)
+            OnPurchase();
+
     }
 
     private void RestoreProducts()
@@ -121,19 +136,8 @@ public class IapDemoManager : MonoBehaviour
     private void OnBuyProductSuccess(PurchaseResultInfo obj)
     {
         Debug.Log($"OnBuyProductSuccess");
+        PurchaseRemoveAds();
 
-        if (obj.InAppPurchaseData.ProductId == "removeads")
-        {
-            IAPLog?.Invoke("Ads Removed!");
-        }
-        else if (obj.InAppPurchaseData.ProductId == "coins100")
-        {
-            IAPLog?.Invoke("coins100 Purchased!");
-        }
-        else if (obj.InAppPurchaseData.ProductId == "premium")
-        {
-            IAPLog?.Invoke("premium subscribed!");
-        }
     }
 
     private void OnInitializeIAPFailure(HMSException obj)
