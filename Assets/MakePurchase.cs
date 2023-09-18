@@ -8,11 +8,11 @@ public class MakePurchase : MonoBehaviour
 
     private void OnEnable()
     {
-        PurchaseManager.OnPurchase += OnPurchaseAction;
+        IapDemoManager.OnPurchase += OnPurchaseAction;
     }
     private void OnDisable()
     {
-        PurchaseManager.OnPurchase -= OnPurchaseAction;
+        IapDemoManager.OnPurchase -= OnPurchaseAction;
     }
     void Start()
     {
@@ -26,7 +26,7 @@ public class MakePurchase : MonoBehaviour
         }
     }
 
-   
+
     void Update()
     {
 
@@ -38,11 +38,12 @@ public class MakePurchase : MonoBehaviour
     }
     public void MakePurchaseButton()
     {
-        PurchaseManager.Instance.RemoveAdsCompleted();
+        IapDemoManager.Instance.PurchaseProduct("remove_ads_hs");
+        
     }
     public void RestorePurchase()
     {
         PurchaseManager.Instance.RestorePurchases();
     }
-    
+
 }
