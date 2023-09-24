@@ -16,4 +16,4 @@ MonoBehaviour:
     _keys:
     - remove_ads_hs
     _values:
-    - Subscription
+    - NonConsumable
