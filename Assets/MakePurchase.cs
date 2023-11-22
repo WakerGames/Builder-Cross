@@ -8,11 +8,15 @@ public class MakePurchase : MonoBehaviour
 
     private void OnEnable()
     {
+#if !play_build
         IapDemoManager.OnPurchase += OnPurchaseAction;
+#endif
     }
     private void OnDisable()
     {
+#if !play_build
         IapDemoManager.OnPurchase -= OnPurchaseAction;
+#endif
     }
     void Start()
     {
@@ -38,7 +42,9 @@ public class MakePurchase : MonoBehaviour
     }
     public void MakePurchaseButton()
     {
+#if !play_build
         IapDemoManager.Instance.PurchaseProduct("remove_ads_hs");
+#endif
         
     }
     public void RestorePurchase()

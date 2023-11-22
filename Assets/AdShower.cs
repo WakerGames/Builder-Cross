@@ -32,6 +32,7 @@ public class AdShower : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("REMOVEADS") == 0)
         {
+            #if !play_build
             yield return new WaitUntil(() => AdsDemoManager.Instance != null);
             {
 
@@ -40,11 +41,10 @@ public class AdShower : MonoBehaviour
                 {
                     AdsDemoManager.Instance.ShowInterstitialAd();
                 }
-
-
             }
-
-
+            #else
+            yield return null; 
+            #endif
         }
 
 
